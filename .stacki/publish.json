@@ -4,10 +4,10 @@
     "hosting": {
       "provider": "cloudflare-workers",
       "accountId": "ce14d2a6a2faf31016fec1063c9d563b",
-      "project": "klub-misia-bo"
+      "project": "klub-misia"
     },
     "source": "discovered",
-    "url": "https://klub-misia-bo.mateuszfabjan.workers.dev"
+    "url": "https://klub-misia.mateuszfabjan.workers.dev"
   },
   "defaultTarget": "all",
   "githubAccount": "fabjandesign",
