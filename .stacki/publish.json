@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "publishedSite": {
+    "hosting": {
+      "provider": "cloudflare-workers",
+      "accountId": "ce14d2a6a2faf31016fec1063c9d563b",
+      "project": "klub-misia-bo"
+    },
+    "source": "discovered",
+    "url": "https://klub-misia-bo.mateuszfabjan.workers.dev"
+  },
+  "defaultTarget": "all",
+  "githubAccount": "fabjandesign",
+  "hosting": {
+    "provider": "cloudflare-workers",
+    "accountId": "ce14d2a6a2faf31016fec1063c9d563b",
+    "project": "klub-misia-bo"
+  },
+  "buildScript": "build",
+  "beforePublish": [],
+  "afterPublish": []
+}

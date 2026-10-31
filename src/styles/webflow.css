@@ -1591,3 +1591,23 @@ var(--thumb-size) * -1 * (var(--progress) - 0.5)
 /* Webflow form reset: fieldsets must not retain browser padding or borders. */
 fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 legend { padding: 0; }
+
+/* Keep the sign interaction shared by the home and 404 heroes.
+   Override legacy Webflow inline transforms so both pages behave alike. */
+:is(.hero_image_wrapper, .hero_404) .tablica_s {
+  transform: rotate(-5deg) !important;
+  transition: transform 0.3s ease;
+}
+@media (hover: hover) {
+  :is(.hero_image_wrapper, .hero_404) .tablica_s:hover {
+    transform: rotate(0deg) !important;
+  }
+}
+:is(.hero_image_wrapper, .hero_404) .tablica_s:active {
+  transform: rotate(0deg) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.hero_image_wrapper, .hero_404) .tablica_s {
+    transition: none;
+  }
+}
