@@ -1,0 +1,29 @@
+---
+import { safeTag } from '@/lib/attributes';
+
+
+interface Props {
+  /** Classes */
+  classes?: string;
+  /** Tag */
+  tag?: string;
+  /** Variant */
+  variant?: "visible" | "hidden" | "bold";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  classes: propClasses = "",
+  tag: propTag = "span",
+  variant: propVariant = "visible",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Name";
+if (!["visible", "hidden", "bold"].includes(propVariant)) throw new Error("FormLabelText.variant must be one of: visible, hidden, bold");
+
+const Tag = safeTag(propTag, "div");
+---
+{propVisibility && (<Tag class:list={[{"hidden": "w-variant-46933b79-cf19-81b4-bc00-8af5c19b08b3", "bold": "w-variant-e8e97384-daa0-7ce7-bc12-14efcd69bcd4"}[propVariant], "form_label_text", propClasses]} data-wf-id="b4da0210-a11e-8169-6bd3-3724db9bdc24" data-w-id="b4da0210-a11e-8169-6bd3-3724db9bdc24" data-wf--form-label-text--variant={{"visible": "visible", "hidden": "hidden", "bold": "bold"}[propVariant]} data-wf-variant={["558e34e3-97f9-fcda-de85-cbb2f3a7ba4a=" + ({"visible": "base", "hidden": "46933b79-cf19-81b4-bc00-8af5c19b08b3", "bold": "e8e97384-daa0-7ce7-bc12-14efcd69bcd4"}[propVariant])].join(" ")}>
+<slot>{propText}</slot>
+</Tag>)}

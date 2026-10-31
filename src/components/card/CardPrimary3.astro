@@ -1,0 +1,35 @@
+---
+import TestimonialCard from '@/components/card/TestimonialCard.astro';
+
+interface Props {
+  /** Variant */
+  variant?: "default" | "cover" | "stacked";
+  /** Style */
+  style?: string;
+  /** Classes */
+  classes?: string;
+  /** Role */
+  role?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  variant: propVariant = "default",
+  style: propStyle = "",
+  classes: propClasses = "",
+  role: propRole = "none",
+  visibility: propVisibility = true
+} = Astro.props;
+const propTestimonialCardName = "Igor Umrikhin";
+const propTestimonialCardText = "Chciałbym podzielić się swoim doświadczeniem o współpracy z agentem od nieruchomości Sebastianie Monice, który pomógł sprzedać mieszkanie. Byłem bardzo zadowolony ze współpracy z nim i polecam jego usługi każdemu, kto szuka profesjonalnej pomocy w sprzedaży swojej nieruchomości.";
+if (!["default", "cover", "stacked"].includes(propVariant)) throw new Error("CardPrimary3.variant must be one of: default, cover, stacked");
+
+
+---
+{propVisibility && (<div class:list={[{"cover": "w-variant-0811d318-935c-61ef-7f81-bcdcfc75dbdc", "stacked": "w-variant-0811d318-935c-61ef-7f81-bcdcfc75dbdd"}[propVariant], "card_primary_wrap2", propClasses]} style={propStyle} role={propRole} data-wf-id="0811d318-935c-61ef-7f81-bcdcfc75dbd1" data-w-id="0811d318-935c-61ef-7f81-bcdcfc75dbd1" data-wf--card-primary-3--variant={{"default": "default", "cover": "cover", "stacked": "stacked"}[propVariant]} data-wf-variant={["0811d318-935c-61ef-7f81-bcdcfc75dbdb=" + ({"default": "base", "cover": "0811d318-935c-61ef-7f81-bcdcfc75dbdc", "stacked": "0811d318-935c-61ef-7f81-bcdcfc75dbdd"}[propVariant])].join(" ")}>
+<TestimonialCard>
+<slot name="testimonialcardname" slot="name">{propTestimonialCardName}</slot>
+<slot name="testimonialcardtext" slot="text">{propTestimonialCardText}</slot>
+</TestimonialCard>
+</div>)}

@@ -1,0 +1,128 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import GlobalStyles from '@/components/global/GlobalStyles.astro';
+import GlobalGuides from '@/components/global/GlobalGuides.astro';
+import Nav from '@/components/global/Nav.astro';
+import Spacer from '@/components/utility/Spacer.astro';
+import Svg from '@/components/Svg.astro';
+import TypographyHeading from '@/components/typography/TypographyHeading.astro';
+import Section from '@/components/wrapper/Section.astro';
+import IconX from '@/components/svg/IconX.astro';
+import Layout2 from '@/components/wrapper/Layout2.astro';
+import TypographyParagraph from '@/components/typography/TypographyParagraph.astro';
+import ButtonWrapper from '@/components/wrapper/ButtonWrapper.astro';
+import ButtonMain from '@/components/button/ButtonMain.astro';
+import IconArrow from '@/components/svg/IconArrow.astro';
+import ButtonClose from '@/components/button/ButtonClose.astro';
+import ContactForm from '@/components/form/ContactForm.astro';
+import Map from '@/components/Map.astro';
+import Footer from '@/components/global/Footer.astro';
+import Cookie from '@/components/Cookie.astro';
+
+const data = {};
+const collectionData = {};
+
+
+---
+<Layout webflowPageId="6949905526a6d69d416176cf" pageTitle="Kontakt - Klub Misia Bo | Skontaktuj się z nami" pageDescription="Skontaktuj się z Klub Misia Bo. Telefon: +48 733 700 612, email: info@klub-misia-bo.pl. Godziny otwarcia: 8:00-17:00. ul. Świadowida 47, Warszawa." data-wf-id="689f3d1b8a521025da1b93a4" data-w-id="689f3d1b8a521025da1b93a4">
+<Fragment slot="head"><script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Kontakt",
+  "url": "https://klub-misia-bo.pl/kontakt",
+  "@id": "https://klub-misia-bo.pl/kontakt/#webpage",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Klub Misia Bo",
+    "@id": "https://klub-misia-bo.pl/#preschool",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Światowida 47",
+      "postalCode": "03-144",
+      "addressLocality": "Warszawa",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48733700612",
+    "email": "info@klub-misia-bo.pl"
+  }
+}
+</script>
+
+
+<script type="application/ld+json" is:inline>
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://klub-misia-bo.pl/kontakt/#breadcrumbs",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona główna",
+                "item": "https://klub-misia-bo.pl"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Kontakt",
+                "item": "https://klub-misia-bo.pl/kontakt"
+            }
+        ]
+    }
+</script></Fragment>
+<div data-wf-id="1c862110-5b53-42b6-ff63-119b6b19de9b" data-w-id="1c862110-5b53-42b6-ff63-119b6b19de9b" class="page_wrap">
+<GlobalStyles />
+<GlobalGuides />
+<Nav navPosition="overlap" />
+<main id="main" data-wf-id="c115f8c5-25c2-6daa-120d-7997cfd24cce" data-w-id="c115f8c5-25c2-6daa-120d-7997cfd24cce" class="page_main">
+<section data-wf-id="c3f9715a-b550-4287-5d86-ce7c136811d0" data-w-id="c3f9715a-b550-4287-5d86-ce7c136811d0" class="header_wrap">
+<div data-wf-id="c751cb3c-212d-a3c6-f3ee-a4ee71b2fdf2" data-w-id="c751cb3c-212d-a3c6-f3ee-a4ee71b2fdf2" class="header_contain u-container">
+<div data-wf-id="55d37c19-8286-e7e1-94a4-412be36f6057" data-w-id="55d37c19-8286-e7e1-94a4-412be36f6057" class="header_layout">
+<Spacer variant="page-top" />
+<div data-wf-id="c8776529-e0a1-0ccd-2e36-83b80fcca9c9" data-w-id="c8776529-e0a1-0ccd-2e36-83b80fcca9c9" class="contact_header_svg">
+<Svg image={{"id": "6ae64414e86c687666831896"}} />
+</div>
+<TypographyHeading classes="u-alignment-center u-position-relative" textTag="h1" variant="h1">
+Kontakt
+</TypographyHeading>
+<Spacer />
+</div>
+</div>
+</section>
+<Section paddingTop="page-top" visibility={false}>
+<IconX slot="background" />
+<Layout2 variant="stack-centered">
+<TypographyHeading textTag="h2" variant="h1">
+Kontakt
+</TypographyHeading>
+<TypographyParagraph textTag="p" visibility={false}>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+<a href="#modal-1" data-wf-id="a8bcacfc-f9af-e49f-efd0-38c5217e6882" data-w-id="a8bcacfc-f9af-e49f-efd0-38c5217e6882">
+commodo
+</a>
+ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</TypographyParagraph>
+<ButtonWrapper visibility={false}>
+<ButtonMain attributeValue="modal-1" attributeName="data-modal-trigger">
+<IconArrow />
+<Fragment slot="text">Open Modal</Fragment>
+</ButtonMain>
+<ButtonClose />
+</ButtonWrapper>
+</Layout2>
+</Section>
+<Section idAttributeValue="form" containerClasses="u-container-small u-gap-0" paddingTop="none" paddingBottom="none">
+<TypographyHeading textTag="h2" variant="h4">
+Formularz kontakowy
+</TypographyHeading>
+<ContactForm />
+</Section>
+<Section idAttributeValue="" containerClasses="u-container-small" sectionClasses="u-min-height-screen">
+<Map />
+</Section>
+</main>
+<Footer />
+<Cookie />
+</div>
+</Layout>

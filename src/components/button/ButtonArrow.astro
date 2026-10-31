@@ -1,0 +1,49 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+import IconArrowFull from '@/components/svg/IconArrowFull.astro';
+import Clickable from '@/components/utility/Clickable.astro';
+
+interface Props {
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Classes */
+  classes?: string;
+  /** Link */
+  link?: string;
+  linkTarget?: string;
+  /** Arrow Direction */
+  arrowDirection?: "right" | "left" | "top" | "bottom";
+  /** Variant */
+  variant?: "primary-medium" | "secondary-medium" | "primary-large" | "secondary-large";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  classes: propClasses = "",
+  link: propLink = "#",
+  linkTarget: propLinkTarget = "",
+  arrowDirection: propArrowDirection = "right",
+  variant: propVariant = "primary-medium",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Next";
+if (!["right", "left", "top", "bottom"].includes(propArrowDirection)) throw new Error("ButtonArrow.arrowDirection must be one of: right, left, top, bottom");
+if (!["primary-medium", "secondary-medium", "primary-large", "secondary-large"].includes(propVariant)) throw new Error("ButtonArrow.variant must be one of: primary-medium, secondary-medium, primary-large, secondary-large");
+
+
+---
+{propVisibility && (<div {...safeAttributes(customAttributes([...([({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses}), {"name": "data-button", "value": " "}, {"name": "data-trigger", "value": "hover focus"}] || [])]), ["data-wf-id", "data-w-id", "data-wf--button-arrow--variant", "class"])} data-wf-id="bb0688d1-65b6-14b6-81e5-21e2cd39bbd0" data-w-id="bb0688d1-65b6-14b6-81e5-21e2cd39bbd0" data-wf--button-arrow--variant={{"primary-medium": "primary-medium", "secondary-medium": "secondary-medium", "primary-large": "primary-large", "secondary-large": "secondary-large"}[propVariant]} class:list={[{"secondary-medium": "w-variant-bb0688d1-65b6-14b6-81e5-21e2cd39bbda", "primary-large": "w-variant-d7d7e32c-ac47-de0c-eb2d-07f19dfa19d2", "secondary-large": "w-variant-6c75cae2-0734-1bbf-191f-bfe0f8ed1797"}[propVariant], "button_arrow_wrap", customAttributes([...([({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses}), {"name": "data-button", "value": " "}, {"name": "data-trigger", "value": "hover focus"}] || [])]).class]} data-wf-variant={["bb0688d1-65b6-14b6-81e5-21e2cd39bbd9=" + ({"primary-medium": "base", "secondary-medium": "bb0688d1-65b6-14b6-81e5-21e2cd39bbda", "primary-large": "d7d7e32c-ac47-de0c-eb2d-07f19dfa19d2", "secondary-large": "6c75cae2-0734-1bbf-191f-bfe0f8ed1797"}[propVariant])].join(" ")}>
+<div data-wf-id="b07c384c-ad7b-6be8-66c6-6496090734f3" data-w-id="b07c384c-ad7b-6be8-66c6-6496090734f3" class="button_arrow_element">
+<div aria-hidden="true" data-wf-id="bb0688d1-65b6-14b6-81e5-21e2cd39bbd1" data-w-id="bb0688d1-65b6-14b6-81e5-21e2cd39bbd1" class="button_arrow_icon">
+<IconArrowFull variant={propArrowDirection} />
+</div>
+</div>
+<Clickable linkTarget={propLinkTarget} link={propLink}>
+<slot>{propText}</slot>
+</Clickable>
+</div>)}

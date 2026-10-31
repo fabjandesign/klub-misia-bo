@@ -1,0 +1,189 @@
+---
+import NavBanner from '@/components/miscellaneous/NavBanner.astro';
+import Logo from '@/components/svg/Logo.astro';
+import Menu from '@/components/miscellaneous/Menu.astro';
+
+interface Props {
+  /** Nav Position */
+  navPosition?: "default" | "overlap";
+}
+const collectionData = {};
+const {
+  navPosition: propNavPosition = "default"
+} = Astro.props;
+if (!["default", "overlap"].includes(propNavPosition)) throw new Error("Nav.navPosition must be one of: default, overlap");
+
+
+---
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fd0b" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fd0b" data-wf--nav--nav-position={{"default": "default", "overlap": "overlap"}[propNavPosition]} class:list={[{"overlap": "w-variant-dd866659-1d7d-6447-6461-66ca86ca367f"}[propNavPosition], "nav_component"]} data-wf-variant={["cd3a70a2-6531-fc84-1158-965d098fb4cd=" + ({"default": "base", "overlap": "dd866659-1d7d-6447-6461-66ca86ca367f"}[propNavPosition])].join(" ")}>
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fd0c" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fd0c" class="w-embed u-embed-css">
+<style is:inline>
+:root {
+	--nav--menu-open-duration: 400ms;
+	--nav--menu-close-duration: 400ms;
+	--nav--dropdown-open-duration: 400ms;
+	--nav--dropdown-close-duration: 400ms;
+}
+body:has(.nav_component .w-nav-button.w--open):not(:has(.nav_desktop_wrap:not(.w-condition-invisible))) { overflow: hidden; }
+/* on smaller screens */
+@media (width < 65em) {
+	/* disable scroll when mobile menu is open */
+	body:has(.nav_component .w-nav-button.w--open) { overflow: hidden; }
+}
+/* on larger screens */
+@container (min-width: 65em) {
+	/* show desktop nav & dropdown backdrop */
+	.nav_desktop_wrap, .nav_dropdown_backdrop { display: block; }
+	/* hide mobile nav & mobile menu backdrop */
+	.nav_desktop_wrap:not(.w-condition-invisible) ~ .nav_mobile_wrap, .nav_desktop_wrap:not(.w-condition-invisible) ~ .nav_menu_backdrop { display: none; }
+}
+/* dropdown list: initial state */
+html:not(.wf-design-mode) .nav_dropdown_component > .w-dropdown-list {
+	/* removes display none to enable css transitions */
+	display: grid !important;
+	grid-template-columns: minmax(0, 1fr);
+	/* sets list to 0 height by default */
+	grid-template-rows: 0fr;
+	transition: grid-template-rows var(--nav--dropdown-close-duration);
+	/* makes list content not focusable when closed */
+	visibility: hidden;
+	opacity: 0;
+}
+/* makes list content focusable when opened */
+html:not(.wf-design-mode) .nav_dropdown_component > .w-dropdown-list.w--open {
+	visibility: visible;
+	opacity: 1;
+}
+/* sets list child to overflow hidden to enable css height transition */
+.nav_dropdown_component > .w-dropdown-list > * {
+	overflow: hidden;
+}
+/* set open state of dropdown list */
+.nav_dropdown_component:has(> .w-dropdown-toggle[aria-expanded="true"]) > .w-dropdown-list {
+	--nav--dropdown-close-duration: var(--nav--dropdown-open-duration);
+	grid-template-rows: 1fr;
+}
+/* on desktop, delay dropdown opening if another dropdown is open */
+.nav_desktop_wrap:has(.nav_dropdown_component > .w-dropdown-toggle.w--open[aria-expanded="false"]) .nav_dropdown_component:has(> .w--open[aria-expanded="true"]) > .w-dropdown-list {
+	transition-delay: var(--nav--dropdown-close-duration);
+}
+/* reveal dropdown backdrop when dropdown open */
+.nav_dropdown_backdrop {
+	transition: opacity var(--nav--dropdown-close-duration);
+}
+body:has(.nav_dropdown_component > [aria-expanded="true"]) .nav_dropdown_backdrop {
+	opacity: 1;
+}
+/* reveal mobile menu backdrop on menu open */
+.nav_menu_backdrop {
+	transition: opacity var(--nav--menu-close-duration);
+}
+.nav_component:has(.w-nav-button.w--open) .nav_menu_backdrop {
+	opacity: 1;
+}
+/* menu animations */
+@keyframes menuOpen {
+ from { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+ to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+@keyframes menuClose {
+ from { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+ to { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+}
+/* menu open */
+.nav_component:has(.w-nav-button.w--open) .w-nav-menu {
+	animation: menuOpen var(--nav--menu-open-duration) ease-in-out forwards;
+}
+/* menu close */
+.nav_component:has(.w-nav-button:not(.w--open)) .w-nav-menu {
+	animation: menuClose var(--nav--menu-close-duration) ease-in-out forwards;
+}
+/* position overflow to top of screen */
+.nav_component .w-nav-overlay {
+ top: 0;
+ min-height: 100vh;
+}
+/* open dropdown on mobile */
+.nav_mobile_wrap [data-open-on-mobile] > .w-dropdown-toggle {
+	display: none;
+}
+.nav_mobile_wrap [data-open-on-mobile] > .w-dropdown-list {
+	visibility: visible !important;
+	opacity: 1 !important;
+	display: block !important;
+	grid-template-rows: 1fr !important;
+}
+/* nav banner */
+html:has(.nav_banner_wrap:not(.w-condition-invisible)):not(.hide-nav-banner) {
+	--nav--height-total: calc(var(--nav--banner-height) + var(--nav--height) + var(--nav--spacing-outer-vertical));
+}
+.hide-nav-banner .nav_banner_wrap {
+	display: none;
+}
+.wf-design-mode .nav_mobile_menu_wrap {
+	width: 100%;
+}
+</style>
+</div>
+<a data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fd0d" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fd0d" class="nav_skip_wrap" href="#main">
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fd0e" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fd0e" class="nav_skip_text u-text-style-small">
+Skip to main content
+</div>
+</a>
+<NavBanner link="#" visibility={false} />
+<header data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fd1f" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fd1f" class="nav_desktop_wrap">
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fd20" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fd20" class="nav_desktop_contain">
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fd21" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fd21" class="nav_desktop_layout">
+<a aria-label="Strona główna" data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fd22" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fd22" class="nav_desktop_logo" href="/">
+<Logo />
+</a>
+<Menu variant="desktop" />
+</div>
+</div>
+</header>
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fdc1" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fdc1" data-animation="default" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="w-nav nav_mobile_wrap">
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fdc2" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fdc2" class="nav_mobile_contain">
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fdc3" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fdc3" class="nav_mobile_layout">
+<a aria-label="Home Page" data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fdc4" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fdc4" class="nav_mobile_logo" href="/">
+<Logo />
+</a>
+<nav role="navigation" data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fdcc" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fdcc" class="w-nav-menu nav_mobile_menu_wrap">
+<div data-lenis-prevent="" data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fdcd" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fdcd" class="nav_mobile_menu_scroll">
+<Menu variant="mobile" />
+</div>
+</nav>
+<div data-state="open" data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fe65" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fe65" class="w-nav-button nav_button_wrap">
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fe66" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fe66" class="nav_button_layout">
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fe67" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fe67" class="nav_button_line is-1"></div>
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fe68" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fe68" class="nav_button_line is-2"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fe69" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fe69" class="nav_dropdown_backdrop"></div>
+<div data-wf-id="43ba6c77-0f82-87dd-2627-66c30f96fe6a" data-w-id="43ba6c77-0f82-87dd-2627-66c30f96fe6a" class="nav_menu_backdrop"></div>
+<div data-wf-id="5fd65cbd-2ee1-6d7e-f56e-e852285f83a8" data-w-id="5fd65cbd-2ee1-6d7e-f56e-e852285f83a8" class="w-embed u-embed-js">
+<script is:inline>
+if (sessionStorage.getItem("hide-nav-banner") === "true") {
+  document.documentElement.classList.add("hide-nav-banner");
+}
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".nav_banner_close_wrap").forEach((button) => {
+    button.addEventListener("click", function () {
+      sessionStorage.setItem("hide-nav-banner", "true");
+      document.documentElement.classList.add("hide-nav-banner");
+    });
+  });
+  document.querySelectorAll(".nav_skip_wrap").forEach(function (link) {
+    const target = document.querySelector("main");
+    if (!target) return;
+    link.addEventListener("click", function () {
+      target.setAttribute("tabindex", "-1");
+      target.focus();
+    });
+  });
+});
+</script>
+</div>
+</div>

@@ -1,0 +1,303 @@
+---
+import ButtonWrapper from '@/components/wrapper/ButtonWrapper.astro';
+import ButtonMain from '@/components/button/ButtonMain.astro';
+
+interface Props {
+
+}
+const collectionData = {};
+const {
+
+} = Astro.props;
+
+
+
+---
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af4e" data-w-id="405cec70-06a6-318c-02c6-c6372708af4e" class="cookie1-wrapper">
+<div fs-cc="banner" data-wf-id="405cec70-06a6-318c-02c6-c6372708af4f" data-w-id="405cec70-06a6-318c-02c6-c6372708af4f" class="cookie-banner1_component u-flex-vertical-nowrap u-shadow">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af50" data-w-id="405cec70-06a6-318c-02c6-c6372708af50" class="cookie-banner1_content-top">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af51" data-w-id="405cec70-06a6-318c-02c6-c6372708af51" class="cookie-banner1_twrapper u-flex-horizontal-wrap u-gap-2 u-margin-bottom-3">
+{false && (<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af52" data-w-id="405cec70-06a6-318c-02c6-c6372708af52" class="music_icon_wrapper">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af53" data-w-id="405cec70-06a6-318c-02c6-c6372708af53" class="icon">
+<span data-wf-id="405cec70-06a6-318c-02c6-c6372708af54" data-w-id="405cec70-06a6-318c-02c6-c6372708af54"></span>
+<span data-wf-id="405cec70-06a6-318c-02c6-c6372708af55" data-w-id="405cec70-06a6-318c-02c6-c6372708af55"></span>
+<span data-wf-id="405cec70-06a6-318c-02c6-c6372708af56" data-w-id="405cec70-06a6-318c-02c6-c6372708af56"></span>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af57" data-w-id="405cec70-06a6-318c-02c6-c6372708af57" class="w-embed u-embed-css-2">
+<style is:inline>
+.icon {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 1rem;
+  height: var(--_typography---font-size--text-small);
+
+	span {
+      width: 0.25rem;
+      height: 100%;
+      background-color: currentColor;
+      border-radius: 3px;
+      transform-origin: bottom;
+      animation: bounce 2.2s ease infinite alternate;
+      content: '';   
+      &:nth-of-type(2) {
+    		animation-delay: -2.2s; /* Start at the end of animation */
+  		}
+
+  		&:nth-of-type(3) {
+    		animation-delay: -3.7s; /* Start mid-way of return of animation */
+  		}
+
+	}
+ 
+}
+
+@keyframes bounce {
+  10% {
+    transform: scaleY(0.3); /* start by scaling to 30% */
+  }
+
+  30% {
+    transform: scaleY(1); /* scale up to 100% */
+  }
+
+  60% {
+    transform: scaleY(0.5); /* scale down to 50% */
+  }
+
+  80% {
+    transform: scaleY(0.75); /* scale up to 75% */
+  }
+
+  100% {
+    transform: scaleY(0.6); /* scale down to 60% */
+  }
+}
+
+
+
+
+
+
+.marquee-container {
+  width: 200px; /* Ustaw szerokość kontenera */
+  white-space: nowrap; /* Zapobiega zawijaniu tekstu */
+  overflow: hidden; /* Ukrywa tekst, który wykracza poza kontener */
+  border: 1px solid #ccc; /* Opcjonalne - dla lepszej widoczności */
+}
+
+.music_text {
+  display: inline-block;
+   p adding-left: 100%; /* Ustawia początek tekstu poza kontenerem */
+  animation: marquee 10s linear infinite; /* Animacja przewijania */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0); /* Początkowa pozycja */
+  }
+  100% {
+    transform: translateX(-100%); /* Końcowa pozycja - przesunięcie o 100% w lewo */
+  }
+}
+
+</style>
+</div>
+</div>)}
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af58" data-w-id="405cec70-06a6-318c-02c6-c6372708af58" class="cookie-banner1_title u-text-style-h5">
+Używamy Plików Cookie
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af5a" data-w-id="405cec70-06a6-318c-02c6-c6372708af5a" class="cookie-manager1_icon u-flex-horizontal-nowrap">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af5b" data-w-id="405cec70-06a6-318c-02c6-c6372708af5b">
+<path d="M21.5981 11.0636C21.4777 10.9728 21.3385 10.9102 21.1907 10.8804C21.0428 10.8506 20.8902 10.8545 20.7441 10.8916C20.5017 10.9593 20.2517 10.9956 20.0001 10.9996C18.3461 10.9996 17.0001 9.65362 16.9971 8.06262C17.0021 8.02862 17.0131 7.92663 17.0141 7.89263C17.0206 7.73629 16.9903 7.58061 16.9255 7.43815C16.8608 7.2957 16.7635 7.17046 16.6414 7.07254C16.5194 6.97463 16.376 6.90679 16.2229 6.87449C16.0698 6.8422 15.9113 6.84635 15.7601 6.88663C15.5127 6.95712 15.2572 6.9951 15.0001 6.99963C13.3461 6.99963 12.0001 5.65363 12.0001 3.99963C12.0001 3.78263 12.0311 3.55563 12.0991 3.28363C12.1376 3.12837 12.1383 2.96614 12.1011 2.81056C12.0639 2.65498 11.99 2.51059 11.8854 2.38951C11.7809 2.26843 11.6489 2.17418 11.5004 2.1147C11.3519 2.05521 11.1913 2.03221 11.0321 2.04763C8.55554 2.27845 6.2551 3.42789 4.58353 5.26973C2.91196 7.11156 1.99034 9.51238 2.00008 11.9996C2.00008 17.5136 6.48608 21.9996 12.0001 21.9996C17.5141 21.9996 22.0001 17.5136 22.0001 11.9996C22.0001 11.9506 21.9971 11.9026 21.9931 11.8396C21.9897 11.6889 21.9525 11.5409 21.8841 11.4066C21.8157 11.2722 21.7179 11.155 21.5981 11.0636ZM12.0001 19.9996C7.58908 19.9996 4.00008 16.4106 4.00008 11.9996C3.99294 10.2229 4.58028 8.49485 5.66863 7.09047C6.75698 5.68609 8.28379 4.6861 10.0061 4.24963C10.0717 5.53036 10.6263 6.73709 11.5555 7.62091C12.4847 8.50473 13.7177 8.99823 15.0001 8.99963L15.1011 8.99862C15.3306 10.1169 15.9353 11.1231 16.815 11.8506C17.6947 12.5781 18.7966 12.9832 19.9381 12.9986C19.4441 16.9406 16.0731 19.9996 12.0001 19.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af5c" data-w-id="405cec70-06a6-318c-02c6-c6372708af5c"></path>
+<path d="M12.5001 12.9996C13.3285 12.9996 14.0001 12.3281 14.0001 11.4996C14.0001 10.6712 13.3285 9.99963 12.5001 9.99963C11.6716 9.99963 11.0001 10.6712 11.0001 11.4996C11.0001 12.3281 11.6716 12.9996 12.5001 12.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af5d" data-w-id="405cec70-06a6-318c-02c6-c6372708af5d"></path>
+<path d="M8.50006 9.99963C9.32849 9.99963 10.0001 9.32806 10.0001 8.49963C10.0001 7.67121 9.32849 6.99963 8.50006 6.99963C7.67163 6.99963 7.00006 7.67121 7.00006 8.49963C7.00006 9.32806 7.67163 9.99963 8.50006 9.99963Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af5e" data-w-id="405cec70-06a6-318c-02c6-c6372708af5e"></path>
+<path d="M7.50006 13.9996C8.32849 13.9996 9.00006 13.3281 9.00006 12.4996C9.00006 11.6712 8.32849 10.9996 7.50006 10.9996C6.67163 10.9996 6.00006 11.6712 6.00006 12.4996C6.00006 13.3281 6.67163 13.9996 7.50006 13.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af5f" data-w-id="405cec70-06a6-318c-02c6-c6372708af5f"></path>
+<path d="M15.5001 16.9996C16.3285 16.9996 17.0001 16.3281 17.0001 15.4996C17.0001 14.6712 16.3285 13.9996 15.5001 13.9996C14.6716 13.9996 14.0001 14.6712 14.0001 15.4996C14.0001 16.3281 14.6716 16.9996 15.5001 16.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af60" data-w-id="405cec70-06a6-318c-02c6-c6372708af60"></path>
+<path d="M10.5001 17.9996C11.3285 17.9996 12.0001 17.3281 12.0001 16.4996C12.0001 15.6712 11.3285 14.9996 10.5001 14.9996C9.67163 14.9996 9.00006 15.6712 9.00006 16.4996C9.00006 17.3281 9.67163 17.9996 10.5001 17.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af61" data-w-id="405cec70-06a6-318c-02c6-c6372708af61"></path>
+</svg>
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af62" data-w-id="405cec70-06a6-318c-02c6-c6372708af62" class="cookie-banner1_text u-text-style-main">
+<span data-wf-id="405cec70-06a6-318c-02c6-c6372708af63" data-w-id="405cec70-06a6-318c-02c6-c6372708af63">
+Używamy plików cookie, aby ulepszać Twoje doświadczenie.
+<br data-wf-id="5e4a6acd-e7bd-4892-8091-92d5b57df17b" data-w-id="5e4a6acd-e7bd-4892-8091-92d5b57df17b" />
+‍
+</span>
+<a href="/polityka-prywatnosci" data-wf-id="405cec70-06a6-318c-02c6-c6372708af65" data-w-id="405cec70-06a6-318c-02c6-c6372708af65">
+<span data-wf-id="405cec70-06a6-318c-02c6-c6372708af66" data-w-id="405cec70-06a6-318c-02c6-c6372708af66">
+Polityka prywatności
+</span>
+</a>
+</div>
+</div>
+{false && (<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af68" data-w-id="405cec70-06a6-318c-02c6-c6372708af68" class="cookie-banner1_buttons-wrapper u-flex-horizontal-wrap u-gap-2">
+<a fs-cc="open-preferences" data-wf-id="405cec70-06a6-318c-02c6-c6372708af69" data-w-id="405cec70-06a6-318c-02c6-c6372708af69" class="btn_main_wrap" href="#">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af6a" data-w-id="405cec70-06a6-318c-02c6-c6372708af6a">
+Preferences
+</div>
+</a>
+{false && (<a fs-cc="deny" data-wf-id="405cec70-06a6-318c-02c6-c6372708af6c" data-w-id="405cec70-06a6-318c-02c6-c6372708af6c" class="btn_main_wrap is-secendary" href="#">
+Odrzuć
+</a>)}
+{false && (<a fs-cc="allow" data-wf-id="405cec70-06a6-318c-02c6-c6372708af6e" data-w-id="405cec70-06a6-318c-02c6-c6372708af6e" class="btn_main_wrap" href="#">
+Akceptuj
+</a>)}
+</div>)}
+<ButtonWrapper classes="u-alignment-start">
+<ButtonMain attributeValue="deny" attributeName="fs-cc" variant="secondary">
+<Fragment slot="text">Odrzuć</Fragment>
+</ButtonMain>
+<ButtonMain attributeValue="allow" attributeName="fs-cc">
+<Fragment slot="text">Akceptuj</Fragment>
+</ButtonMain>
+</ButtonWrapper>
+</div>
+{false && (<div fs-cc="manager" data-wf-id="405cec70-06a6-318c-02c6-c6372708af90" data-w-id="405cec70-06a6-318c-02c6-c6372708af90" class="cookie-manager1_component">
+<div fs-cc="open-preferences" data-wf-id="405cec70-06a6-318c-02c6-c6372708af91" data-w-id="405cec70-06a6-318c-02c6-c6372708af91" class="cookie-manager1_button">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af92" data-w-id="405cec70-06a6-318c-02c6-c6372708af92" class="w-embed">
+<style is:inline>
+
+.cookie-manager1_text{
+ width: 0;
+ transition: width 0.6s ease;
+}
+
+.cookie-manager1_button:hover .cookie-manager1_text{
+ width: auto;
+}
+
+</style>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af93" data-w-id="405cec70-06a6-318c-02c6-c6372708af93" class="cookie-manager1_icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af94" data-w-id="405cec70-06a6-318c-02c6-c6372708af94">
+<path d="M21.5981 11.0636C21.4777 10.9728 21.3385 10.9102 21.1907 10.8804C21.0428 10.8506 20.8902 10.8545 20.7441 10.8916C20.5017 10.9593 20.2517 10.9956 20.0001 10.9996C18.3461 10.9996 17.0001 9.65362 16.9971 8.06262C17.0021 8.02862 17.0131 7.92663 17.0141 7.89263C17.0206 7.73629 16.9903 7.58061 16.9255 7.43815C16.8608 7.2957 16.7635 7.17046 16.6414 7.07254C16.5194 6.97463 16.376 6.90679 16.2229 6.87449C16.0698 6.8422 15.9113 6.84635 15.7601 6.88663C15.5127 6.95712 15.2572 6.9951 15.0001 6.99963C13.3461 6.99963 12.0001 5.65363 12.0001 3.99963C12.0001 3.78263 12.0311 3.55563 12.0991 3.28363C12.1376 3.12837 12.1383 2.96614 12.1011 2.81056C12.0639 2.65498 11.99 2.51059 11.8854 2.38951C11.7809 2.26843 11.6489 2.17418 11.5004 2.1147C11.3519 2.05521 11.1913 2.03221 11.0321 2.04763C8.55554 2.27845 6.2551 3.42789 4.58353 5.26973C2.91196 7.11156 1.99034 9.51238 2.00008 11.9996C2.00008 17.5136 6.48608 21.9996 12.0001 21.9996C17.5141 21.9996 22.0001 17.5136 22.0001 11.9996C22.0001 11.9506 21.9971 11.9026 21.9931 11.8396C21.9897 11.6889 21.9525 11.5409 21.8841 11.4066C21.8157 11.2722 21.7179 11.155 21.5981 11.0636ZM12.0001 19.9996C7.58908 19.9996 4.00008 16.4106 4.00008 11.9996C3.99294 10.2229 4.58028 8.49485 5.66863 7.09047C6.75698 5.68609 8.28379 4.6861 10.0061 4.24963C10.0717 5.53036 10.6263 6.73709 11.5555 7.62091C12.4847 8.50473 13.7177 8.99823 15.0001 8.99963L15.1011 8.99862C15.3306 10.1169 15.9353 11.1231 16.815 11.8506C17.6947 12.5781 18.7966 12.9832 19.9381 12.9986C19.4441 16.9406 16.0731 19.9996 12.0001 19.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af95" data-w-id="405cec70-06a6-318c-02c6-c6372708af95"></path>
+<path d="M12.5001 12.9996C13.3285 12.9996 14.0001 12.3281 14.0001 11.4996C14.0001 10.6712 13.3285 9.99963 12.5001 9.99963C11.6716 9.99963 11.0001 10.6712 11.0001 11.4996C11.0001 12.3281 11.6716 12.9996 12.5001 12.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af96" data-w-id="405cec70-06a6-318c-02c6-c6372708af96"></path>
+<path d="M8.50006 9.99963C9.32849 9.99963 10.0001 9.32806 10.0001 8.49963C10.0001 7.67121 9.32849 6.99963 8.50006 6.99963C7.67163 6.99963 7.00006 7.67121 7.00006 8.49963C7.00006 9.32806 7.67163 9.99963 8.50006 9.99963Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af97" data-w-id="405cec70-06a6-318c-02c6-c6372708af97"></path>
+<path d="M7.50006 13.9996C8.32849 13.9996 9.00006 13.3281 9.00006 12.4996C9.00006 11.6712 8.32849 10.9996 7.50006 10.9996C6.67163 10.9996 6.00006 11.6712 6.00006 12.4996C6.00006 13.3281 6.67163 13.9996 7.50006 13.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af98" data-w-id="405cec70-06a6-318c-02c6-c6372708af98"></path>
+<path d="M15.5001 16.9996C16.3285 16.9996 17.0001 16.3281 17.0001 15.4996C17.0001 14.6712 16.3285 13.9996 15.5001 13.9996C14.6716 13.9996 14.0001 14.6712 14.0001 15.4996C14.0001 16.3281 14.6716 16.9996 15.5001 16.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af99" data-w-id="405cec70-06a6-318c-02c6-c6372708af99"></path>
+<path d="M10.5001 17.9996C11.3285 17.9996 12.0001 17.3281 12.0001 16.4996C12.0001 15.6712 11.3285 14.9996 10.5001 14.9996C9.67163 14.9996 9.00006 15.6712 9.00006 16.4996C9.00006 17.3281 9.67163 17.9996 10.5001 17.9996Z" fill="currentColor" data-wf-id="405cec70-06a6-318c-02c6-c6372708af9a" data-w-id="405cec70-06a6-318c-02c6-c6372708af9a"></path>
+</svg>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708af9b" data-w-id="405cec70-06a6-318c-02c6-c6372708af9b" class="cookie-manager1_text u-text-style-main u-overflow-hidden">
+Preferencje Cookie
+</div>
+</div>
+<div fs-cc="interaction" data-wf-id="405cec70-06a6-318c-02c6-c6372708af9d" data-w-id="405cec70-06a6-318c-02c6-c6372708af9d" class="cookie-manager1_trigger"></div>
+</div>)}
+{false && (<div fs-cc="preferences" fs-cc-scroll="disable" data-wf-id="405cec70-06a6-318c-02c6-c6372708af9e" data-w-id="405cec70-06a6-318c-02c6-c6372708af9e" class="w-form cookie-prefs1_component">
+<form id="wf-form-Cookie-Preferences-1" name="wf-form-Cookie-Preferences-1" data-name="Cookie Preferences 1" redirect="" data-redirect="" action="" method="get" data-wf-id="405cec70-06a6-318c-02c6-c6372708af9f" data-w-id="405cec70-06a6-318c-02c6-c6372708af9f" class="cookie-prefs1_form">
+<div fs-cc="close" data-wf-id="405cec70-06a6-318c-02c6-c6372708afa0" data-w-id="405cec70-06a6-318c-02c6-c6372708afa0" class="cookie-prefs1_close-button">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afa1" data-w-id="405cec70-06a6-318c-02c6-c6372708afa1" class="w-embed icon-embed-small">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 33" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<path d="M22.8354 22.864L22.3639 23.3354C22.1036 23.5957 21.6815 23.5957 21.4211 23.3354L16 17.9142L10.5788 23.3353C10.3185 23.5957 9.89638 23.5957 9.63603 23.3353L9.16462 22.8639C8.90427 22.6036 8.90427 22.1815 9.16462 21.9211L14.5858 16.5L9.16462 11.0788C8.90427 10.8185 8.90427 10.3964 9.16462 10.136L9.63602 9.66463C9.89637 9.40428 10.3185 9.40428 10.5788 9.66463L16 15.0858L21.4211 9.66462C21.6815 9.40427 22.1036 9.40427 22.3639 9.66462L22.8354 10.136C23.0957 10.3964 23.0957 10.8185 22.8354 11.0788L17.4142 16.5L22.8354 21.9211C23.0957 22.1815 23.0957 22.6036 22.8354 22.864Z" fill="currentColor" />
+</svg>
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afa2" data-w-id="405cec70-06a6-318c-02c6-c6372708afa2" class="cookie-prefs1_content">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afa3" data-w-id="405cec70-06a6-318c-02c6-c6372708afa3" class="toggle2_subtitle u-text-style-h4 u-mb-3">
+Preferencje prywatności
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afa5" data-w-id="405cec70-06a6-318c-02c6-c6372708afa5">
+Podczas odwiedzania witryn internetowych mogą one przechowywać lub pobierać dane w przeglądarce użytkownika. Przechowywanie to jest często niezbędne do zapewnienia podstawowej funkcjonalności witryny. Przechowywanie może być wykorzystywane do celów marketingowych, analitycznych i personalizacji witryny, takich jak przechowywanie preferencji użytkownika. Prywatność jest dla nas ważna, dlatego użytkownik ma możliwość wyłączenia niektórych rodzajów przechowywania danych, które mogą nie być niezbędne do podstawowego funkcjonowania witryny. Zablokowanie kategorii może mieć wpływ na korzystanie z witryny.
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afa7" data-w-id="405cec70-06a6-318c-02c6-c6372708afa7" class="u-display-contents">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afa8" data-w-id="405cec70-06a6-318c-02c6-c6372708afa8" class="u-button-group"></div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afa9" data-w-id="405cec70-06a6-318c-02c6-c6372708afa9" class="u-btn-group u-mt-5">
+<a fs-cc="deny" data-wf-id="405cec70-06a6-318c-02c6-c6372708afaa" data-w-id="405cec70-06a6-318c-02c6-c6372708afaa" class="btn_main_wrap" href="#">
+Odrzuć wszystkie pliki cookie
+</a>
+<a fs-cc="allow" data-wf-id="405cec70-06a6-318c-02c6-c6372708afac" data-w-id="405cec70-06a6-318c-02c6-c6372708afac" class="btn_main_wrap" href="#">
+Akceptuj wszystkie pliki cookie
+</a>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afae" data-w-id="405cec70-06a6-318c-02c6-c6372708afae" class="cookie-prefs1_divider"></div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afaf" data-w-id="405cec70-06a6-318c-02c6-c6372708afaf" class="cookie-prefs1_content-bottom u-mt-6">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afb0" data-w-id="405cec70-06a6-318c-02c6-c6372708afb0" class="toggle2_subtitle u-text-style-h4">
+Zarządzanie preferencjami zgody według kategorii
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afb2" data-w-id="405cec70-06a6-318c-02c6-c6372708afb2" class="cookie-prefs1_item">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afb3" data-w-id="405cec70-06a6-318c-02c6-c6372708afb3" class="cookie-prefs1_item-toggle">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afb4" data-w-id="405cec70-06a6-318c-02c6-c6372708afb4" class="toggle2_tagline u-text-style-h6">
+Niezbędny
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afb6" data-w-id="405cec70-06a6-318c-02c6-c6372708afb6" class="u-weight-bold">
+Always active
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afb8" data-w-id="405cec70-06a6-318c-02c6-c6372708afb8">
+Te elementy są wymagane, aby umożliwić podstawową funkcjonalność witryny.
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afba" data-w-id="405cec70-06a6-318c-02c6-c6372708afba" class="cookie-prefs1_item">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afbb" data-w-id="405cec70-06a6-318c-02c6-c6372708afbb" class="cookie-prefs1_item-toggle">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afbc" data-w-id="405cec70-06a6-318c-02c6-c6372708afbc" class="toggle2_tagline u-text-style-h6">
+Marketing
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afbe" data-w-id="405cec70-06a6-318c-02c6-c6372708afbe" class="w-checkbox toggle2_field">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afbf" data-w-id="405cec70-06a6-318c-02c6-c6372708afbf" class="toggle2_dot"></div>
+<input type="checkbox" name="Cookie-Preferences-1-Option-1" id="Cookie-Preferences-1-Option-1" data-name="Cookie Preferences 1 Option 1" required={false} checked={false} fs-cc-checkbox="marketing" data-wf-id="405cec70-06a6-318c-02c6-c6372708afc0" data-w-id="405cec70-06a6-318c-02c6-c6372708afc0" class="w-checkbox-input toggle2_button" />
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afc1" data-w-id="405cec70-06a6-318c-02c6-c6372708afc1" class="toggle2_label">
+Checkbox 8
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afc3" data-w-id="405cec70-06a6-318c-02c6-c6372708afc3" class="toggle2_mask"></div>
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afc4" data-w-id="405cec70-06a6-318c-02c6-c6372708afc4">
+Elementy te są wykorzystywane do dostarczania reklam, które są bardziej dopasowane do użytkownika i jego zainteresowań. Mogą być również wykorzystywane do ograniczania liczby wyświetleń reklamy i mierzenia skuteczności kampanii reklamowych. Sieci reklamowe zazwyczaj umieszczają je za zgodą operatora witryny.
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afc6" data-w-id="405cec70-06a6-318c-02c6-c6372708afc6" class="cookie-prefs1_item">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afc7" data-w-id="405cec70-06a6-318c-02c6-c6372708afc7" class="cookie-prefs1_item-toggle">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afc8" data-w-id="405cec70-06a6-318c-02c6-c6372708afc8" class="toggle2_tagline u-text-style-h6">
+Personalizacja
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afca" data-w-id="405cec70-06a6-318c-02c6-c6372708afca" class="w-checkbox toggle2_field">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afcb" data-w-id="405cec70-06a6-318c-02c6-c6372708afcb" class="toggle2_dot"></div>
+<input type="checkbox" name="Cookie-Preferences-1-Option-2" id="Cookie-Preferences-1-Option-2" data-name="Cookie Preferences 1 Option 2" required={false} checked={false} fs-cc-checkbox="personalization" data-wf-id="405cec70-06a6-318c-02c6-c6372708afcc" data-w-id="405cec70-06a6-318c-02c6-c6372708afcc" class="w-checkbox-input toggle2_button" />
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afcd" data-w-id="405cec70-06a6-318c-02c6-c6372708afcd" class="toggle2_label">
+Checkbox 8
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afcf" data-w-id="405cec70-06a6-318c-02c6-c6372708afcf" class="toggle2_mask"></div>
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afd0" data-w-id="405cec70-06a6-318c-02c6-c6372708afd0">
+Elementy te pozwalają witrynie zapamiętać wybory dokonane przez użytkownika (takie jak nazwa użytkownika, język lub region, w którym się znajduje) i zapewnić ulepszone, bardziej spersonalizowane funkcje. Na przykład witryna internetowa może dostarczać użytkownikowi lokalne prognozy warunków pogodowych lub wiadomości o ruchu drogowym, przechowując dane o jego bieżącej lokalizacji.
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afd2" data-w-id="405cec70-06a6-318c-02c6-c6372708afd2" class="cookie-prefs1_item">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afd3" data-w-id="405cec70-06a6-318c-02c6-c6372708afd3" class="cookie-prefs1_item-toggle">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afd4" data-w-id="405cec70-06a6-318c-02c6-c6372708afd4" class="toggle2_tagline u-text-style-h6">
+Analityka
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afd6" data-w-id="405cec70-06a6-318c-02c6-c6372708afd6" class="w-checkbox toggle2_field">
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afd7" data-w-id="405cec70-06a6-318c-02c6-c6372708afd7" class="toggle2_dot"></div>
+<input type="checkbox" name="Cookie-Preferences-1-Option-3" id="Cookie-Preferences-1-Option-3" data-name="Cookie Preferences 1 Option 3" required={false} checked={false} fs-cc-checkbox="analytics" data-wf-id="405cec70-06a6-318c-02c6-c6372708afd8" data-w-id="405cec70-06a6-318c-02c6-c6372708afd8" class="w-checkbox-input toggle2_button" />
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afd9" data-w-id="405cec70-06a6-318c-02c6-c6372708afd9" class="toggle2_label">
+Checkbox 8
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afdb" data-w-id="405cec70-06a6-318c-02c6-c6372708afdb" class="toggle2_mask"></div>
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afdc" data-w-id="405cec70-06a6-318c-02c6-c6372708afdc">
+Elementy te pomagają operatorowi witryny zrozumieć, w jaki sposób działa jego witryna, w jaki sposób odwiedzający wchodzą w interakcję z witryną i czy mogą występować problemy techniczne. Ten typ pamięci masowej zazwyczaj nie gromadzi informacji identyfikujących odwiedzającego.
+</div>
+</div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afde" data-w-id="405cec70-06a6-318c-02c6-c6372708afde" class="cookie-prefs1_buttons-wrapper u-mt-5">
+<a fs-cc="close" data-wf-id="405cec70-06a6-318c-02c6-c6372708afdf" data-w-id="405cec70-06a6-318c-02c6-c6372708afdf" class="btn_main_wrap" href="#">
+Odrzuć
+</a>
+<a fs-cc="submit" data-wf-id="405cec70-06a6-318c-02c6-c6372708afe1" data-w-id="405cec70-06a6-318c-02c6-c6372708afe1" class="btn_main_wrap" href="#">
+Zapisz preferencje
+</a>
+</div>
+</div>
+</div>
+</form>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afe3" data-w-id="405cec70-06a6-318c-02c6-c6372708afe3" class="w-form-done"></div>
+<div data-wf-id="405cec70-06a6-318c-02c6-c6372708afe4" data-w-id="405cec70-06a6-318c-02c6-c6372708afe4" class="w-form-fail"></div>
+<div fs-cc="close" data-wf-id="405cec70-06a6-318c-02c6-c6372708afe5" data-w-id="405cec70-06a6-318c-02c6-c6372708afe5" class="cookie-prefs1_overlay"></div>
+<div fs-cc="interaction" data-wf-id="405cec70-06a6-318c-02c6-c6372708afe6" data-w-id="405cec70-06a6-318c-02c6-c6372708afe6" class="cookie-prefs1_trigger"></div>
+</div>)}
+</div>

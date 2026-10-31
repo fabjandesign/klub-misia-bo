@@ -1,0 +1,259 @@
+---
+import FormFieldset from '@/components/form/FormFieldset.astro';
+import FormInput from '@/components/form/FormInput.astro';
+import FormSelect from '@/components/form/FormSelect.astro';
+import FormSelectOption from '@/components/form/FormSelectOption.astro';
+import FormTextarea from '@/components/form/FormTextarea.astro';
+import FormCheckbox from '@/components/form/FormCheckbox.astro';
+import FormRadio from '@/components/form/FormRadio.astro';
+import FormRange from '@/components/form/FormRange.astro';
+import ButtonWrapper from '@/components/wrapper/ButtonWrapper.astro';
+import ButtonMain from '@/components/button/ButtonMain.astro';
+
+interface Props {
+  /** Classes */
+  classes?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  classes: propClasses = " ",
+  visibility: propVisibility = true
+} = Astro.props;
+
+
+
+---
+{propVisibility && (<div class:list={["form_component", propClasses]} data-wf-id="f6291c55-7146-0e47-b2f4-77ff85d63d60" data-w-id="f6291c55-7146-0e47-b2f4-77ff85d63d60">
+<div data-wf-id="bf7970fc-209c-ae43-67b3-617852be4c54" data-w-id="bf7970fc-209c-ae43-67b3-617852be4c54" class="w-form form_wrap">
+<form id="wf-form-Contact-Form" name="wf-form-Contact-Form" data-name="Contact Form" redirect="" data-redirect="" action="https://hook.eu1.make.com/fsea8sko9t12or4rn2ik5i9c1w7aycqb" method="post" data-wf-id="bf7970fc-209c-ae43-67b3-617852be4c55" data-w-id="bf7970fc-209c-ae43-67b3-617852be4c55" class="form_element">
+<FormFieldset legendVariant="hidden" variant="grid-2-column">
+<FormInput autoComplete="given-name" placeholder="Imię" name="First Name">
+Imię
+</FormInput>
+<FormInput autoComplete="family-name" placeholder="Nazwisko" name="Last Name">
+Nazwisko
+</FormInput>
+<FormInput autoComplete="email" inputMode="email" type="email" required=" required" placeholder="email@domena.pl" name="Email Address">
+Adres Email
+</FormInput>
+<FormFieldset legendVariant="hidden" variant="grid-3-column" visibility={false}>
+<FormSelect classes="u-column-span-2" name="State">
+<FormSelectOption value="">
+Select one...
+</FormSelectOption>
+<FormSelectOption value="Option 1">
+Option 1
+</FormSelectOption>
+<FormSelectOption value="Option 2">
+Option 2
+</FormSelectOption>
+<FormSelectOption value="Option 3">
+Option 3
+</FormSelectOption>
+<Fragment slot="label">State</Fragment>
+</FormSelect>
+<FormInput autoComplete="postal-code" inputMode="text" type="text" placeholder="" name="Zip Code">
+Zip Code
+</FormInput>
+<Fragment slot="legendtext">Address</Fragment>
+</FormFieldset>
+<FormFieldset variant="grid-3-column" visibility={false}>
+<FormSelect name="Month" labelVariant="hidden">
+<FormSelectOption value="">
+MM
+</FormSelectOption>
+<FormSelectOption value="January">
+January
+</FormSelectOption>
+<FormSelectOption value="February">
+February
+</FormSelectOption>
+<FormSelectOption value="March">
+March
+</FormSelectOption>
+<FormSelectOption value="April">
+April
+</FormSelectOption>
+<FormSelectOption value="May">
+May
+</FormSelectOption>
+<FormSelectOption value="June">
+June
+</FormSelectOption>
+<FormSelectOption value="July">
+July
+</FormSelectOption>
+<FormSelectOption value="August">
+August
+</FormSelectOption>
+<FormSelectOption value="September">
+September
+</FormSelectOption>
+<FormSelectOption value="October">
+October
+</FormSelectOption>
+<FormSelectOption value="November">
+November
+</FormSelectOption>
+<FormSelectOption value="December">
+December
+</FormSelectOption>
+<Fragment slot="label">Month</Fragment>
+</FormSelect>
+<FormSelect name="Day" labelVariant="hidden">
+<FormSelectOption value="">
+DD
+</FormSelectOption>
+<FormSelectOption value="1">
+1
+</FormSelectOption>
+<FormSelectOption value="2">
+2
+</FormSelectOption>
+<FormSelectOption value="3">
+3
+</FormSelectOption>
+<Fragment slot="label">Day</Fragment>
+</FormSelect>
+<FormSelect name="Year" labelVariant="hidden">
+<FormSelectOption value="">
+YYYY
+</FormSelectOption>
+<FormSelectOption value="2025">
+2025
+</FormSelectOption>
+<FormSelectOption value="2024">
+2024
+</FormSelectOption>
+<FormSelectOption value="2023">
+2023
+</FormSelectOption>
+<Fragment slot="label">Year</Fragment>
+</FormSelect>
+<Fragment slot="legendtext">Date of Birth</Fragment>
+</FormFieldset>
+<FormInput autoComplete="tel" inputMode="tel" type="tel" placeholder="733 700 612" name="Phone Number" visibility={true}>
+Numer Telefonu
+</FormInput>
+<Fragment slot="legendtext">Formularz kontaktowy</Fragment>
+</FormFieldset>
+<FormTextarea classes="u-column-2 u-margin-top-2" required="required" placeholder="Twoja wiadomość" name="Message">
+Wiadomość
+</FormTextarea>
+<FormFieldset classes="u-margin-top-2 u-margin-bottom-4" legendVariant="hidden" variant="flex-horizontal">
+<FormCheckbox required="required" name="I agree to the terms">
+Zapoznałem się z Polityką Prywatności
+</FormCheckbox>
+<Fragment slot="legendtext">Terms &amp; Conditions</Fragment>
+</FormFieldset>
+<FormFieldset legendVariant="bold" variant="grid-2-column" visibility={false}>
+<FormFieldset slotRole="list" variant="flex-horizontal">
+<FormRadio role="listitem" checked=" " required=" " value="Red" groupName="Color" variant="radio">
+Red
+</FormRadio>
+<FormRadio role="listitem" required=" " value="Green" groupName="Color" variant="radio">
+Green
+</FormRadio>
+<FormRadio role="listitem" required=" " value="Blue" groupName="Color" variant="radio">
+Blue
+</FormRadio>
+<Fragment slot="legendtext">Favorite Color</Fragment>
+</FormFieldset>
+<FormFieldset slotRole="list" variant="flex-horizontal">
+<FormCheckbox role="listitem" checked=" " name="I agree to the terms">
+I agree to the terms
+</FormCheckbox>
+<FormCheckbox role="listitem" name="I agree to the terms">
+I agree to the terms
+</FormCheckbox>
+<Fragment slot="legendtext">Terms &amp; Conditions</Fragment>
+</FormFieldset>
+<FormSelect name="Job Title">
+<FormSelectOption value="">
+Select one...
+</FormSelectOption>
+<FormSelectOption />
+<FormSelectOption value="Option 2">
+Option 2
+</FormSelectOption>
+<FormSelectOption value="Option 3">
+Option 3
+</FormSelectOption>
+<Fragment slot="label">Job Title</Fragment>
+</FormSelect>
+<FormInput autoComplete="" inputMode="" type="date" placeholder="" name="Completion Date">
+Completion Date
+</FormInput>
+<FormRange />
+<FormTextarea classes="u-column-2" placeholder="Your message" name="Message">
+Message
+</FormTextarea>
+<Fragment slot="legendtext">Project Details</Fragment>
+</FormFieldset>
+<div data-wf-id="d7c919ee-e126-0590-e5c7-ca81abca426e" data-w-id="d7c919ee-e126-0590-e5c7-ca81abca426e" class="w-embed">
+<script is:inline>
+
+let turnstileLoaded = false;
+
+function loadTurnstile() {
+    if (turnstileLoaded) return;
+    turnstileLoaded = true;
+    
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    document.head.appendChild(script);
+    console.log('🎯 Turnstile załadowany po wejściu w formularz');
+}
+
+
+/*
+// Ładuj gdy użytkownik kliknie w JAKIKOLWIEK input/textarea/select w formularzu
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.form_wrap'); // Twój główny formularz
+    
+    form.addEventListener('focusin', function(event) {
+        if (event.target.matches('input, textarea, select')) {
+            loadTurnstile();
+        }
+    }, { once: true }); // { once: true } - wykonaj tylko raz
+});
+*/
+loadTurnstile();
+
+</script>
+
+<!-- Turnstile Widget -->
+<div class="cf-turnstile" data-sitekey="0x4AAAAAACJdHfxjT2jMAE4S" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired" data-error-callback="onTurnstileExpired" data-theme="light" data-language="pl">
+</div>
+
+
+<script is:inline>
+  let turnstileToken = '';
+
+  function onTurnstileExpired() { turnstileToken = ''; }
+
+  function onTurnstileSuccess(token) {
+    turnstileToken = token;
+  }
+</script>
+</div>
+<ButtonWrapper classes="u-margin-top-2">
+<ButtonMain type="submit">
+<Fragment slot="text">Wyślij</Fragment>
+</ButtonMain>
+</ButtonWrapper>
+</form>
+<div data-wf-id="bf7970fc-209c-ae43-67b3-617852be4c56" data-w-id="bf7970fc-209c-ae43-67b3-617852be4c56" class="w-form-done form_success_wrap">
+<div data-wf-id="67b061b2-5762-344a-0b0c-b5514355ab1f" data-w-id="67b061b2-5762-344a-0b0c-b5514355ab1f" class="form_success_text">
+Dziękujemy! Twoje zgłoszenie zostało odebrane!
+</div>
+</div>
+<div data-wf-id="bf7970fc-209c-ae43-67b3-617852be4c57" data-w-id="bf7970fc-209c-ae43-67b3-617852be4c57" class="w-form-fail form_error_wrap">
+<div data-wf-id="a33a55ba-d746-aec2-d913-025d865cb85a" data-w-id="a33a55ba-d746-aec2-d913-025d865cb85a" class="form_error_text">
+Ups! Coś poszło nie tak podczas przesyłania formularza.
+</div>
+</div>
+</div>
+</div>)}

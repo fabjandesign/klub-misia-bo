@@ -1,0 +1,22 @@
+---
+import __lumosAsset23 from '@/assets/Vector6.svg?url';
+import { imageUrl, imageAlt } from '@/lib/urls';
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+
+
+interface Props {
+  /** Name Atribute */
+  nameAtribute?: string;
+  /** Image */
+  image?: string | { url?: string; alt?: string; id?: string };
+}
+const collectionData = {};
+const {
+  nameAtribute: propNameAtribute = "",
+  image: propImage = {"id": "6ae638cdc464653d091ad8ea"}
+} = Astro.props;
+
+
+
+---
+<img {...safeAttributes(customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])]), ["width", "height", "alt", "src", "loading", "id", "data-wf-id", "data-w-id", "class"])} width={Object.hasOwn(customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])]), "width") ? customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])])["width"] : "auto"} height={Object.hasOwn(customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])]), "height") ? customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])])["height"] : "auto"} alt={((Object.hasOwn(customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])]), "alt") ? customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])])["alt"] : "__wf_reserved_inherit" === '__wf_reserved_inherit' ? (imageAlt(propImage)) : Object.hasOwn(customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])]), "alt") ? customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])])["alt"] : "__wf_reserved_inherit")) || ''} src={imageUrl(propImage) || (Object.hasOwn(customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])]), "src") ? customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])])["src"] : __lumosAsset23)} loading={Object.hasOwn(customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])]), "loading") ? customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])])["loading"] : "lazy"} id={(Object.hasOwn(customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])]), "id") ? customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])])["id"] : "") || undefined} data-wf-id="f8360167-648c-b0fe-f7e3-04e14b123c68" data-w-id="f8360167-648c-b0fe-f7e3-04e14b123c68" class:list={[customAttributes([...([{"name": "aria-hidden", "value": "true"}, ({"name": propNameAtribute, "value": ""})] || [])]).class]} />

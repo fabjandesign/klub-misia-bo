@@ -1,0 +1,31 @@
+---
+
+
+interface Props {
+  /** Classes */
+  classes?: string;
+  /** Item ID */
+  itemId?: string;
+  /** Variant */
+  variant?: "link" | "button";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  classes: propClasses = "",
+  itemId: propItemId = "",
+  variant: propVariant = "link",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Tab Link";
+if (!["link", "button"].includes(propVariant)) throw new Error("TabLink.variant must be one of: link, button");
+
+
+---
+{propVisibility && (<button data-tab-item-id={propItemId} class:list={[{"button": "w-variant-8ffc88d1-7ba2-15f6-9b67-306f6d86c1bd"}[propVariant], "tab_button_item", propClasses]} data-wf-id="fadb3dda-30e2-1019-1230-faffe6f79f30" data-w-id="fadb3dda-30e2-1019-1230-faffe6f79f30" data-wf--tab-link--variant={{"link": "link", "button": "button"}[propVariant]} data-wf-variant={["1493a6b0-7e7d-f362-f1b2-cada071733a3=" + ({"link": "base", "button": "8ffc88d1-7ba2-15f6-9b67-306f6d86c1bd"}[propVariant])].join(" ")}>
+<span data-wf-id="651a1b57-12b3-41f1-51c2-6994195b6724" data-w-id="651a1b57-12b3-41f1-51c2-6994195b6724" class="tab_button_text u-text-style-main">
+<slot>{propText}</slot>
+</span>
+<span data-wf-id="01556b6f-dcf7-c185-5bf0-3dbb3bd620ba" data-w-id="01556b6f-dcf7-c185-5bf0-3dbb3bd620ba" class="tab_button_line"></span>
+</button>)}

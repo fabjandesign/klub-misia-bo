@@ -1,0 +1,31 @@
+---
+import { safeTag } from '@/lib/attributes';
+
+
+interface Props {
+  /** Classes */
+  classes?: string;
+  textTag?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  classes: propClasses = " ",
+  textTag: propTextTag = "p",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Eyebrow Text Here";
+
+const Tag = safeTag(propTextTag, "p");
+---
+{propVisibility && (<div class:list={["u-eyebrow-wrapper", propClasses]} data-wf-id="3c7de3d6-58ac-a383-9a7c-2b483f0bf7d0" data-w-id="3c7de3d6-58ac-a383-9a7c-2b483f0bf7d0">
+<div data-wf-id="67836375-df0d-6c46-1a4f-77ded0816663" data-w-id="67836375-df0d-6c46-1a4f-77ded0816663" class="u-eyebrow-layout">
+<div data-wf-id="5f0fd548-3935-d649-a294-761d49b522b6" data-w-id="5f0fd548-3935-d649-a294-761d49b522b6" class="u-eyebrow-marker"></div>
+<div data-wf-id="65ed9ddc-27f8-4221-2c4d-b581889eedd1" data-w-id="65ed9ddc-27f8-4221-2c4d-b581889eedd1" class="w-richtext u-eyebrow-text u-text-style-main">
+<Tag data-wf-id="65ed9ddc-27f8-4221-2c4d-b581889eedde" data-w-id="65ed9ddc-27f8-4221-2c4d-b581889eedde">
+<slot>{propText}</slot>
+</Tag>
+</div>
+</div>
+</div>)}

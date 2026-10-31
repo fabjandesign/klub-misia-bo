@@ -1,0 +1,44 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import GlobalStyles from '@/components/global/GlobalStyles.astro';
+import GlobalGuides from '@/components/global/GlobalGuides.astro';
+import Nav from '@/components/global/Nav.astro';
+import Section from '@/components/wrapper/Section.astro';
+import VisualImage from '@/components/visual/VisualImage.astro';
+import MediaOverlay from '@/components/visual/MediaOverlay.astro';
+import Layout2 from '@/components/wrapper/Layout2.astro';
+import TypographyEyebrow from '@/components/typography/TypographyEyebrow.astro';
+import TypographyHeading from '@/components/typography/TypographyHeading.astro';
+import TypographyParagraph from '@/components/typography/TypographyParagraph.astro';
+import ButtonWrapper from '@/components/wrapper/ButtonWrapper.astro';
+import ButtonMain from '@/components/button/ButtonMain.astro';
+import Footer from '@/components/global/Footer.astro';
+
+const data = {};
+const collectionData = {};
+
+
+---
+<Layout webflowPageId="6946d7950be584e943c44608" pageTitle="Page Name" pageDescription="" data-wf-id="689f3d1b8a521025da1b93a4" data-w-id="689f3d1b8a521025da1b93a4">
+<div data-wf-id="1c862110-5b53-42b6-ff63-119b6b19de9b" data-w-id="1c862110-5b53-42b6-ff63-119b6b19de9b" class="page_wrap">
+<GlobalStyles />
+<GlobalGuides />
+<Nav navPosition="overlap" />
+<main id="main" data-wf-id="1c862110-5b53-42b6-ff63-119b6b19de9e" data-w-id="1c862110-5b53-42b6-ff63-119b6b19de9e" class="page_main">
+<Section idAttributeValue="" sectionClasses="u-min-height-screen" variant="dark">
+<VisualImage slot="background" />
+<MediaOverlay slot="background" />
+<Layout2 variant="stack-centered">
+<TypographyEyebrow />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+</Section>
+</main>
+<Footer />
+</div>
+</Layout>

@@ -1,0 +1,27 @@
+---
+
+
+interface Props {
+  /** Hidden */
+  hidden?: string;
+  /** Selected */
+  selected?: string;
+  /** Value */
+  value?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  hidden: propHidden = "",
+  selected: propSelected = "",
+  value: propValue = "Option 1",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Option 1";
+
+
+---
+{propVisibility && (<option value={propValue} selected={propSelected} hidden={propHidden} data-wf-id="68b8d65e-3c81-d6e1-09cb-3761bfce6da6" data-w-id="68b8d65e-3c81-d6e1-09cb-3761bfce6da6">
+<slot>{propText}</slot>
+</option>)}

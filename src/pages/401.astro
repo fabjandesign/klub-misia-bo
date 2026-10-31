@@ -1,0 +1,55 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { embedHtml } from '@/lib/values';
+import GlobalStyles from '@/components/global/GlobalStyles.astro';
+import Nav from '@/components/global/Nav.astro';
+import Footer from '@/components/global/Footer.astro';
+
+const data = {};
+const collectionData = {};
+
+
+---
+<Layout webflowPageId="6946d7950be584e943c44605" pageTitle="Protected page" pageDescription="" data-wf-id="65c691173dcb69ac7ea46f74" data-w-id="65c691173dcb69ac7ea46f74">
+<GlobalStyles />
+<Nav navPosition="overlap" />
+<div data-wf-id="65c691173dcb69ac7ea46f74aN" data-w-id="65c691173dcb69ac7ea46f74aN" class="hero_utility-page_wrap">
+<div data-wf-id="65c691173dcb69ac7ea46f7400000000000b" data-w-id="65c691173dcb69ac7ea46f7400000000000b" class="w-form hero_utility-page_contain u-container">
+<form action="/.wf_auth" method="post" id="email-form" name="email-form" data-name="Email Form" redirect="" data-redirect="" data-wf-id="65c691173dcb69ac7ea46f7400000000000c" data-w-id="65c691173dcb69ac7ea46f7400000000000c" class="hero_utility-page_content">
+<div data-wf-id="a7d7c097-21b6-4342-3e9f-47b00a3d5af8" data-w-id="a7d7c097-21b6-4342-3e9f-47b00a3d5af8">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 64" width="3rem" data-wf-id="9f3a697e-0164-6d9b-c864-4996a9d301f0" data-w-id="9f3a697e-0164-6d9b-c864-4996a9d301f0">
+<path fill-rule="evenodd" d="M38 21H43.6C46.03 21 48 22.97 48 25.4V59.6C48 62.03 46.03 64 43.6 64H4.4C1.97 64 0 62.03 0 59.6V25.4C0 22.97 1.97 21 4.4 21H10V14C10 7 16.28 0 24 0C31.72 0 38 7 38 14V21ZM15 14V21H33V14C33 9.04 28.96 5 24 5C19.04 5 15 9.04 15 14ZM24 35C26.76 35 29 37.24 29 40C29 41.91 27.92 43.55 26.35 44.39L28 51H20L21.65 44.39C20.08 43.55 19 41.91 19 40C19 37.24 21.24 35 24 35Z" fill="currentColor" data-wf-id="63fd1cd7-f908-3fd3-dd0d-3c37b77ac703" data-w-id="63fd1cd7-f908-3fd3-dd0d-3c37b77ac703"></path>
+</svg>
+</div>
+<div data-wf-id="37fb28d1-a082-d080-baa9-4f479096aace" data-w-id="37fb28d1-a082-d080-baa9-4f479096aace">
+<h1 data-wf-id="65c691173dcb69ac7ea46f7400000000000e" data-w-id="65c691173dcb69ac7ea46f7400000000000e" class="hero_utility-page_title u-text-style-h2">
+Protected Page
+</h1>
+</div>
+<div data-wf-id="9929774f-45f0-91cb-6284-db3e37b283fd" data-w-id="9929774f-45f0-91cb-6284-db3e37b283fd" class="form_label_wrap">
+<div for="pass" data-wf-id="65c691173dcb69ac7ea46f74000000000010" data-w-id="65c691173dcb69ac7ea46f74000000000010" class="form_label_text u-weight-medium">
+Password
+</div>
+<input id="pass" name="pass" maxlength={256} data-name="field" placeholder="Enter your password" disabled={false} type="password" required={false} autofocus={true} data-wf-id="65c691173dcb69ac7ea46f74000000000012" data-w-id="65c691173dcb69ac7ea46f74000000000012" class="w-input form_field" />
+</div>
+<input type="submit" value="Submit" data-wait="Please wait..." data-wf-id="65c691173dcb69ac7ea46f74000000000013" data-w-id="65c691173dcb69ac7ea46f74000000000013" class="w-button button_main_element" />
+<div data-wf-id="65c691173dcb69ac7ea46f74000000000014" data-w-id="65c691173dcb69ac7ea46f74000000000014" class="w-form-fail form_error_wrap">
+<div data-wf-id="65c691173dcb69ac7ea46f74000000000015" data-w-id="65c691173dcb69ac7ea46f74000000000015">
+Incorrect password. Please try again.
+</div>
+</div>
+<div style="display: none;" data-wf-id="65c691173dcb69ac7ea46f74000000000017" data-w-id="65c691173dcb69ac7ea46f74000000000017" class="w-embed">
+<Fragment set:html={embedHtml({"search": {"exclude": true}, "embed": {"meta": {"html": "\u003cinput type=\"hidden\" name=\"path\" value=\"\u003c%WF_FORM_VALUE_PATH%>\" />\u003cinput type=\"hidden\" name=\"page\" value=\"\u003c%WF_FORM_VALUE_PAGE%>\" />", "div": false, "script": true, "compilable": false, "iframe": false}, "type": "html"}, "insideRTE": false, "attr": {"style": "display: none;", "id": ""}, "form": {"passwordPage": true, "passwordPageHiddenInput": true}, "value": "", "content": "", "devlink": {"runtimeProps": {}, "slot": ""}, "displayName": "", "xattr": [], "styleBlockIds": [], "visibility": {"conditions": [], "keepInHtml": false}})} />
+</div>
+<div style="display: none;" data-wf-id="65c691173dcb69ac7ea46f74000000000018" data-w-id="65c691173dcb69ac7ea46f74000000000018" class="w-embed">
+<script type="application/javascript" is:inline>(function _handlePasswordPageOnload() {
+	  if (/[?&]e=1(&|$)/.test(document.location.search)) {
+	    document.querySelector('.w-password-page.w-form-fail').style.display = 'block';
+	  }
+	})()</script>
+</div>
+</form>
+</div>
+</div>
+<Footer />
+</Layout>

@@ -1,0 +1,45 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+
+
+interface Props {
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Target */
+  target?: string;
+  /** Type */
+  type?: string;
+  /** Link */
+  link?: string;
+  linkTarget?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  target: propTarget = "",
+  type: propType = "button",
+  link: propLink = "#",
+  linkTarget: propLinkTarget = "",
+  visibility: propVisibility = true
+} = Astro.props;
+const propScreenReaderText = "";
+
+
+---
+{propVisibility && (<div {...safeAttributes(customAttributes([...([{"name": "class", "value": "u-cover-absolute"}, ({"name": propAttributeName, "value": propAttributeValue})] || [])]), ["data-wf-id", "data-w-id", "class"])} data-wf-id="0254e612-9509-0757-3332-f6be61ca6889" data-w-id="0254e612-9509-0757-3332-f6be61ca6889" class:list={["clickable_wrap", customAttributes([...([{"name": "class", "value": "u-cover-absolute"}, ({"name": propAttributeName, "value": propAttributeValue})] || [])]).class]}>
+<a target={propLinkTarget || (propTarget)} data-wf-id="0254e612-9509-0757-3332-f6be61ca688a" data-w-id="0254e612-9509-0757-3332-f6be61ca688a" class="clickable_link" href={propLink}>
+<span data-wf-id="0254e612-9509-0757-3332-f6be61ca688b" data-w-id="0254e612-9509-0757-3332-f6be61ca688b" class="clickable_text u-sr-only">
+<slot>{propScreenReaderText}</slot>
+</span>
+</a>
+<button type={propType} data-wf-id="0254e612-9509-0757-3332-f6be61ca688c" data-w-id="0254e612-9509-0757-3332-f6be61ca688c" class="clickable_btn">
+<span data-wf-id="0254e612-9509-0757-3332-f6be61ca688d" data-w-id="0254e612-9509-0757-3332-f6be61ca688d" class="clickable_text u-sr-only">
+<slot>{propScreenReaderText}</slot>
+</span>
+</button>
+</div>)}

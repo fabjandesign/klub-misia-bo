@@ -1,0 +1,53 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+import FormLabelText from '@/components/form/FormLabelText.astro';
+
+interface Props {
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Classes */
+  classes?: string;
+  /** Allow Multi Select */
+  allowMultiSelect?: string;
+  /** Required */
+  required?: string;
+  /** Name */
+  name?: string;
+  /** Label Variant */
+  labelVariant?: "visible" | "hidden" | "bold";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  classes: propClasses = "",
+  allowMultiSelect: propAllowMultiSelect = "",
+  required: propRequired = "",
+  name: propName = "Name",
+  labelVariant: propLabelVariant = "visible",
+  visibility: propVisibility = true
+} = Astro.props;
+const propLabel = "Label";
+if (!["visible", "hidden", "bold"].includes(propLabelVariant)) throw new Error("FormSelect.labelVariant must be one of: visible, hidden, bold");
+
+
+---
+{propVisibility && (<label data-trigger="focus" class:list={["form_label_wrap", propClasses]} data-wf-id="f4898e4a-ac54-c8bb-94d2-4d0cfbb94746" data-w-id="f4898e4a-ac54-c8bb-94d2-4d0cfbb94746">
+<FormLabelText variant={propLabelVariant}>
+<slot name="label">{propLabel}</slot>
+</FormLabelText>
+<span data-wf-id="b6ab4bab-e0e6-104e-9247-8d85a473dd8d" data-w-id="b6ab4bab-e0e6-104e-9247-8d85a473dd8d" class="form_select_wrap">
+<select {...safeAttributes(customAttributes([...([({"name": "name", "value": propName}), ({"name": "multiple", "value": propAllowMultiSelect}), ({"name": "required", "value": Boolean(propRequired)}), ({"name": propAttributeName, "value": propAttributeValue})] || [])]), ["data-wf-id", "data-w-id", "class"])} data-wf-id="8d1466a5-52ba-5e4a-bc38-75d604cab583" data-w-id="8d1466a5-52ba-5e4a-bc38-75d604cab583" class:list={["form_field", customAttributes([...([({"name": "name", "value": propName}), ({"name": "multiple", "value": propAllowMultiSelect}), ({"name": "required", "value": Boolean(propRequired)}), ({"name": propAttributeName, "value": propAttributeValue})] || [])]).class]}>
+<div data-wf-id="5caa0a57-8ac7-d914-e8b8-301cc3c8b182" data-w-id="5caa0a57-8ac7-d914-e8b8-301cc3c8b182" name="">
+<slot />
+</div>
+</select>
+<svg width="100%" viewBox="0 0 6 5" fill="none" aria-hidden="true" data-wf-id="f4898e4a-ac54-c8bb-94d2-4d0cfbb9474c" data-w-id="f4898e4a-ac54-c8bb-94d2-4d0cfbb9474c" class="form_select_icon">
+<path d="M0.5 1L3 3.5L5.5 1" stroke="currentColor" stroke-width="0.125rem" vector-effect="non-scaling-stroke" data-wf-id="f4898e4a-ac54-c8bb-94d2-4d0cfbb9474d" data-w-id="f4898e4a-ac54-c8bb-94d2-4d0cfbb9474d"></path>
+</svg>
+</span>
+</label>)}

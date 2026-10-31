@@ -1,0 +1,36 @@
+---
+import { safeAttributes, customAttributes, safeTag } from '@/lib/attributes';
+
+
+interface Props {
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Tag */
+  tag?: string;
+  /** Style */
+  style?: string;
+  /** Classes */
+  classes?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  tag: propTag = "div",
+  style: propStyle = "",
+  classes: propClasses = " ",
+  visibility: propVisibility = true
+} = Astro.props;
+
+
+const Tag = safeTag(propTag, "div");
+---
+{propVisibility && (<Tag {...safeAttributes(customAttributes([...([({"name": "style", "value": propStyle}), ({"name": "class", "value": propClasses}), ({"name": propAttributeName, "value": propAttributeValue})] || [])]), ["data-wf-id", "data-w-id", "class"])} data-wf-id="cfe16031-f44d-4a67-3ea7-9298adf7238a" data-w-id="cfe16031-f44d-4a67-3ea7-9298adf7238a" class:list={[customAttributes([...([({"name": "style", "value": propStyle}), ({"name": "class", "value": propClasses}), ({"name": propAttributeName, "value": propAttributeValue})] || [])]).class]}>
+<div data-wf-id="364faa14-14d3-28e9-4c08-ecdb0c730e26" data-w-id="364faa14-14d3-28e9-4c08-ecdb0c730e26" class="u-display-contents" name="">
+<slot />
+</div>
+</Tag>)}

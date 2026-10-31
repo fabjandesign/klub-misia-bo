@@ -1,0 +1,27 @@
+---
+
+
+interface Props {
+  /** Link */
+  link?: string;
+  linkTarget?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  link: propLink = "#",
+  linkTarget: propLinkTarget = "",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Link Text Here";
+
+
+---
+{propVisibility && (<div data-trigger="hover-other focus-other" role="listitem" data-wf-id="f5219fe8-69c7-b978-3e87-e9a133727619" data-w-id="f5219fe8-69c7-b978-3e87-e9a133727619" class="footer_group_item">
+<a data-wf-id="f5219fe8-69c7-b978-3e87-e9a13372761a" data-w-id="f5219fe8-69c7-b978-3e87-e9a13372761a" class="footer_link_wrap" href={propLink} target={propLinkTarget || (undefined)}>
+<div data-wf-id="f5219fe8-69c7-b978-3e87-e9a13372761b" data-w-id="f5219fe8-69c7-b978-3e87-e9a13372761b" class="footer_link_text u-text-style-main">
+<slot>{propText}</slot>
+</div>
+</a>
+</div>)}

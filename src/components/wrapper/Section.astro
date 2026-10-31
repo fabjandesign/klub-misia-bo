@@ -1,0 +1,61 @@
+---
+import { safeAttributes, customAttributes, safeTag } from '@/lib/attributes';
+import Spacer from '@/components/utility/Spacer.astro';
+
+interface Props {
+  /** ID Attribute Value */
+  idAttributeValue?: string;
+  /** ID Attribute Name */
+  idAttributeName?: string;
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Style */
+  style?: string;
+  /** Container Classes */
+  containerClasses?: string;
+  /** Section Classes */
+  sectionClasses?: string;
+  /** Tag */
+  tag?: string;
+  /** Padding Top */
+  paddingTop?: "none" | "even" | "small" | "main" | "large" | "page-top";
+  /** Padding Bottom */
+  paddingBottom?: "none" | "even" | "small" | "main" | "large" | "page-top";
+  /** Variant */
+  variant?: "inherit" | "light" | "dark" | "brand";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  idAttributeValue: propIdAttributeValue = "",
+  idAttributeName: propIdAttributeName = "",
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  style: propStyle = "",
+  containerClasses: propContainerClasses = " ",
+  sectionClasses: propSectionClasses = "",
+  tag: propTag = "section",
+  paddingTop: propPaddingTop = "main",
+  paddingBottom: propPaddingBottom = "main",
+  variant: propVariant = "inherit",
+  visibility: propVisibility = true
+} = Astro.props;
+if (!["none", "even", "small", "main", "large", "page-top"].includes(propPaddingTop)) throw new Error("Section.paddingTop must be one of: none, even, small, main, large, page-top");
+if (!["none", "even", "small", "main", "large", "page-top"].includes(propPaddingBottom)) throw new Error("Section.paddingBottom must be one of: none, even, small, main, large, page-top");
+if (!["inherit", "light", "dark", "brand"].includes(propVariant)) throw new Error("Section.variant must be one of: inherit, light, dark, brand");
+
+const Tag = safeTag(propTag, "div");
+---
+{propVisibility && (<Tag {...safeAttributes(customAttributes([...([({"name": "class", "value": propSectionClasses}), ({"name": propIdAttributeName, "value": propIdAttributeValue}), ({"name": propAttributeName, "value": propAttributeValue}), ({"name": "style", "value": propStyle})] || [])]), ["data-wf-id", "data-w-id", "data-wf--section--variant", "class"])} data-wf-id="9cd849af-5c85-da69-3983-2e49dba72900" data-w-id="9cd849af-5c85-da69-3983-2e49dba72900" data-wf--section--variant={{"inherit": "inherit", "light": "light", "dark": "dark", "brand": "brand"}[propVariant]} class:list={[{"light": "w-variant-a4eabb01-8ed6-63d0-157e-0a7b56aedaa1", "dark": "w-variant-857e5430-97c7-deb6-3c1a-d3063f9fe2c7", "brand": "w-variant-25bf08d9-3196-322b-5616-019ac7f0f4f7"}[propVariant], "u-section", customAttributes([...([({"name": "class", "value": propSectionClasses}), ({"name": propIdAttributeName, "value": propIdAttributeValue}), ({"name": propAttributeName, "value": propAttributeValue}), ({"name": "style", "value": propStyle})] || [])]).class]} data-wf-variant={["90d95ad3-bc67-89ab-2030-0ac014a96832=" + ({"inherit": "base", "light": "a4eabb01-8ed6-63d0-157e-0a7b56aedaa1", "dark": "857e5430-97c7-deb6-3c1a-d3063f9fe2c7", "brand": "25bf08d9-3196-322b-5616-019ac7f0f4f7"}[propVariant])].join(" ")}>
+<Spacer variant={propPaddingTop} />
+<div class:list={["u-container", propContainerClasses]} data-wf-id="a0239dae-da9b-24c4-1ba7-fdc1d9bb81cc" data-w-id="a0239dae-da9b-24c4-1ba7-fdc1d9bb81cc" name="Container">
+<slot />
+</div>
+<Spacer variant={propPaddingBottom} />
+<div data-wf-id="0477a9d4-32d0-3e12-6ce9-e67aa03e72ab" data-w-id="0477a9d4-32d0-3e12-6ce9-e67aa03e72ab" class="u-background-slot" name="">
+<slot name="background" />
+</div>
+</Tag>)}

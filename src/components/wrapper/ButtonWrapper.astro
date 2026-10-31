@@ -1,0 +1,26 @@
+---
+
+
+interface Props {
+  /** Style */
+  style?: string;
+  /** Classes */
+  classes?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  style: propStyle = "",
+  classes: propClasses = "",
+  visibility: propVisibility = true
+} = Astro.props;
+
+
+
+---
+{propVisibility && (<div class:list={["u-button-wrapper", propClasses]} style={propStyle} data-wf-id="ef0597e2-9ec1-c890-ceba-f61926a36e78" data-w-id="ef0597e2-9ec1-c890-ceba-f61926a36e78">
+<div data-wf-id="e3788759-8448-de81-d4f6-4a2feca62513" data-w-id="e3788759-8448-de81-d4f6-4a2feca62513" class="u-display-contents" name="Buttons">
+<slot />
+</div>
+</div>)}

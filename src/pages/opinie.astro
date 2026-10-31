@@ -1,0 +1,380 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import GlobalStyles from '@/components/global/GlobalStyles.astro';
+import GlobalGuides from '@/components/global/GlobalGuides.astro';
+import Nav from '@/components/global/Nav.astro';
+import Spacer from '@/components/utility/Spacer.astro';
+import TypographyHeading from '@/components/typography/TypographyHeading.astro';
+import IconCudzyslow from '@/components/svg/IconCudzyslow.astro';
+import ButtonWrapper from '@/components/wrapper/ButtonWrapper.astro';
+import ButtonMain from '@/components/button/ButtonMain.astro';
+import IconFacebook from '@/components/svg/IconFacebook.astro';
+import IconGoogle from '@/components/svg/IconGoogle.astro';
+import Slider from '@/components/interactive/Slider.astro';
+import CardPrimary3 from '@/components/card/CardPrimary3.astro';
+import Footer from '@/components/global/Footer.astro';
+import Cookie from '@/components/Cookie.astro';
+
+const data = {};
+const collectionData = {};
+
+
+---
+<Layout webflowPageId="697896620c8d07768ffac388" pageTitle="Opinie | Klub Misia Bo Przedszkole Publiczne Warszawa" pageDescription="Przeczytaj opinie rodziców o Klubie Misia Bo. Zadowolone dzieci, edukacyjne zabawy i profesjonalna opieka w przedszkolu publicznym w Warszawie." data-wf-id="689f3d1b8a521025da1b93a4" data-w-id="689f3d1b8a521025da1b93a4">
+<Fragment slot="head"><script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Opinie | Klub Misia Bo Przedszkole Publiczne Warszawa",
+  "description": "Przeczytaj opinie rodziców o Klubie Misia Bo. Zadowolone dzieci, edukacyjne zabawy i profesjonalna opieka w przedszkolu publicznym w Warszawie.",
+  "url": "/opinie",
+  "inLanguage": "pl",
+  "about": {
+    "@type": "Organization",
+    "name": "Klub Misia Bo Przedszkole Publiczne",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Światowida 47",
+      "addressLocality": "Warszawa",
+      "postalCode": "03-144",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48 733 700 612",
+    "email": "info@klub-misia-bo.pl",
+    "sameAs": [
+      "https://www.facebook.com/KlubMisiaBo"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "13"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pani Anna"
+        },
+        "reviewBody": "Córka aktualnie w zerówce ale z przedszkolem związana od 3 roku życia. Na przestrzeni ostatnich lat Przedszkole bardzo zyskało na plus. Główne powody to wykwalifikowana Kadra nauczycielska, uważna na potrzeby Dziecka, która także służy pomocą i wsparciem Rodzicom. Ponadto spotykamy się na co dzień z zaangażowaniem Dyrekcji, nie tylko w sprawach organizacyjnych ale przede wszystkim z sercem okazanym Podopiecznym. Zajęcia wspierające rozwój oraz wielorakie wycieczki i warsztaty to kolejne atuty tego miejsca. Jako Rodzice polecamy z całego serca.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pani Monika"
+        },
+        "reviewBody": "Od pierwszego dnia wiedzieliśmy, że to był dobry wybór. Miła, domowa atmosfera, ciekawe wydarzenia, przedstawienia i wycieczki. Widać, że dzieci są tu naprawdę szczęśliwe. Z żalem żegnamy się z przedszkolem klub misia bo. Syn otrzymał doskonałe przygotowanie do pierwszej klasy. Przedszkole jest przyjazne, z ciepłą atmosferą. Dzieci robią wiele interesujących rzeczy podczas roku szkolnego. Pyszne jedzenie, syn zawsze jadł dokładki :). Plusem jest otwarcie przedszkola nawet w wakacje.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pani Magdalena"
+        },
+        "reviewBody": "Bardzo dziękujemy za tak wspaniale zorganizowane spotkanie! Doceniam ogrom pracy, który Państwo włożyli. Przepiękne dekoracje, warsztaty i pyszne ciasta! Cieszę się, że do Was trafiliśmy.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Rodzice Ivana"
+        },
+        "reviewBody": "Serdecznie dziękujemy całemu zespołowi przedszkola za ten wspaniały rok – za opiekę, zaangażowanie i rozwój, jaki nasz syn otrzymał w tym czasie. Bardzo doceniamy Waszą pracę i ciepłe podejście do dzieci.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Rodzice Jasia"
+        },
+        "reviewBody": "To wspaniałe przedszkole, w którym naprawdę dba się o dobro dzieci. W placówce pracuje kompetentny, wysoko wykwalifikowany psycholog, który wspiera dzieci potrzebujące pomocy w adaptacji, co daje ogromne poczucie bezpieczeństwa zarówno dzieciom, jak i rodzicom.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Rodzice Mai"
+        },
+        "reviewBody": "Personel jest niezwykle uważny, cierpliwy i troskliwy – dzieci są traktowane z empatią i zrozumieniem. W tym miejscu przykłada się ogromną wagę do detali: na każdą uroczystość pięknie dekorowane są sale, organizowane są świąteczne posiłki dla dzieci oraz różnorodne atrakcje i zabawy, dzięki czemu każde dziecko znajdzie coś dla siebie.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pani Joanna"
+        },
+        "reviewBody": "Kadra kierownicza dokłada wszelkich starań, aby każde święto było wyjątkowe, a czas spędzony w przedszkolu różnorodny, radosny i pełen pozytywnych emocji.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pani Katarzyna"
+        },
+        "reviewBody": "W razie jakichkolwiek pytań lub problemów wychowawcy oraz dyrekcja są zawsze otwarci na rozmowę i chętni do pomocy. Z całego serca polecam to przedszkole.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pan Max"
+        },
+        "reviewBody": "Szczerze polecam. Jesteśmy po przenosinach z innego przedszkola. Odbiory dziecka zmieniły się z \"dlaczego tak późno\" na \"chcę tu jeszcze zostać\". Super zaangażowana i sympatyczna kadra na czele z Panią Dyrektor, która ewidentnie jest tam z pasji. Ciągle coś fajnego się dzieje, widać zaangażowanie. Na dodatkowy plus - widoczne efekty nauki w zerówce.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pan Ireneusz"
+        },
+        "reviewBody": "Serdecznie polecam. Bardzo dobry kontakt z zarządem przedszkola, Panie są przemiłe, posiłki dobre, a córka wychodzi zawsze zadowolona 🥰",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pani Roksana"
+        },
+        "reviewBody": "Serdecznie polecam. Bardzo dobry kontakt z zarządem przedszkola, Panie są przemiłe, posiłki dobre, a córka wychodzi zawsze zadowolona.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Pani Justyna"
+        },
+        "reviewBody": "Dziękuję za wszystko! Prezent z przedszkola był dla mnie miłą niespodzianką. W rzeczywistości po raz pierwszy w moim życiu dziecko otrzymało prezent z przedszkola. Nie żałowałam ani jednego dnia, że zostawiłam Justynkę u Państwa! Jeszcze raz dziękuję!",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Mama Justynki"
+        },
+        "reviewBody": "Dziękuję za wszystko! Prezent z przedszkola był dla mnie miłą niespodzianką. W rzeczywistości po raz pierwszy w moim życiu dziecko otrzymało prezent z przedszkola. Nie żałowałam ani jednego dnia, że zostawiłam Justynkę u Państwa!",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ważne dokumenty",
+  "url": "/dokumenty",
+  "description": "Strona z ważnymi dokumentami Klubu Misia Bo, w tym wniosek o przyjęcie dziecka do przedszkola, statut oraz obowiązek informacyjny RODO",
+  "about": {
+    "@type": "Organization",
+    "name": "Klub Misia Bo",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Światowida 47",
+      "addressLocality": "Warszawa",
+      "postalCode": "03-144",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48733700612",
+    "email": "info@klub-misia-bo.pl"
+  }
+}
+</script>
+
+
+<script type="application/ld+json" is:inline>
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://klub-misia-bo.pl/opinie/#breadcrumbs",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona główna",
+                "item": "https://klub-misia-bo.pl"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Opinie",
+                "item": "https://klub-misia-bo.pl/opinie"
+            }
+        ]
+    }
+</script>
+
+
+
+
+</Fragment>
+<div data-wf-id="1c862110-5b53-42b6-ff63-119b6b19de9b" data-w-id="1c862110-5b53-42b6-ff63-119b6b19de9b" class="page_wrap">
+<GlobalStyles />
+<GlobalGuides />
+<Nav navPosition="overlap" />
+<main id="main" data-wf-id="01960591-394d-0720-99c1-b6af016afdf8" data-w-id="01960591-394d-0720-99c1-b6af016afdf8" class="page_main">
+<section data-wf-id="51a876b8-3d8e-b252-5a94-782f7f90cb72" data-w-id="51a876b8-3d8e-b252-5a94-782f7f90cb72" class="header_wrap">
+<div data-wf-id="51a876b8-3d8e-b252-5a94-782f7f90cb73" data-w-id="51a876b8-3d8e-b252-5a94-782f7f90cb73" class="header_contain u-container">
+<div data-wf-id="51a876b8-3d8e-b252-5a94-782f7f90cb74" data-w-id="51a876b8-3d8e-b252-5a94-782f7f90cb74" class="header_layout">
+<Spacer variant="page-top" />
+<TypographyHeading classes="u-alignment-center u-position-relative" textTag="h1" variant="h1">
+Opinie
+</TypographyHeading>
+<Spacer />
+</div>
+</div>
+</section>
+<div data-wf-id="8fc763b5-65cb-f69e-111b-240a97cf1338" data-w-id="8fc763b5-65cb-f69e-111b-240a97cf1338" class="testimonial_wrap">
+<div data-wf-id="f8ca17cf-7708-2b38-25f9-89c4093f2d05" data-w-id="f8ca17cf-7708-2b38-25f9-89c4093f2d05" class="testimonial_contain u-container">
+<div data-wf-id="51a876b8-3d8e-b252-5a94-782f7f90cb76" data-w-id="51a876b8-3d8e-b252-5a94-782f7f90cb76" class="contact_header_svg-copy">
+<IconCudzyslow />
+</div>
+<TypographyHeading classes="u-zindex-1" textTag="h2">
+Opinie naszych Rodziców
+</TypographyHeading>
+<ButtonWrapper classes="u-alignment-center u-padding-bottom-4">
+<ButtonMain linkTarget="_blank" link="https://www.facebook.com/KlubMisiaBo/reviews">
+<IconFacebook />
+<Fragment slot="text">Zobacz opinie</Fragment>
+</ButtonMain>
+<ButtonMain linkTarget="_blank" link="https://www.google.com/search?sca_esv=e0108723e50a180c&amp;hl=pl&amp;biw=2306&amp;bih=1420&amp;aic=0&amp;sxsrf=ANbL-n5vMYKzqfAzOYw3CPDGn4MbGzbODQ:1768325567635&amp;si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x-jRkPd7aV11BETdxGD3B16wPORmToWdQqlMP1qKxlIjeySFUobrWJ9GqLEJquKToz9y324Y0mWmz1m_OUvGxNb9quqLc0KOhF_siITnSvJBGzHID2LGXhVhJ7v__WasBY1hRj0%3D&amp;q=Klub+Misia+Bo+Przedszkole+Publiczne+Opinie&amp;sa=X&amp;ved=2ahUKEwjomrmKhomSAxVbR_EDHTx1EfoQ0bkNegQIIhAE&amp;cshid=1768325667431697">
+<IconGoogle />
+<Fragment slot="text">Zobacz opinie</Fragment>
+</ButtonMain>
+</ButtonWrapper>
+<Slider settingsControlsVisibility={true} slidesPerView="--lg: 2; --md: 1.2; --sm: 1.1; --xs: 1.05;" variant="crop-left" visibility={true}>
+<CardPrimary3 visibility={false}>
+<Fragment slot="testimonialcardname">Pani Natalia</Fragment>
+<Fragment slot="testimonialcardtext">Jako rodzic zdążyłam się nauczyć, że nie ma placówki idealnej. Ważniejsze jednak jest dla mnie to, jaką relację z przedszkolem ma dziecko (rodzice zawsze znajdą sobie jakoś powód do niezadowolenia), oraz jak reaguje przedszkole na rodziców i ich potrzeby. W ostatnim roku miałam okazję się przekonać, że w tym miejscu głos rodziców jest ważny, a kierownictwo było zawsze gotowe na współpracę z nami. Ostatnie miesiące to też sporo widocznych zmian w kierunku modernizacji i zwiększenia bezpieczeństwa dzieci. W przedszkolu poza standardową pracą z nauczycielami, dzieci mają mnóstwo zajęć dodatkowych, są specjaliści, atmosfera jest przyjazna dzieciom. Z pewnością będę chciała tu zapisać również moje drugie dziecko</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">Pani Anna</Fragment>
+<Fragment slot="testimonialcardtext">Córka aktualnie w zerówce ale z przedszkolem związana od 3 roku życia. Na przestrzeni ostatnich lat Przedszkole bardzo zyskało na plus. Główne powody to wykwalifikowana Kadra nauczycielska, uważna na potrzeby Dziecka, która także służy pomocą i wsparciem Rodzicom. Ponadto spotykamy się na co dzień z zaangażowaniem Dyrekcji, nie tylko w sprawach organizacyjnych ale przede wszystkim z sercem okazanym Podopiecznym. Zajęcia wspierające rozwój oraz wielorakie wycieczki i warsztaty to kolejne atuty tego miejsca. Jako Rodzice polecamy z całego serca.</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Pani Monika</Fragment>
+<Fragment slot="testimonialcardtext">Od pierwszego dnia wiedzieliśmy, że to był dobry wybór. Miła, domowa atmosfera, ciekawe wydarzenia, przedstawienia i wycieczki. Widać, że dzieci są tu naprawdę szczęśliwe. Z żalem żegnamy się z przedszkolem klub misia bo. Syn otrzymał doskonałe przygotowanie do pierwszej klasy. Przedszkole jest przyjazne, z ciepłą atmosferą. Dzieci robią wiele interesujących rzeczy podczas roku szkolnego. Pyszne jedzenie, syn zawsze jadł dokładki :). Plusem jest otwarcie przedszkola nawet w wakacje.</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Pani Magdalena</Fragment>
+<Fragment slot="testimonialcardtext">Bardzo dziękujemy za tak wspaniale zorganizowane spotkanie! Doceniam ogrom pracy, który Państwo włożyli. Przepiękne dekoracje, warsztaty i pyszne ciasta! Cieszę się, że do Was trafiliśmy.</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Rodzice Ivana</Fragment>
+<Fragment slot="testimonialcardtext">Serdecznie dziękujemy całemu zespołowi przedszkola za ten wspaniały rok – za opiekę, zaangażowanie i rozwój, jaki nasz syn otrzymał w tym czasie. Bardzo doceniamy Waszą pracę i ciepłe podejście do dzieci.</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Rodzice Jasia</Fragment>
+<Fragment slot="testimonialcardtext">To wspaniałe przedszkole, w którym naprawdę dba się o dobro dzieci. W placówce pracuje kompetentny, wysoko wykwalifikowany psycholog, który wspiera dzieci potrzebujące pomocy w adaptacji, co daje ogromne poczucie bezpieczeństwa zarówno dzieciom, jak i rodzicom.</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Rodzice Mai</Fragment>
+<Fragment slot="testimonialcardtext">Personel jest niezwykle uważny, cierpliwy i troskliwy – dzieci są traktowane z empatią i zrozumieniem. W tym miejscu przykłada się ogromną wagę do detali: na każdą uroczystość pięknie dekorowane są sale, organizowane są świąteczne posiłki dla dzieci oraz różnorodne atrakcje i zabawy, dzięki czemu każde dziecko znajdzie coś dla siebie.</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Pani Joanna</Fragment>
+<Fragment slot="testimonialcardtext">Kadra kierownicza dokłada wszelkich starań, aby każde święto było wyjątkowe, a czas spędzony w przedszkolu różnorodny, radosny i pełen pozytywnych emocji.</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Pani Katarzyna</Fragment>
+<Fragment slot="testimonialcardtext">W razie jakichkolwiek pytań lub problemów wychowawcy oraz dyrekcja są zawsze otwarci na rozmowę i chętni do pomocy. Z całego serca polecam to przedszkole.</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Pan Max</Fragment>
+<Fragment slot="testimonialcardtext">Bardzo polecam te przedszkole.</Fragment>
+<br slot="testimonialcardtext" data-wf-id="7dd66d17-83af-9ce3-8866-64aeb8e8d583" data-w-id="7dd66d17-83af-9ce3-8866-64aeb8e8d583" />
+<Fragment slot="testimonialcardtext">Kadra wychowawców jest zaangażowana, uważna i naprawdę dobrze wykonuje swoją pracę. Widać, że dzieci są traktowane z szacunkiem i indywidualnym podejściem.</Fragment>
+<br slot="testimonialcardtext" data-wf-id="7dd66d17-83af-9ce3-8866-64aeb8e8d585" data-w-id="7dd66d17-83af-9ce3-8866-64aeb8e8d585" />
+<Fragment slot="testimonialcardtext">Moje dziecko chętnie chodzi do przedszkola, jest zainteresowane zajęciami i czuje się tam bezpiecznie. To dla mnie najlepszy wskaźnik jakości.</Fragment>
+<br slot="testimonialcardtext" data-wf-id="7dd66d17-83af-9ce3-8866-64aeb8e8d587" data-w-id="7dd66d17-83af-9ce3-8866-64aeb8e8d587" />
+<Fragment slot="testimonialcardtext">Na plus również dyrekcja, która stale pracuje nad rozwojem placówki i podnoszeniem standardów. Widać, że się rozwija! 👍👍👍</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Pan Ireneusz</Fragment>
+<Fragment slot="testimonialcardtext">Szczerze polecam. Jesteśmy po przenosinach z innego przedszkola. Odbiory dziecka zmieniły się z "dlaczego tak późno" na "chcę tu jeszcze zostać". Super zaangażowana i sympatyczna kadra na czele z Panią Dyrektor, która ewidentnie jest tam z pasji. Ciągle coś fajnego się dzieje, widać zaangażowanie. Na dodatkowy plus - widoczne efekty nauki w zerówce. Mógłbym wymieniać dalej ale przecież nikt normalny aż tyle nie czyta...</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Pani Roksana</Fragment>
+<Fragment slot="testimonialcardtext">Serdecznie polecam. Bardzo dobry kontakt z zarządem przedszkola, Panie są przemiłe, posiłki dobre, a córka wychodzi zawsze zadowolona 🥰</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Pani Justyna</Fragment>
+<Fragment slot="testimonialcardtext">Do tego przedszkola uczęszcza już moja druga córka i bardzo się cieszę że trafiliśmy 7 lat temu właśnie tam. Przytulne i zadbane z troską o dzieci a Panie przedszkolanki które tam pracują bardzo miłe i ciepłe w stosunku do dzieci i do nas rodziców.</Fragment>
+<br slot="testimonialcardtext" data-wf-id="7dd66d17-83af-9ce3-8866-64aeb8e8d592" data-w-id="7dd66d17-83af-9ce3-8866-64aeb8e8d592" />
+<Fragment slot="testimonialcardtext">Pani Kasia i Pan Ernest to bardzo życzliwi i dbający o przedszkole ludzie. Oby więcej takich placówek 😉</Fragment>
+</CardPrimary3>
+<CardPrimary3>
+<Fragment slot="testimonialcardname">‍Mama Justynki</Fragment>
+<Fragment slot="testimonialcardtext">Dziękuję za wszystko! Prezent z przedszkola był dla mnie miłą niespodzianką. W rzeczywistości po raz pierwszy w moim życiu dziecko otrzymało prezent z przedszkola. Nie żałowałam ani jednego dnia, że zostawiłam Justynkę u Państwa! Jeszcze raz dziękuję! </Fragment>
+</CardPrimary3>
+</Slider>
+<ButtonWrapper classes="u-alignment-center u-padding-bottom-8">
+<ButtonMain linkTarget="_blank" link="https://www.facebook.com/KlubMisiaBo/reviews">
+<IconFacebook />
+<Fragment slot="text">Zobacz opinie</Fragment>
+</ButtonMain>
+<ButtonMain linkTarget="_blank" link="https://www.google.com/search?sca_esv=e0108723e50a180c&amp;hl=pl&amp;biw=2306&amp;bih=1420&amp;aic=0&amp;sxsrf=ANbL-n5vMYKzqfAzOYw3CPDGn4MbGzbODQ:1768325567635&amp;si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x-jRkPd7aV11BETdxGD3B16wPORmToWdQqlMP1qKxlIjeySFUobrWJ9GqLEJquKToz9y324Y0mWmz1m_OUvGxNb9quqLc0KOhF_siITnSvJBGzHID2LGXhVhJ7v__WasBY1hRj0%3D&amp;q=Klub+Misia+Bo+Przedszkole+Publiczne+Opinie&amp;sa=X&amp;ved=2ahUKEwjomrmKhomSAxVbR_EDHTx1EfoQ0bkNegQIIhAE&amp;cshid=1768325667431697">
+<IconGoogle />
+<Fragment slot="text">Zobacz opinie</Fragment>
+</ButtonMain>
+</ButtonWrapper>
+</div>
+</div>
+</main>
+<Footer />
+<Cookie />
+</div>
+</Layout>

@@ -1,0 +1,81 @@
+---
+import __lumosAsset27 from '@/assets/placeholder.svg?url';
+import { imageUrl, imageAlt } from '@/lib/urls';
+import { safeTag } from '@/lib/attributes';
+import Clickable from '@/components/utility/Clickable.astro';
+
+interface Props {
+  /** Style */
+  style?: string;
+  /** Content Classes */
+  contentClasses?: string;
+  /** Classes */
+  classes?: string;
+  /** Role */
+  role?: string;
+  /** Image */
+  image?: string | { url?: string; alt?: string; id?: string };
+  /** Link Target */
+  linkTarget?: string;
+  /** Link Url */
+  linkUrl?: string;
+  linkUrlTarget?: string;
+  /** Link Visibility */
+  linkVisibility?: boolean;
+  paragraphTextTag?: string;
+  /** Paragraph Visibility */
+  paragraphVisibility?: boolean;
+  /** Heading Tag */
+  headingTag?: string;
+  /** Variant */
+  variant?: "default" | "cover" | "stacked";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  style: propStyle = "",
+  contentClasses: propContentClasses = " ",
+  classes: propClasses = "",
+  role: propRole = "none",
+  image: propImage = {"id": "plugins/Basic/assets/placeholder.svg"},
+  linkTarget: propLinkTarget = "",
+  linkUrl: propLinkUrl = "#",
+  linkUrlTarget: propLinkUrlTarget = "",
+  linkVisibility: propLinkVisibility = true,
+  paragraphTextTag: propParagraphTextTag = "p",
+  paragraphVisibility: propParagraphVisibility = true,
+  headingTag: propHeadingTag = "h3",
+  variant: propVariant = "default",
+  visibility: propVisibility = true
+} = Astro.props;
+const propLinkText = "";
+const propParagraphText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.";
+const propHeadingText = "Lorem ipsum";
+if (!["default", "cover", "stacked"].includes(propVariant)) throw new Error("CardPrimary.variant must be one of: default, cover, stacked");
+
+const Tag = safeTag(propHeadingTag, "h1");
+const Tag2 = safeTag(propParagraphTextTag, "p");
+---
+{propVisibility && (<div class:list={[{"cover": "w-variant-51efa20c-c7be-48fe-973a-11367f19d622", "stacked": "w-variant-da648fa9-bbba-c8cb-e549-1d22cb8af97b"}[propVariant], "card_primary_wrap", propClasses]} style={propStyle} role={propRole} data-wf-id="7941d471-12eb-22ce-6420-784e5a3b04f8" data-w-id="7941d471-12eb-22ce-6420-784e5a3b04f8" data-wf--card-primary--variant={{"default": "default", "cover": "cover", "stacked": "stacked"}[propVariant]} data-wf-variant={["3268fbae-5eb0-86b0-534a-c61ed07d8106=" + ({"default": "base", "cover": "51efa20c-c7be-48fe-973a-11367f19d622", "stacked": "da648fa9-bbba-c8cb-e549-1d22cb8af97b"}[propVariant])].join(" ")}>
+<div data-triggerTEMP="hover-if-clickable focus hover" data-wf-id="1bc3f7cf-b9ea-de35-90c5-cd56829f841f" data-w-id="1bc3f7cf-b9ea-de35-90c5-cd56829f841f" class="card_primary_group">
+<div class:list={["card_primary_element", propContentClasses]} data-wf-id="8b91fbe4-0bc7-c429-1775-d8edbdbbe85e" data-w-id="8b91fbe4-0bc7-c429-1775-d8edbdbbe85e">
+<div data-wf-id="6723eb48-bdcb-481c-f8eb-b1723672f7dd" data-w-id="6723eb48-bdcb-481c-f8eb-b1723672f7dd" class="card_primary_visual">
+<img src={imageUrl(propImage) || (__lumosAsset27)} loading="lazy" alt={(imageAlt(propImage)) || ''} data-wf-id="edd296d7-f934-b8ac-e7b5-2ba183e6a78e" data-w-id="edd296d7-f934-b8ac-e7b5-2ba183e6a78e" class="card_primary_image" />
+</div>
+<div class="card_primary_content u-margin-trim" data-wf-id="cdab0976-92dd-8646-1d25-9bef2a173ef4" data-w-id="cdab0976-92dd-8646-1d25-9bef2a173ef4">
+<Tag data-wf-id="78abb942-21ee-3c94-f69f-20ba3c150585" data-w-id="78abb942-21ee-3c94-f69f-20ba3c150585" class="card_primary_title u-text-style-h4">
+<slot name="headingtext">{propHeadingText}</slot>
+</Tag>
+{propParagraphVisibility && (<div data-wf-id="f9caf4fd-d2de-98e6-c107-fbd19ea192ef" data-w-id="f9caf4fd-d2de-98e6-c107-fbd19ea192ef" class="w-richtext card_primary_text u-text-style-large">
+{Astro.slots.has("paragraphtext-blocks") ? (<slot name="paragraphtext-blocks" />) : (<Tag2 data-wf-id="99ca2e6d-2b82-bb82-6df8-bd4932d075be" data-w-id="99ca2e6d-2b82-bb82-6df8-bd4932d075be">
+<slot name="paragraphtext">{propParagraphText}</slot>
+</Tag2>)}
+</div>)}
+</div>
+</div>
+<Clickable attributeValue="" attributeName="" target={propLinkTarget} type="button" linkTarget={propLinkUrlTarget} link={propLinkUrl} visibility={propLinkVisibility}>
+<slot name="linktext">{propLinkText}</slot>
+</Clickable>
+</div>
+</div>)}

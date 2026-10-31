@@ -1,0 +1,19 @@
+---
+import StrokePath from '@/components/svg/StrokePath.astro';
+
+interface Props {
+  /** Variant */
+  variant?: "right" | "left" | "top" | "bottom";
+}
+const collectionData = {};
+const {
+  variant: propVariant = "right"
+} = Astro.props;
+if (!["right", "left", "top", "bottom"].includes(propVariant)) throw new Error("IconArrowFull.variant must be one of: right, left, top, bottom");
+
+
+---
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 33 26" fill="none" aria-hidden="true" data-wf-id="9d2d1e50-103f-d310-b352-08c163e684c9" data-w-id="9d2d1e50-103f-d310-b352-08c163e684c9" data-wf--icon-arrow-full--variant={{"right": "right", "left": "left", "top": "top", "bottom": "bottom"}[propVariant]} class:list={[{"left": "w-variant-1c3f028b-116e-d4eb-db7f-8484491bbf2e", "top": "w-variant-a0a4b133-f837-5340-6c98-04b1518f150d", "bottom": "w-variant-5939aeba-b378-ecdc-f1bc-b6970df2be03"}[propVariant], "u-svg"]} data-wf-variant={["8b583aae-a6cd-af1d-7e88-12f339a69761=" + ({"right": "base", "left": "1c3f028b-116e-d4eb-db7f-8484491bbf2e", "top": "a0a4b133-f837-5340-6c98-04b1518f150d", "bottom": "5939aeba-b378-ecdc-f1bc-b6970df2be03"}[propVariant])].join(" ")}>
+<StrokePath />
+<StrokePath path="M30.5 13L0 13" />
+</svg>

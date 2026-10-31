@@ -1,0 +1,16 @@
+---
+
+
+interface Props {
+  /** Variant */
+  variant?: "none" | "even" | "small" | "main" | "large" | "page-top";
+}
+const collectionData = {};
+const {
+  variant: propVariant = "main"
+} = Astro.props;
+if (!["none", "even", "small", "main", "large", "page-top"].includes(propVariant)) throw new Error("Spacer.variant must be one of: none, even, small, main, large, page-top");
+
+
+---
+<div class:list={[{"even": "w-variant-41fc0c0a-cac3-53c9-9802-6a916e3fb342", "small": "w-variant-d422cbd0-f212-c815-68df-63414354c21d", "main": "w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490", "large": "w-variant-8cc18b30-4618-8767-0111-f6abfe45aaa3", "page-top": "w-variant-e359d2da-de19-6775-b122-3e06f925f39e"}[propVariant], "u-section-spacer", "u-ignore-trim"]} data-wf-id="6988c782-9d84-f50b-88aa-e362ff213d22" data-w-id="6988c782-9d84-f50b-88aa-e362ff213d22" data-wf--spacer--variant={{"none": "none", "even": "even", "small": "small", "main": "main", "large": "large", "page-top": "page-top"}[propVariant]} data-wf-variant={["6c14af0c-7d93-c86c-7e8c-95100cb81cf2=" + ({"none": "base", "even": "41fc0c0a-cac3-53c9-9802-6a916e3fb342", "small": "d422cbd0-f212-c815-68df-63414354c21d", "main": "60a7ad7d-02b0-6682-95a5-2218e6fd1490", "large": "8cc18b30-4618-8767-0111-f6abfe45aaa3", "page-top": "e359d2da-de19-6775-b122-3e06f925f39e"}[propVariant])].join(" ")}></div>

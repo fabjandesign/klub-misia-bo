@@ -1,0 +1,1 @@
+export function formatNumber(value,precision) { return Number.isFinite(Number(value)) ? Number(precision)<0 ? String(value) : Number(value).toFixed(Math.min(20,Math.max(0,Number(precision)||0))) : ''; }

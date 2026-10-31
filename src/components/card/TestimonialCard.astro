@@ -1,0 +1,40 @@
+---
+import IconStar from '@/components/svg/IconStar.astro';
+
+interface Props {
+
+}
+const collectionData = {};
+const {
+
+} = Astro.props;
+const propName = "Igor Umrikhin";
+const propText = "Chciałbym podzielić się swoim doświadczeniem o współpracy z agentem od nieruchomości Sebastianie Monice, który pomógł sprzedać mieszkanie. Byłem bardzo zadowolony ze współpracy z nim i polecam jego usługi każdemu, kto szuka profesjonalnej pomocy w sprzedaży swojej nieruchomości.";
+
+
+---
+<div data-wf-id="7a3ed629-0cae-2807-4465-d937e545f032" data-w-id="7a3ed629-0cae-2807-4465-d937e545f032" class="testimonial_card u-background-2">
+<div data-wf-id="7a3ed629-0cae-2807-4465-d937e545f033" data-w-id="7a3ed629-0cae-2807-4465-d937e545f033" class="testimonial_star_wrapped u-margin-bottom-4">
+<div data-wf-id="7a3ed629-0cae-2807-4465-d937e545f034" data-w-id="7a3ed629-0cae-2807-4465-d937e545f034" class="testimonial_icon">
+<IconStar />
+</div>
+<div data-wf-id="cd540c00-ffda-a33e-abac-2104c973a0a2" data-w-id="cd540c00-ffda-a33e-abac-2104c973a0a2" class="testimonial_icon">
+<IconStar />
+</div>
+<div data-wf-id="aff2d0de-d4cc-931a-4466-b18d0cbd0eb1" data-w-id="aff2d0de-d4cc-931a-4466-b18d0cbd0eb1" class="testimonial_icon">
+<IconStar />
+</div>
+<div data-wf-id="057bbd5a-5464-b14f-7c56-75873dc5b46b" data-w-id="057bbd5a-5464-b14f-7c56-75873dc5b46b" class="testimonial_icon">
+<IconStar />
+</div>
+<div data-wf-id="6be36d44-17d6-39ad-ef12-15d65b1ca2e7" data-w-id="6be36d44-17d6-39ad-ef12-15d65b1ca2e7" class="testimonial_icon">
+<IconStar />
+</div>
+</div>
+<div data-wf-id="7a3ed629-0cae-2807-4465-d937e545f052" data-w-id="7a3ed629-0cae-2807-4465-d937e545f052" class="testimonial_text u-text-style-large">
+<slot name="text">{propText}</slot>
+</div>
+<div data-wf-id="7a3ed629-0cae-2807-4465-d937e545f054" data-w-id="7a3ed629-0cae-2807-4465-d937e545f054" class="testimonial_name u-text-style-large u-weight-bold u-margin-top-6">
+<slot name="name">{propName}</slot>
+</div>
+</div>

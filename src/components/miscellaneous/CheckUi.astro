@@ -1,0 +1,57 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+
+
+interface Props {
+  /** Label Attribute Value */
+  labelAttributeValue?: string;
+  /** Label Attribute Name */
+  labelAttributeName?: string;
+  /** Input Attribute Value */
+  inputAttributeValue?: string;
+  /** Input Attribute Name */
+  inputAttributeName?: string;
+  /** Checked */
+  checked?: string;
+  /** Required */
+  required?: string;
+  /** Value */
+  value?: string;
+  /** Name */
+  name?: string;
+  /** Type */
+  type?: string;
+  /** Variant */
+  variant?: "checkbox" | "radio" | "toggle" | "button";
+}
+const collectionData = {};
+const {
+  labelAttributeValue: propLabelAttributeValue = "",
+  labelAttributeName: propLabelAttributeName = "",
+  inputAttributeValue: propInputAttributeValue = "",
+  inputAttributeName: propInputAttributeName = "",
+  checked: propChecked = "",
+  required: propRequired = "",
+  value: propValue = "Value",
+  name: propName = "Name",
+  type: propType = "checkbox",
+  variant: propVariant = "checkbox"
+} = Astro.props;
+const propLabel = "I agree to the terms";
+if (!["checkbox", "radio", "toggle", "button"].includes(propVariant)) throw new Error("CheckUi.variant must be one of: checkbox, radio, toggle, button");
+
+
+---
+<label role="listitem" data-state="checked" data-wf-id="39a856c3-f857-7c26-307f-b73399139f4a" data-w-id="39a856c3-f857-7c26-307f-b73399139f4a" data-wf--check-ui--variant={{"checkbox": "checkbox", "radio": "radio", "toggle": "toggle", "button": "button"}[propVariant]} class:list={[{"radio": "w-variant-c18f59b8-0331-9f8c-c106-08818710cc20", "toggle": "w-variant-05ff758a-80c8-4344-649b-149f87b62cc9", "button": "w-variant-e3978449-fef8-38a6-7f29-4e26ca4f8f53"}[propVariant], "form_ui_label"]} data-wf-variant={["ceea9dae-1800-0050-d339-30851b2ad651=" + ({"checkbox": "base", "radio": "c18f59b8-0331-9f8c-c106-08818710cc20", "toggle": "05ff758a-80c8-4344-649b-149f87b62cc9", "button": "e3978449-fef8-38a6-7f29-4e26ca4f8f53"}[propVariant])].join(" ")}>
+<input {...safeAttributes(customAttributes([...([({"name": "type", "value": propType}), ({"name": "name", "value": propName}), ({"name": "required", "value": propRequired}), ({"name": "checked", "value": propChecked}), ({"name": propInputAttributeName, "value": propInputAttributeValue}), ({"name": "value", "value": propValue})] || [])]), ["data-wf-id", "data-w-id", "class"])} data-wf-id="39a856c3-f857-7c26-307f-b73399139f4b" data-w-id="39a856c3-f857-7c26-307f-b73399139f4b" class:list={["form_ui_input", customAttributes([...([({"name": "type", "value": propType}), ({"name": "name", "value": propName}), ({"name": "required", "value": propRequired}), ({"name": "checked", "value": propChecked}), ({"name": propInputAttributeName, "value": propInputAttributeValue}), ({"name": "value", "value": propValue})] || [])]).class]} />
+<span data-wf-id="39a856c3-f857-7c26-307f-b73399139f4c" data-w-id="39a856c3-f857-7c26-307f-b73399139f4c" class="form_ui_visual_wrap">
+<span data-wf-id="ff4d329f-c595-dadc-0180-3f6cd24b73bb" data-w-id="ff4d329f-c595-dadc-0180-3f6cd24b73bb" class="form_ui_visual_inner">
+<svg viewBox="0 0 11 8" fill="none" aria-hidden="true" data-wf-id="39a856c3-f857-7c26-307f-b73399139f4d" data-w-id="39a856c3-f857-7c26-307f-b73399139f4d" class="form_ui_visual_icon">
+<path d="M1 4L4 7L10 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="0.125rem" data-wf-id="39a856c3-f857-7c26-307f-b73399139f4e" data-w-id="39a856c3-f857-7c26-307f-b73399139f4e"></path>
+</svg>
+</span>
+</span>
+<span {...safeAttributes(customAttributes([...([({"name": propLabelAttributeName, "value": propLabelAttributeValue})] || [])]), ["data-wf-id", "data-w-id", "class"])} data-wf-id="39a856c3-f857-7c26-307f-b73399139f4f" data-w-id="39a856c3-f857-7c26-307f-b73399139f4f" class:list={["form_ui_text", customAttributes([...([({"name": propLabelAttributeName, "value": propLabelAttributeValue})] || [])]).class]}>
+<slot>{propLabel}</slot>
+</span>
+</label>

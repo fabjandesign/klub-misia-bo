@@ -1,0 +1,27 @@
+---
+import Download from '@/components/svg/Download.astro';
+
+interface Props {
+  /** Link */
+  link?: string;
+  linkTarget?: string;
+}
+const collectionData = {};
+const {
+  link: propLink = "#",
+  linkTarget: propLinkTarget = "_blank"
+} = Astro.props;
+const propText = "Regulamin";
+
+
+---
+<div data-wf-id="5ddb85fb-275e-f3a8-052b-6733ef28ffe5" data-w-id="5ddb85fb-275e-f3a8-052b-6733ef28ffe5" class="document_download">
+<div data-wf-id="5ddb85fb-275e-f3a8-052b-6733ef28ffe6" data-w-id="5ddb85fb-275e-f3a8-052b-6733ef28ffe6" class="document_download_icon">
+<Download />
+</div>
+<a data-wf-id="59b33467-e933-357c-10b0-b7b08d472a58" data-w-id="59b33467-e933-357c-10b0-b7b08d472a58" class="document_download_link" href={propLink} target={propLinkTarget || (undefined)}>
+<div data-wf-id="5ddb85fb-275e-f3a8-052b-6733ef28ffec" data-w-id="5ddb85fb-275e-f3a8-052b-6733ef28ffec" class="document_download_text u-text-style-h5">
+<slot>{propText}</slot>
+</div>
+</a>
+</div>

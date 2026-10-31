@@ -1,0 +1,50 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+import Clickable from '@/components/utility/Clickable.astro';
+
+interface Props {
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Classes */
+  classes?: string;
+  /** Link */
+  link?: string;
+  linkTarget?: string;
+  /** Variant */
+  variant?: "primary-medium" | "secondary-medium" | "primary-large" | "secondary-large";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  classes: propClasses = " ",
+  link: propLink = "#",
+  linkTarget: propLinkTarget = "",
+  variant: propVariant = "primary-medium",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Play";
+if (!["primary-medium", "secondary-medium", "primary-large", "secondary-large"].includes(propVariant)) throw new Error("ButtonPlay.variant must be one of: primary-medium, secondary-medium, primary-large, secondary-large");
+
+
+---
+{propVisibility && (<div {...safeAttributes(customAttributes([...([({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses}), {"name": "data-button", "value": " "}, {"name": "data-trigger", "value": "hover focus"}, {"name": "data-state", "value": "pressed"}] || [])]), ["data-wf-id", "data-w-id", "data-wf--button-play--variant", "class"])} data-wf-id="ef6f7715-7082-0e78-9b80-b290d4fc5f0f" data-w-id="ef6f7715-7082-0e78-9b80-b290d4fc5f0f" data-wf--button-play--variant={{"primary-medium": "primary-medium", "secondary-medium": "secondary-medium", "primary-large": "primary-large", "secondary-large": "secondary-large"}[propVariant]} class:list={[{"secondary-medium": "w-variant-ab355ea0-b722-2f23-3507-f0290f710e57", "primary-large": "w-variant-d47b6b31-1410-4123-4cbe-47472b6d649d", "secondary-large": "w-variant-3970b3f9-2fa6-52d8-098a-2260caaa12bb"}[propVariant], "button_toggle_wrap", customAttributes([...([({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses}), {"name": "data-button", "value": " "}, {"name": "data-trigger", "value": "hover focus"}, {"name": "data-state", "value": "pressed"}] || [])]).class]} data-wf-variant={["83194c10-6941-a340-0227-973a3bb8ad35=" + ({"primary-medium": "base", "secondary-medium": "ab355ea0-b722-2f23-3507-f0290f710e57", "primary-large": "d47b6b31-1410-4123-4cbe-47472b6d649d", "secondary-large": "3970b3f9-2fa6-52d8-098a-2260caaa12bb"}[propVariant])].join(" ")}>
+<div data-wf-id="b141a75e-f059-5979-9684-f43451672c63" data-w-id="b141a75e-f059-5979-9684-f43451672c63" class="button_toggle_element">
+<div aria-hidden="true" data-wf-id="262cc14c-a4d2-71ff-dc48-e58f876556b2" data-w-id="262cc14c-a4d2-71ff-dc48-e58f876556b2" class="button_toggle_icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1393 1394" fill="none" data-wf-id="2ce19dca-2134-74a6-dc58-7e3dff6c2471" data-w-id="2ce19dca-2134-74a6-dc58-7e3dff6c2471" class="button_toggle_play u-cover-absolute">
+<path d="M1271 696.5L280 1393L280 -4.3318e-05L1271 696.5Z" fill="currentColor" data-wf-id="cf2a5195-afec-19e3-fa0b-2b9db99c6c7e" data-w-id="cf2a5195-afec-19e3-fa0b-2b9db99c6c7e"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 898 1277" fill="none" data-wf-id="7bf4ef98-8a71-e99a-c57f-7d190badedc9" data-w-id="7bf4ef98-8a71-e99a-c57f-7d190badedc9" class="button_toggle_pause u-cover-absolute">
+<rect x="577" width="321" height="1277" fill="currentColor" data-wf-id="60b2275c-a2f6-fd4e-e26a-1ca519367785" data-w-id="60b2275c-a2f6-fd4e-e26a-1ca519367785"></rect>
+<rect width="321" height="1277" fill="currentColor" data-wf-id="db610838-887d-4eec-6f54-e85109eda607" data-w-id="db610838-887d-4eec-6f54-e85109eda607"></rect>
+</svg>
+</div>
+</div>
+<Clickable linkTarget={propLinkTarget} link={propLink}>
+<slot>{propText}</slot>
+</Clickable>
+</div>)}

@@ -1,0 +1,56 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+import FormLabelText from '@/components/form/FormLabelText.astro';
+
+interface Props {
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Classes */
+  classes?: string;
+  /** Auto Complete */
+  autoComplete?: string;
+  /** Input Mode */
+  inputMode?: string;
+  /** Type */
+  type?: string;
+  /** Value */
+  value?: string;
+  /** Required */
+  required?: string;
+  /** Placeholder */
+  placeholder?: string;
+  /** Name */
+  name?: string;
+  /** Label Variant */
+  labelVariant?: "visible" | "hidden" | "bold";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  classes: propClasses = "",
+  autoComplete: propAutoComplete = "",
+  inputMode: propInputMode = "text",
+  type: propType = "text",
+  value: propValue = "",
+  required: propRequired = "",
+  placeholder: propPlaceholder = "Placeholder",
+  name: propName = "Field Name",
+  labelVariant: propLabelVariant = "visible",
+  visibility: propVisibility = true
+} = Astro.props;
+const propLabel = "Label";
+if (!["visible", "hidden", "bold"].includes(propLabelVariant)) throw new Error("FormInput.labelVariant must be one of: visible, hidden, bold");
+
+
+---
+{propVisibility && (<label data-trigger="focus" data-wf-id="86c2893a-48c6-c1d1-7a1d-c1d9f1e2429e" data-w-id="86c2893a-48c6-c1d1-7a1d-c1d9f1e2429e" class="form_label_wrap">
+<FormLabelText variant={propLabelVariant}>
+<slot>{propLabel}</slot>
+</FormLabelText>
+<input {...safeAttributes(customAttributes([...([({"name": "name", "value": propName}), ({"name": "type", "value": propType}), ({"name": "placeholder", "value": propPlaceholder}), ({"name": "required", "value": Boolean(propRequired)}), ({"name": "value", "value": propValue}), ({"name": "inputmode", "value": propInputMode}), ({"name": "autocomplete", "value": propAutoComplete}), ({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses})] || [])]), ["data-wf-id", "data-w-id", "class"])} data-wf-id="65a70103-b834-353b-fc6f-5bce970a8aee" data-w-id="65a70103-b834-353b-fc6f-5bce970a8aee" class:list={["form_field", customAttributes([...([({"name": "name", "value": propName}), ({"name": "type", "value": propType}), ({"name": "placeholder", "value": propPlaceholder}), ({"name": "required", "value": Boolean(propRequired)}), ({"name": "value", "value": propValue}), ({"name": "inputmode", "value": propInputMode}), ({"name": "autocomplete", "value": propAutoComplete}), ({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses})] || [])]).class]} />
+</label>)}

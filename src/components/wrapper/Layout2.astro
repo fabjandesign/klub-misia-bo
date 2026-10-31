@@ -1,0 +1,37 @@
+---
+
+
+interface Props {
+  /** Column 2 Classes */
+  column2Classes?: string;
+  /** Column 1 Classes */
+  column1Classes?: string;
+  /** Classes */
+  classes?: string;
+  /** Variant */
+  variant?: "stack" | "stack-centered" | "columns" | "columns-reversed" | "sticky-left" | "breakout" | "breakout-reversed" | "full" | "full-reversed" | "contain" | "contain-reversed" | "card";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  column2Classes: propColumn2Classes = " ",
+  column1Classes: propColumn1Classes = " ",
+  classes: propClasses = "",
+  variant: propVariant = "stack",
+  visibility: propVisibility = true
+} = Astro.props;
+if (!["stack", "stack-centered", "columns", "columns-reversed", "sticky-left", "breakout", "breakout-reversed", "full", "full-reversed", "contain", "contain-reversed", "card"].includes(propVariant)) throw new Error("Layout2.variant must be one of: stack, stack-centered, columns, columns-reversed, sticky-left, breakout, breakout-reversed, full, full-reversed, contain, contain-reversed, card");
+
+
+---
+{propVisibility && (<div class:list={[{"stack-centered": "w-variant-d69d5003-e9bc-b347-4e02-eb46976beb1c", "columns": "w-variant-558793eb-2b07-490b-9842-2d7e6f6bf325", "columns-reversed": "w-variant-1261a7e4-2c05-3b0b-2126-d399890906b8", "sticky-left": "w-variant-81232c92-6578-ef9a-1e3e-35e3204ae0fd", "breakout": "w-variant-4fee4cc0-701f-2817-944f-2c0261b9c2f3", "breakout-reversed": "w-variant-6bb5e515-55a9-1fc8-d29b-ff898d8b40f7", "full": "w-variant-58b19052-6f23-ab5e-5e89-54288af57e85", "full-reversed": "w-variant-560ed4d9-9e8c-5c39-4619-fc154cdf9f19", "contain": "w-variant-31f8ed75-2c88-945a-a737-1b9b50b4494b", "contain-reversed": "w-variant-329f6899-ba0f-e4db-0449-3c5b8ba4f388", "card": "w-variant-ebfcdcb1-ac53-1b15-fcb9-eaeda25808f5"}[propVariant], "u-layout-wrapper", propClasses]} data-wf-id="7079fed5-17cb-c5c6-24bf-0555d09731f4" data-w-id="7079fed5-17cb-c5c6-24bf-0555d09731f4" data-wf--layout--variant={{"stack": "stack", "stack-centered": "stack-centered", "columns": "columns", "columns-reversed": "columns-reversed", "sticky-left": "sticky-left", "breakout": "breakout", "breakout-reversed": "breakout-reversed", "full": "full", "full-reversed": "full-reversed", "contain": "contain", "contain-reversed": "contain-reversed", "card": "card"}[propVariant]} data-wf-variant={["d79d1d2a-f1f8-6796-b262-f9bcbc51e82b=" + ({"stack": "base", "stack-centered": "d69d5003-e9bc-b347-4e02-eb46976beb1c", "columns": "558793eb-2b07-490b-9842-2d7e6f6bf325", "columns-reversed": "1261a7e4-2c05-3b0b-2126-d399890906b8", "sticky-left": "81232c92-6578-ef9a-1e3e-35e3204ae0fd", "breakout": "4fee4cc0-701f-2817-944f-2c0261b9c2f3", "breakout-reversed": "6bb5e515-55a9-1fc8-d29b-ff898d8b40f7", "full": "58b19052-6f23-ab5e-5e89-54288af57e85", "full-reversed": "560ed4d9-9e8c-5c39-4619-fc154cdf9f19", "contain": "31f8ed75-2c88-945a-a737-1b9b50b4494b", "contain-reversed": "329f6899-ba0f-e4db-0449-3c5b8ba4f388", "card": "ebfcdcb1-ac53-1b15-fcb9-eaeda25808f5"}[propVariant])].join(" ")}>
+<div data-wf-id="5fea6dee-188b-0739-a13c-3170050f3280" data-w-id="5fea6dee-188b-0739-a13c-3170050f3280" class="u-layout">
+<div class:list={["u-layout-column-1", propColumn1Classes]} data-wf-id="226edbfa-bf98-60fa-b45e-0b31719a3da9" data-w-id="226edbfa-bf98-60fa-b45e-0b31719a3da9" name="">
+<slot />
+</div>
+<div class:list={["u-layout-column-2", propColumn2Classes]} data-wf-id="45c58a29-3a10-c371-2a68-242a90878cd6" data-w-id="45c58a29-3a10-c371-2a68-242a90878cd6" name="">
+<slot name="column-2" />
+</div>
+</div>
+</div>)}

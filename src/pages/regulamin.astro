@@ -1,0 +1,95 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import GlobalStyles from '@/components/global/GlobalStyles.astro';
+import GlobalGuides from '@/components/global/GlobalGuides.astro';
+import Nav from '@/components/global/Nav.astro';
+import Spacer from '@/components/utility/Spacer.astro';
+import Svg from '@/components/Svg.astro';
+import TypographyHeading from '@/components/typography/TypographyHeading.astro';
+import Terms from '@/components/section/Terms.astro';
+import Footer from '@/components/global/Footer.astro';
+import Cookie from '@/components/Cookie.astro';
+
+const data = {};
+const collectionData = {};
+
+
+---
+<Layout webflowPageId="694ac9725b9745015518c953" pageTitle="Regulamin Przedszkola | Klub Misia Bo" pageDescription="Zapoznaj się z regulaminem Przedszkola Publicznego Klub Misia Bo: zasady przyprowadzania i odbioru dzieci, procedury bezpieczeństwa i inne ważne informacje." data-wf-id="689f3d1b8a521025da1b93a4" data-w-id="689f3d1b8a521025da1b93a4">
+<Fragment slot="head"><script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Regulamin Przedszkola",
+  "description": "Regulamin Przedszkola Publicznego Klub Misia Bo zawierający procedury przyprowadzania i odbioru dzieci oraz zasady bezpiecznego pobytu w przedszkolu",
+  "url": "/regulamin",
+  "inLanguage": "pl",
+  "about": {
+    "@type": "Preschool",
+    "name": "Klub Misia Bo",
+    "alternateName": "Przedszkole Publiczne Klub Misia Bo",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Światowida 47",
+      "addressLocality": "Warszawa",
+      "postalCode": "03-144",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48733700612",
+    "email": "info@klub-misia-bo.pl",
+    "sameAs": [
+      "https://www.facebook.com/KlubMisiaBo"
+    ],
+    "openingHours": "Mo-Fr 07:00-18:00"
+  }
+}
+</script>
+
+
+<script type="application/ld+json" is:inline>
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://klub-misia-bo.pl/regulamin/#breadcrumbs",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona główna",
+                "item": "https://klub-misia-bo.pl"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Regulamin",
+                "item": "https://klub-misia-bo.pl/regulamin"
+            }
+        ]
+    }
+</script>
+</Fragment>
+<div data-wf-id="1c862110-5b53-42b6-ff63-119b6b19de9b" data-w-id="1c862110-5b53-42b6-ff63-119b6b19de9b" class="page_wrap">
+<GlobalStyles />
+<GlobalGuides />
+<Nav navPosition="overlap" />
+<main id="main" data-wf-id="c5805b76-cf39-4d36-9cd5-308cd98907ee" data-w-id="c5805b76-cf39-4d36-9cd5-308cd98907ee" class="page_main">
+<section data-wf-id="063514e1-9290-8c58-8555-b931216946b0" data-w-id="063514e1-9290-8c58-8555-b931216946b0" class="header_wrap">
+<div data-wf-id="063514e1-9290-8c58-8555-b931216946b1" data-w-id="063514e1-9290-8c58-8555-b931216946b1" class="header_contain u-container">
+<div data-wf-id="063514e1-9290-8c58-8555-b931216946b2" data-w-id="063514e1-9290-8c58-8555-b931216946b2" class="header_layout">
+<Spacer variant="page-top" />
+<div data-wf-id="063514e1-9290-8c58-8555-b931216946b4" data-w-id="063514e1-9290-8c58-8555-b931216946b4" class="contact_header_svg">
+<Svg image={{"id": "6ae64414e86c687666831896"}} />
+</div>
+<TypographyHeading classes="u-alignment-center u-position-relative" textTag="h1" variant="h1">
+Regulamin
+</TypographyHeading>
+<Spacer />
+</div>
+</div>
+</section>
+<Terms />
+</main>
+<Footer />
+<Cookie />
+</div>
+</Layout>

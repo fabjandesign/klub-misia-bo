@@ -1,0 +1,47 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+import FormLabelText from '@/components/form/FormLabelText.astro';
+
+interface Props {
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Classes */
+  classes?: string;
+  /** Value */
+  value?: string;
+  /** Required */
+  required?: string;
+  /** Placeholder */
+  placeholder?: string;
+  /** Name */
+  name?: string;
+  /** Label Variant */
+  labelVariant?: "visible" | "hidden" | "bold";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  classes: propClasses = "",
+  value: propValue = "",
+  required: propRequired = "",
+  placeholder: propPlaceholder = "",
+  name: propName = "Name",
+  labelVariant: propLabelVariant = "visible",
+  visibility: propVisibility = true
+} = Astro.props;
+const propLabel = "Label";
+if (!["visible", "hidden", "bold"].includes(propLabelVariant)) throw new Error("FormTextarea.labelVariant must be one of: visible, hidden, bold");
+
+
+---
+{propVisibility && (<label data-trigger="focus" class:list={["form_label_wrap", propClasses]} data-wf-id="50094686-3809-242d-2cc1-5c609bf19df4" data-w-id="50094686-3809-242d-2cc1-5c609bf19df4">
+<FormLabelText variant={propLabelVariant}>
+<slot>{propLabel}</slot>
+</FormLabelText>
+<textarea {...safeAttributes(customAttributes([...([({"name": "name", "value": propName}), ({"name": "placeholder", "value": propPlaceholder}), ({"name": "required", "value": Boolean(propRequired)}), ({"name": "value", "value": propValue}), ({"name": propAttributeName, "value": propAttributeValue})] || [])]), ["data-wf-id", "data-w-id", "class"])} data-wf-id="9ec83a83-ca92-720c-aa22-c0fdc97461dd" data-w-id="9ec83a83-ca92-720c-aa22-c0fdc97461dd" class:list={["form_field", "is-textarea", customAttributes([...([({"name": "name", "value": propName}), ({"name": "placeholder", "value": propPlaceholder}), ({"name": "required", "value": Boolean(propRequired)}), ({"name": "value", "value": propValue}), ({"name": propAttributeName, "value": propAttributeValue})] || [])]).class]}></textarea>
+</label>)}

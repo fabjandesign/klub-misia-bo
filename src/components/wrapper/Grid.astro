@@ -1,0 +1,48 @@
+---
+import { formatNumber } from '@/lib/format';
+
+
+interface Props {
+  /** Role */
+  role?: string;
+  /** Style */
+  style?: string;
+  /** Minimum Column Size */
+  minimumColumnSize?: number;
+  /** Smallest Screen */
+  smallestScreen?: number;
+  /** Small Screen */
+  smallScreen?: number;
+  /** Medium Screen */
+  mediumScreen?: number;
+  /** Large Screen */
+  largeScreen?: number;
+  /** Variant */
+  variant?: "default" | "self-contained" | "autofit" | "autofill";
+  /** Classes */
+  classes?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  role: propRole = "none",
+  style: propStyle = "",
+  minimumColumnSize: propMinimumColumnSize = 12,
+  smallestScreen: propSmallestScreen = 0,
+  smallScreen: propSmallScreen = 0,
+  mediumScreen: propMediumScreen = 1,
+  largeScreen: propLargeScreen = 2,
+  variant: propVariant = "default",
+  classes: propClasses = " ",
+  visibility: propVisibility = true
+} = Astro.props;
+if (!["default", "self-contained", "autofit", "autofill"].includes(propVariant)) throw new Error("Grid.variant must be one of: default, self-contained, autofit, autofill");
+
+
+---
+{propVisibility && (<div style={propStyle} class:list={[{"self-contained": "w-variant-b8204f2e-764d-b421-dc96-2c59d3054271", "autofit": "w-variant-d58244bf-290f-ebb3-3aa0-352d6fa8e84f", "autofill": "w-variant-129319ac-a2cd-9e88-2ebd-a33b4bb85fa5"}[propVariant], "u-grid-wrapper", propClasses]} data-number={formatNumber(propMinimumColumnSize, -1)} data-wf-id="7d7894ee-390d-226d-3dd5-a9571f6c41f5" data-w-id="7d7894ee-390d-226d-3dd5-a9571f6c41f5" data-wf--grid--variant={{"default": "default", "self-contained": "self-contained", "autofit": "autofit", "autofill": "autofill"}[propVariant]} data-wf-variant={["36a4b313-b94e-f017-af51-587183913231=" + ({"default": "base", "self-contained": "b8204f2e-764d-b421-dc96-2c59d3054271", "autofit": "d58244bf-290f-ebb3-3aa0-352d6fa8e84f", "autofill": "129319ac-a2cd-9e88-2ebd-a33b4bb85fa5"}[propVariant])].join(" ")}>
+<div data-large-columns={formatNumber(propLargeScreen, -1)} data-medium-columns={formatNumber(propMediumScreen, -1)} data-small-columns={formatNumber(propSmallScreen, -1)} data-xsmall-columns={formatNumber(propSmallestScreen, -1)} role={propRole} data-wf-id="c909ed31-041c-fb25-1529-a570e05b9ae1" data-w-id="c909ed31-041c-fb25-1529-a570e05b9ae1" class="u-grid" name="">
+<slot />
+</div>
+</div>)}

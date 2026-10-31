@@ -1,0 +1,54 @@
+---
+import CheckUi from '@/components/miscellaneous/CheckUi.astro';
+
+interface Props {
+  /** Label Attribute Value */
+  labelAttributeValue?: string;
+  /** Label Attribute Name */
+  labelAttributeName?: string;
+  /** Input Attribute Value */
+  inputAttributeValue?: string;
+  /** Input Attribute Name */
+  inputAttributeName?: string;
+  /** Classes */
+  classes?: string;
+  /** Role */
+  role?: string;
+  /** Checked */
+  checked?: string;
+  /** Required */
+  required?: string;
+  /** Value */
+  value?: string;
+  /** Group Name */
+  groupName?: string;
+  /** Variant */
+  variant?: "checkbox" | "radio" | "toggle" | "button";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  labelAttributeValue: propLabelAttributeValue = "",
+  labelAttributeName: propLabelAttributeName = "",
+  inputAttributeValue: propInputAttributeValue = "",
+  inputAttributeName: propInputAttributeName = "",
+  classes: propClasses = "",
+  role: propRole = "none",
+  checked: propChecked = "",
+  required: propRequired = "",
+  value: propValue = "Value",
+  groupName: propGroupName = "Group Name",
+  variant: propVariant = "checkbox",
+  visibility: propVisibility = true
+} = Astro.props;
+const propLabel = "Label";
+if (!["checkbox", "radio", "toggle", "button"].includes(propVariant)) throw new Error("FormRadio.variant must be one of: checkbox, radio, toggle, button");
+
+
+---
+{propVisibility && (<div role={propRole} data-state="checked" class:list={["form_ui_item", propClasses]} data-wf-id="c2fd5c20-65cf-6b26-fc6c-059fb6547f9c" data-w-id="c2fd5c20-65cf-6b26-fc6c-059fb6547f9c">
+<CheckUi labelAttributeValue={propLabelAttributeValue} labelAttributeName={propLabelAttributeName} inputAttributeValue={propInputAttributeValue} inputAttributeName={propInputAttributeName} checked={propChecked} required={propRequired} value={propValue} name={propGroupName} type="radio" variant={propVariant}>
+<slot>{propLabel}</slot>
+</CheckUi>
+</div>)}

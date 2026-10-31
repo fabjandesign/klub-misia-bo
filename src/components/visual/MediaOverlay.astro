@@ -1,0 +1,26 @@
+---
+import { formatNumber } from '@/lib/format';
+
+
+interface Props {
+  /** Classes */
+  classes?: string;
+  /** Overlay Strength */
+  overlayStrength?: number;
+  /** Variant */
+  variant?: "base" | "gradient";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  classes: propClasses = " ",
+  overlayStrength: propOverlayStrength = 70,
+  variant: propVariant = "base",
+  visibility: propVisibility = true
+} = Astro.props;
+if (!["base", "gradient"].includes(propVariant)) throw new Error("MediaOverlay.variant must be one of: base, gradient");
+
+
+---
+{propVisibility && (<div class:list={[{"gradient": "w-variant-9653c0cc-21fc-fb82-1373-c98b1644e5a8"}[propVariant], "u-overlay", propClasses]} data-number={formatNumber(propOverlayStrength, -1)} data-wf-id="219abfbb-a07c-d448-250c-6bdda9f81a14" data-w-id="219abfbb-a07c-d448-250c-6bdda9f81a14" data-wf--media-overlay--variant={{"base": "base", "gradient": "gradient"}[propVariant]} data-wf-variant={["f938dc12-5258-40e7-07d5-701551ddbb9e=" + ({"base": "base", "gradient": "9653c0cc-21fc-fb82-1373-c98b1644e5a8"}[propVariant])].join(" ")}></div>)}

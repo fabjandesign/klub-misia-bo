@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GlobalStyles from '@/components/global/GlobalStyles.astro';
+import GlobalGuides from '@/components/global/GlobalGuides.astro';
+import Nav from '@/components/global/Nav.astro';
+import Footer from '@/components/global/Footer.astro';
+import Cookie from '@/components/Cookie.astro';
+import IconSun from '@/components/svg/IconSun.astro';
+
+const photos = [
+  { file: 'sala', title: 'Przestrzeń do odkrywania', alt: 'Jasna sala przedszkolna z małymi stolikami i kolorową dekoracją ścian', id: 8535634, author: 'Ksenia Chernaya' },
+  { file: 'zabawki', title: 'Małe rzeczy, wielka ciekawość', alt: 'Półki z kolorowymi pomocami i zabawkami edukacyjnymi', id: 8923987, author: 'Pavel Danilyuk' },
+  { file: 'klocki', title: 'Tyle możliwości!', alt: 'Kolorowe drewniane klocki do kreatywnej zabawy', id: 6692949, author: 'Tara Winstead' },
+  { file: 'zabawa', title: 'Razem jest weselej', alt: 'Dzieci bawiące się drewnianymi klockami na dywanie', id: 8535193, author: 'Ksenia Chernaya' },
+  { file: 'odkrywanie', title: 'Nauka przez zabawę', alt: 'Dziewczynka odkrywająca zabawki edukacyjne w sali', id: 8923527, author: 'Pavel Danilyuk' },
+  { file: 'budowanie', title: 'Pomysły małych konstruktorów', alt: 'Dziecko układające kolorowe klocki na drewnianej podłodze', id: 7117502, author: 'cottonbro studio' },
+];
+---
+<Layout webflowPageId="6946d7950be584e943c44608" pageTitle="Galeria — Klub Misia Bo" pageDescription="Zajrzyj do galerii Klubu Misia Bo. Przestrzeń do zabawy, odkrywania i wspólnego dorastania.">
+  <div class="page_wrap">
+    <GlobalStyles /><GlobalGuides /><Nav />
+    <main id="main" class="page_main gallery-page">
+      <header class="gallery-intro u-container">
+        <span class="gallery-eyebrow">MAŁY ŚWIAT, WIELKIE ODKRYCIA</span>
+        <h1>Galeria<span class="gallery-sun" aria-hidden="true"><IconSun /></span></h1>
+        <p>Miejsce na zabawę, przyjaźnie i codzienne odkrycia.<br />Zajrzyj do świata Misia Bo.</p>
+        <svg class="gallery-scribble" viewBox="0 0 250 20" fill="none" aria-hidden="true"><path d="M4 12C65 2 159 2 244 8M30 17C97 10 161 11 218 15" stroke="currentColor" stroke-width="4" stroke-linecap="round" /></svg>
+      </header>
+      <section class="gallery-section u-container" aria-labelledby="preschool-title">
+        <div class="gallery-category"><a href="#przedszkole" aria-current="true">Przedszkole <span>06</span></a></div>
+        <div class="gallery-section-heading" id="przedszkole">
+          <div><span class="gallery-eyebrow">POZNAJ NASZĄ PRZESTRZEŃ</span><h2 id="preschool-title">Przedszkole</h2></div>
+          <p>Przestrzeń dla małych odkrywców.<br />Dużo miejsca na dziecięcą wyobraźnię.</p>
+        </div>
+        <div class="gallery-grid">
+          {photos.map((photo, index) => (
+            <figure class:list={['gallery-item', { 'gallery-item-wide': index === 0 || index === 5 }]}>
+              <button class="gallery-photo" data-gallery-index={index} aria-label={`Powiększ zdjęcie: ${photo.title}`} aria-haspopup="dialog">
+                <img src={`/images/galeria/${photo.file}.jpg`} alt={photo.alt} loading={index === 0 ? 'eager' : 'lazy'} width="1400" height="934" />
+                <span class="gallery-expand" aria-hidden="true">↗</span>
+              </button>
+              <figcaption><span>{photo.title}</span><span class="gallery-number">0{index + 1}</span></figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="gallery-stock-note">Zdjęcia stockowe — przykładowa galeria. Fotografie: <a href="https://www.pexels.com" target="_blank" rel="noreferrer">Pexels</a>.</p>
+        <details class="gallery-credits"><summary>Autorzy zdjęć</summary><ul>{photos.map(photo => <li><a href={`https://www.pexels.com/photo/${photo.id}/`} target="_blank" rel="noreferrer">{photo.title} — {photo.author}</a></li>)}</ul></details>
+        <aside class="gallery-visit"><div><span class="gallery-eyebrow">POZNAJMY SIĘ BLIŻEJ</span><h2>Najlepiej zobaczyć nas na żywo.</h2><p>Zapraszamy do Klubu Misia Bo. Chętnie pokażemy Ci nasze przedszkole!</p></div><a href="/kontakt">Umów wizytę <span aria-hidden="true">↗</span></a></aside>
+      </section>
+    </main>
+    <Footer /><Cookie />
+  </div>
+  <dialog class="gallery-lightbox" aria-label="Podgląd zdjęcia">
+    <button class="gallery-close" aria-label="Zamknij podgląd">✕</button>
+    <button class="gallery-prev" aria-label="Poprzednie zdjęcie">←</button>
+    <figure><img alt="" /><figcaption aria-live="polite"></figcaption></figure>
+    <button class="gallery-next" aria-label="Następne zdjęcie">→</button>
+  </dialog>
+</Layout>
+
+<style>
+  .gallery-page { color: var(--swatch--brand-500); background: var(--swatch--light-200); }
+  .gallery-intro { text-align: center; padding-top: clamp(56px, 7vw, 112px); padding-bottom: 64px; }
+  .gallery-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .14em; }
+  .gallery-intro h1 { position: relative; display: block; width: fit-content; margin-inline: auto; font-size: clamp(64px, 8vw, 116px); line-height: 1.15; margin: 18px auto 22px; letter-spacing: -.05em; }
+  .gallery-sun { position: absolute; width: 72px; height: 74px; line-height: 0; right: -100px; top: 0; color: #b66e38; transform: rotate(12deg); }
+  .gallery-intro p { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.6; margin: 0; }
+  .gallery-scribble { display: block; width: 180px; margin: 22px auto 0; color: #c38959; }
+  .gallery-section { padding-bottom: 80px; }
+  .gallery-category { display: flex; justify-content: center; padding-bottom: 48px; border-bottom: 1px solid #381c0e25; }
+  .gallery-category a { display: inline-flex; align-items: center; gap: 24px; border-radius: 100px; padding: 13px 24px; color: #fff9f4; background: #381c0e; text-decoration: none; }
+  .gallery-category span { font-size: 12px; opacity: .7; }
+  .gallery-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding: 48px 0 32px; scroll-margin-top: 120px; }
+  .gallery-section-heading h2 { font-size: clamp(36px, 4vw, 56px); letter-spacing: -.035em; line-height: 1.15; margin: 12px 0 0; }
+  .gallery-section-heading p { font-size: 16px; line-height: 1.6; margin: 0; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px 24px; }
+  .gallery-item { margin: 0; min-width: 0; }
+  .gallery-item-wide { grid-column: span 2; }
+  .gallery-photo { position: relative; display: block; width: 100%; height: 320px; padding: 0; overflow: hidden; border-radius: 18px; background: #e5d8ca; }
+  .gallery-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+  .gallery-photo:hover img { transform: scale(1.035); }
+  .gallery-expand { display: grid; place-items: center; position: absolute; bottom: 16px; right: 16px; width: 42px; height: 42px; background: #fff9f4; border-radius: 50%; font-size: 24px; color: #381c0e; }
+  .gallery-item figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 13px; font-size: 16px; }
+  .gallery-number { opacity: .5; font-size: 12px; }
+  .gallery-stock-note, .gallery-credits { font-size: 12px; opacity: .75; margin-top: 24px; }
+  .gallery-credits { margin-top: 8px; }
+  .gallery-credits summary { cursor: pointer; }
+  .gallery-credits ul { padding-left: 20px; }
+  .gallery-stock-note a, .gallery-credits a { text-decoration: underline; }
+  .gallery-visit { margin-top: 64px; padding: clamp(28px, 4vw, 56px); border-radius: 24px; background: #ffe3c5; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .gallery-visit h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1.2; letter-spacing: -.03em; max-width: 550px; margin: 16px 0; }
+  .gallery-visit p { font-size: 16px; line-height: 1.6; max-width: 480px; margin: 0; }
+  .gallery-visit > a { flex-shrink: 0; display: flex; gap: 30px; align-items: center; background: #381c0e; color: #fff9f4; border-radius: 100px; padding: 18px 28px; text-decoration: none; }
+  .gallery-photo:focus-visible, .gallery-category a:focus-visible, .gallery-visit a:focus-visible { outline: 3px solid #b66e38; outline-offset: 5px; }
+  .gallery-lightbox { position: fixed; inset: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 60px 80px; border: 0; background: #21160ff5; color: white; }
+  .gallery-lightbox[open] { display: flex; align-items: center; justify-content: center; }
+  .gallery-lightbox::backdrop { background: #21160f; }
+  .gallery-lightbox figure { margin: 0; text-align: center; }
+  .gallery-lightbox img { display: block; max-width: 100%; max-height: 75dvh; width: auto; height: auto; object-fit: contain; border-radius: 12px; margin: auto; }
+  .gallery-lightbox figcaption { font-size: 16px; padding-top: 18px; }
+  .gallery-lightbox button { position: absolute; background: #fff2; color: white; border-radius: 50%; width: 44px; height: 44px; font-size: 24px; }
+  .gallery-close { top: 18px; right: 18px; }.gallery-prev { left: 16px; }.gallery-next { right: 16px; }
+  :global(body:has(.gallery-lightbox[open])) { overflow: hidden; }
+  @media (max-width: 767px) {
+    .gallery-sun { width: 44px; right: -52px; }
+    .gallery-intro { padding-bottom: 40px; }
+    .gallery-section-heading { align-items: start; flex-direction: column; padding-top: 32px; }
+    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+    .gallery-photo { height: 240px; border-radius: 12px; }
+    .gallery-item-wide .gallery-photo { height: 300px; }
+    .gallery-item figcaption { font-size: 14px; }
+    .gallery-visit { flex-direction: column; align-items: start; }
+    .gallery-lightbox { padding: 70px 56px; }
+  }
+  @media (max-width: 479px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item-wide { grid-column: auto; }
+    .gallery-photo, .gallery-item-wide .gallery-photo { height: 260px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .gallery-photo img { transition: none; } }
+</style>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('.gallery-lightbox');
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-gallery-index]'));
+  if (dialog) {
+    let current = 0;
+    let trigger: HTMLButtonElement | undefined;
+    const show = (index: number) => {
+      current = (index + buttons.length) % buttons.length;
+      const source = buttons[current].querySelector('img')!;
+      const image = dialog.querySelector('img')!;
+      image.src = source.src;
+      image.alt = source.alt;
+      dialog.querySelector('figcaption')!.textContent = `${current + 1} / ${buttons.length} — ${buttons[current].closest('figure')!.querySelector('figcaption span')!.textContent}`;
+    };
+    buttons.forEach((button, index) => button.addEventListener('click', () => { trigger = button; show(index); dialog.showModal(); }));
+    dialog.querySelector('.gallery-close')?.addEventListener('click', () => dialog.close());
+    dialog.querySelector('.gallery-prev')?.addEventListener('click', () => show(current - 1));
+    dialog.querySelector('.gallery-next')?.addEventListener('click', () => show(current + 1));
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => trigger?.focus());
+    dialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); show(current - 1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); show(current + 1); }
+    });
+  }
+</script>

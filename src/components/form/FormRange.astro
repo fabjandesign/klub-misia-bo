@@ -1,0 +1,150 @@
+---
+import { text } from '@/lib/values';
+import { formatNumber } from '@/lib/format';
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+import FormLabelText from '@/components/form/FormLabelText.astro';
+
+interface Props {
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Required */
+  required?: string;
+  /** Step */
+  step?: number;
+  /** Max */
+  max?: number;
+  /** Min */
+  min?: number;
+  /** Value */
+  value?: number;
+  /** ID */
+  id?: string;
+  /** Name */
+  name?: string;
+  /** Label Variant */
+  labelVariant?: "visible" | "hidden" | "bold";
+  /** Classes */
+  classes?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  required: propRequired = "",
+  step: propStep = 1,
+  max: propMax = 100,
+  min: propMin = 0,
+  value: propValue = 50,
+  id: propId = "field-id",
+  name: propName = "Field Name",
+  labelVariant: propLabelVariant = "visible",
+  classes: propClasses = "",
+  visibility: propVisibility = true
+} = Astro.props;
+const propOutputUnit = "%";
+const propLabel = "Label";
+if (!["visible", "hidden", "bold"].includes(propLabelVariant)) throw new Error("FormRange.labelVariant must be one of: visible, hidden, bold");
+
+
+---
+{propVisibility && (<div data-number={formatNumber(propValue, -1)} data-wf-id="4609fdda-3f8a-fc38-e928-f7583be7ab2c" data-w-id="4609fdda-3f8a-fc38-e928-f7583be7ab2c" class="form_range_wrap">
+<div data-wf-id="f3a27e34-bbcf-3d85-3ec8-5636e2197808" data-w-id="f3a27e34-bbcf-3d85-3ec8-5636e2197808" class="w-embed u-embed-css">
+<style is:inline>
+.form_range_wrap {
+	--progress: 0.5;
+  --thumb-size: 2rem;
+  --thumb-radius: 100vw;
+  --thumb-color: transparent;
+}
+input[type="range"] {
+	appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+	cursor: grab;
+  appearance: none;
+  width: var(--thumb-size);
+  aspect-ratio: 1 / 1;
+  border-radius: var(--thumb-radius);
+  background: var(--thumb-color);
+}
+input[type="range"]::-moz-range-thumb {
+	cursor: grab;
+  appearance: none;
+  width: var(--thumb-size);
+  aspect-ratio: 1 / 1;
+  border-radius: var(--thumb-radius);
+  background: var(--thumb-color);
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+input[type="range"]::-moz-range-thumb:active {
+  cursor: grabbing;
+}
+</style>
+
+<noscript><style is:inline>
+.form_range_wrap { --thumb-color: currentColor; }
+.form_range_fill, .form_range_thumb_wrap { display: none; }
+</style></noscript>
+</div>
+<label data-wf-id="630f136d-7b97-dbbb-ca3c-5b6200e60d79" data-w-id="630f136d-7b97-dbbb-ca3c-5b6200e60d79" class="form_label_wrap">
+<FormLabelText variant={propLabelVariant}>
+<slot name="label">{propLabel}</slot>
+</FormLabelText>
+<span data-wf-id="1b89ceef-8d31-cf36-3f9f-6905e9963958" data-w-id="1b89ceef-8d31-cf36-3f9f-6905e9963958" class="form_range_element">
+<input {...safeAttributes(customAttributes([...([({"name": "name", "value": propName}), {"name": "type", "value": "range"}, ({"name": "required", "value": Boolean(propRequired)}), ({"name": "value", "value": formatNumber(propValue, -1)}), ({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses}), ({"name": "min", "value": formatNumber(propMin, -1)}), ({"name": "max", "value": formatNumber(propMax, -1)}), ({"name": "step", "value": formatNumber(propStep, -1)}), ({"name": "id", "value": propId})] || [])]), ["data-wf-id", "data-w-id", "class"])} data-wf-id="4609fdda-3f8a-fc38-e928-f7583be7ab2e" data-w-id="4609fdda-3f8a-fc38-e928-f7583be7ab2e" class:list={["form_range_input", customAttributes([...([({"name": "name", "value": propName}), {"name": "type", "value": "range"}, ({"name": "required", "value": Boolean(propRequired)}), ({"name": "value", "value": formatNumber(propValue, -1)}), ({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses}), ({"name": "min", "value": formatNumber(propMin, -1)}), ({"name": "max", "value": formatNumber(propMax, -1)}), ({"name": "step", "value": formatNumber(propStep, -1)}), ({"name": "id", "value": propId})] || [])]).class]} />
+<span data-wf-id="e81a3043-66d3-ddaf-44d4-a7173e0f6a3d" data-w-id="e81a3043-66d3-ddaf-44d4-a7173e0f6a3d" class="form_range_fill"></span>
+<span data-wf-id="85821d13-1286-9691-228e-d17191cbc378" data-w-id="85821d13-1286-9691-228e-d17191cbc378" class="form_range_thumb_wrap">
+<span data-wf-id="6faba3a2-705d-6192-8af6-a8306db93606" data-w-id="6faba3a2-705d-6192-8af6-a8306db93606" class="form_range_thumb_element"></span>
+</span>
+</span>
+</label>
+<span data-wf-id="dd06d8b5-84fb-ca2f-1789-1571c0dc1e38" data-w-id="dd06d8b5-84fb-ca2f-1789-1571c0dc1e38" class="form_range_output_wrap">
+<ouput for={propId} data-wf-id="d27b6676-282c-45c4-62de-e7f0dce950f1" data-w-id="d27b6676-282c-45c4-62de-e7f0dce950f1" class="form_range_output_element">
+<span data-wf-id="408b67c1-4926-0143-55b0-6c7208df6a3a" data-w-id="408b67c1-4926-0143-55b0-6c7208df6a3a" class="form_range_output_value">
+{text(formatNumber(propValue, -1))}
+</span>
+<span data-wf-id="4dda6a0d-1a35-e1c9-e775-ff44cce69b86" data-w-id="4dda6a0d-1a35-e1c9-e775-ff44cce69b86">
+<slot name="outputunit">{propOutputUnit}</slot>
+</span>
+</ouput>
+</span>
+<div data-wf-id="272499f1-420f-9e08-88fa-e01900c6d0e2" data-w-id="272499f1-420f-9e08-88fa-e01900c6d0e2" class="w-embed u-embed-js">
+<script is:inline>
+(function onReady(callback, options) {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", callback, options);
+  } else if (!options?.signal?.aborted) {
+    const event = new Event("DOMContentLoaded");
+    if (typeof callback === "function") callback.call(document, event);
+    else callback?.handleEvent(event);
+  }
+})( () => {
+  document.querySelectorAll(".form_range_wrap").forEach((component) => {
+    if (component.dataset.scriptInitialized) return;
+    component.dataset.scriptInitialized = "true";
+
+    const input = component.querySelector("input[type='range']");
+    const output = component.querySelector(".form_range_output_value");
+    
+    const update = () => {
+      const min = input.min ? +input.min : 0;
+      const max = input.max ? +input.max : 100;
+      const val = +input.value || min;
+      const progress = (val - min) / (max - min);
+      component.style.setProperty("--progress", progress);
+			if (output) output.textContent = val;
+    };
+
+    input.addEventListener("input", update);
+    update();
+  });
+});
+</script>
+</div>
+</div>)}

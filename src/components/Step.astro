@@ -1,0 +1,25 @@
+---
+
+
+interface Props {
+
+}
+const collectionData = {};
+const {
+
+} = Astro.props;
+const propText = "Rozmowa z opiekunem";
+const propNumber = "01";
+
+
+---
+<div data-wf-id="8044c31d-f704-3808-2f83-8baf42ff5d24" data-w-id="8044c31d-f704-3808-2f83-8baf42ff5d24" class="step_wrapper u-flex-horizontal-nowrap u-gap-2">
+<div data-wf-id="8044c31d-f704-3808-2f83-8baf42ff5d25" data-w-id="8044c31d-f704-3808-2f83-8baf42ff5d25" class="step_number_wrapper">
+<div data-wf-id="8044c31d-f704-3808-2f83-8baf42ff5d26" data-w-id="8044c31d-f704-3808-2f83-8baf42ff5d26" class="step_number u-text-style-h5">
+<slot name="number">{propNumber}</slot>
+</div>
+</div>
+<div data-wf-id="8044c31d-f704-3808-2f83-8baf42ff5d28" data-w-id="8044c31d-f704-3808-2f83-8baf42ff5d28" class="step_text u-text-style-h5">
+<slot name="text">{propText}</slot>
+</div>
+</div>

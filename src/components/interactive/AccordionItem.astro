@@ -1,0 +1,49 @@
+---
+import { safeTag } from '@/lib/attributes';
+import IconArrow from '@/components/svg/IconArrow.astro';
+
+interface Props {
+  /** Classes */
+  classes?: string;
+  contentTag?: string;
+  /** Heading Tag */
+  headingTag?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  classes: propClasses = "",
+  contentTag: propContentTag = "p",
+  headingTag: propHeadingTag = "h3",
+  visibility: propVisibility = true
+} = Astro.props;
+const propContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+const propHeadingText = "This is some text inside of a div block.";
+
+const Tag = safeTag(propHeadingTag, "div");
+const Tag2 = safeTag(propContentTag, "p");
+---
+{propVisibility && (<div role="listitem" class:list={["accordion_item", propClasses]} data-state="" data-wf-id="7125454f-d020-9f09-d88b-18afae6035c6" data-w-id="7125454f-d020-9f09-d88b-18afae6035c6">
+<div data-wf-id="7125454f-d020-9f09-d88b-18afae6035c7" data-w-id="7125454f-d020-9f09-d88b-18afae6035c7" class="accordion_component">
+<Tag data-wf-id="7125454f-d020-9f09-d88b-18afae6035c8" data-w-id="7125454f-d020-9f09-d88b-18afae6035c8" class="accordion_toggle_heading">
+<button aria-expanded="false" data-wf-id="7125454f-d020-9f09-d88b-18afae6035c9" data-w-id="7125454f-d020-9f09-d88b-18afae6035c9" class="accordion_toggle_button">
+<span data-wf-id="7125454f-d020-9f09-d88b-18afae6035ca" data-w-id="7125454f-d020-9f09-d88b-18afae6035ca" class="accordion_toggle_text u-text-style-h5">
+<slot name="headingtext">{propHeadingText}</slot>
+</span>
+<span data-wf-id="7125454f-d020-9f09-d88b-18afae6035cc" data-w-id="7125454f-d020-9f09-d88b-18afae6035cc" class="accordion_toggle_icon">
+<IconArrow direction="bottom" />
+</span>
+</button>
+</Tag>
+<div data-wf-id="7125454f-d020-9f09-d88b-18afae6035cf" data-w-id="7125454f-d020-9f09-d88b-18afae6035cf" class="accordion_content_wrap">
+<div data-wf-id="7125454f-d020-9f09-d88b-18afae6035d0" data-w-id="7125454f-d020-9f09-d88b-18afae6035d0" class="accordion_content_padding">
+<div data-wf-id="7125454f-d020-9f09-d88b-18afae6035d1" data-w-id="7125454f-d020-9f09-d88b-18afae6035d1" class="w-richtext accordion_content_text u-rich-text">
+<Tag2 data-wf-id="7125454f-d020-9f09-d88b-18afae6035d2" data-w-id="7125454f-d020-9f09-d88b-18afae6035d2">
+<slot name="content">{propContent}</slot>
+</Tag2>
+</div>
+</div>
+</div>
+</div>
+</div>)}

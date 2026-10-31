@@ -1,0 +1,69 @@
+---
+import TypographyHeading from '@/components/typography/TypographyHeading.astro';
+import Grid from '@/components/wrapper/Grid.astro';
+import CardPrimary2 from '@/components/card/CardPrimary2.astro';
+import Spacer from '@/components/utility/Spacer.astro';
+
+interface Props {
+
+}
+const collectionData = {};
+const {
+
+} = Astro.props;
+
+
+
+---
+<div data-wf-id="974de94d-4614-d7e8-d4fe-6ba251818589" data-w-id="974de94d-4614-d7e8-d4fe-6ba251818589" class="fsdafasf">
+<TypographyHeading textTag="h2" variant="h4">
+Dane kontaktowe
+</TypographyHeading>
+<Grid>
+<CardPrimary2 linkLinkVisibility={false}>
+<Fragment slot="name">7:00 - 18:00</Fragment>
+<Fragment slot="namelabel">Godziny otwarcia</Fragment>
+</CardPrimary2>
+<CardPrimary2 linkLinkUrlTarget="_blank" linkLinkUrl="https://maps.app.goo.gl/jAYCX6Y321CAnqmV8" linkLinkVisibility={true} nameVisibility={false} visibility={true}>
+<Fragment slot="name">ul. Światowida 47</Fragment>
+<br slot="name" data-wf-id="9f65306b-cc95-425c-61a7-fb1b854bbd29" data-w-id="9f65306b-cc95-425c-61a7-fb1b854bbd29" />
+<Fragment slot="name">03-144 Warszawa</Fragment>
+<Fragment slot="namelabel">Adres</Fragment>
+</CardPrimary2>
+<CardPrimary2 linkLinkUrl="#" nameVisibility={false}>
+<Fragment slot="name">+48 733 700 612</Fragment>
+<Fragment slot="namelabel">Numer</Fragment>
+</CardPrimary2>
+<CardPrimary2 linkLinkUrl="mailto:info@klub-misia-bo.pl?subject=Zapytanie%20strona" nameVisibility={false}>
+<Fragment slot="name">info@klub-misia-bo.pl</Fragment>
+<Fragment slot="namelabel">Email</Fragment>
+</CardPrimary2>
+</Grid>
+<Spacer />
+<TypographyHeading textTag="h2" variant="h4">
+Mapa dojazdu
+</TypographyHeading>
+<div data-wf-id="974de94d-4614-d7e8-d4fe-6ba25181858c" data-w-id="974de94d-4614-d7e8-d4fe-6ba25181858c" class="w-embed google-map u-radius-small u-background-skeleton">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2438.8732580115748!2d20.951126!3d52.3183023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ec9bcf92c158d%3A0x4e456ad18c0790fa!2sKlub%20Misia%20Bo%20Przedszkole%20Publiczne!5e0!3m2!1spl!2spl!4v1766428897567!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+<style is:inline>
+.google-map {
+overflow: hidden;
+padding-bottom: 60%;
+position: relative;
+height: 0;
+}
+
+.google-map iframe {
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+position: absolute;
+}
+
+</style>
+</div>
+</div>

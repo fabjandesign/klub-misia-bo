@@ -1,0 +1,60 @@
+---
+
+
+interface Props {
+  /** Link/Link Url */
+  linkLinkUrl?: string;
+  linkLinkUrlTarget?: string;
+  /** Link/Link Visibility */
+  linkLinkVisibility?: boolean;
+  /** Name Visibility */
+  nameVisibility?: boolean;
+  /** Variant */
+  variant?: "default" | "cover" | "stacked";
+  /** Style */
+  style?: string;
+  /** Content Classes */
+  contentClasses?: string;
+  /** Classes */
+  classes?: string;
+  /** Role */
+  role?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  linkLinkUrl: propLinkLinkUrl = "#",
+  linkLinkUrlTarget: propLinkLinkUrlTarget = "",
+  linkLinkVisibility: propLinkLinkVisibility = true,
+  nameVisibility: propNameVisibility = true,
+  variant: propVariant = "default",
+  style: propStyle = "",
+  contentClasses: propContentClasses = " ",
+  classes: propClasses = "",
+  role: propRole = "none",
+  visibility: propVisibility = true
+} = Astro.props;
+const propName = "Heading";
+const propNameLabel = "Name";
+if (!["default", "cover", "stacked"].includes(propVariant)) throw new Error("CardPrimary2.variant must be one of: default, cover, stacked");
+
+
+---
+{propVisibility && (<div class:list={[{"cover": "w-variant-5bdd9ffc-003c-fdc1-7b4e-798344f9bd05", "stacked": "w-variant-5bdd9ffc-003c-fdc1-7b4e-798344f9bd06"}[propVariant], "card_primary_wrap-copy", propClasses]} style={propStyle} role={propRole} data-wf-id="5bdd9ffc-003c-fdc1-7b4e-798344f9bcfa" data-w-id="5bdd9ffc-003c-fdc1-7b4e-798344f9bcfa" data-wf--card-primary-2--variant={{"default": "default", "cover": "cover", "stacked": "stacked"}[propVariant]} data-wf-variant={["5bdd9ffc-003c-fdc1-7b4e-798344f9bd04=" + ({"default": "base", "cover": "5bdd9ffc-003c-fdc1-7b4e-798344f9bd05", "stacked": "5bdd9ffc-003c-fdc1-7b4e-798344f9bd06"}[propVariant])].join(" ")}>
+<div data-trigger1="hover-if-clickable focus" data-wf-id="5bdd9ffc-003c-fdc1-7b4e-798344f9bcfb" data-w-id="5bdd9ffc-003c-fdc1-7b4e-798344f9bcfb" class="card_primary_group">
+<div class:list={["card_primary_element-copy", propContentClasses]} data-wf-id="5bdd9ffc-003c-fdc1-7b4e-798344f9bcfc" data-w-id="5bdd9ffc-003c-fdc1-7b4e-798344f9bcfc">
+<div data-wf-id="1f43e4a5-3e97-b576-ffc9-a5be90e63e94" data-w-id="1f43e4a5-3e97-b576-ffc9-a5be90e63e94" class="contact_card_name u-text-style-large u-margin-bottom-8 u-color-faded">
+<slot name="namelabel">{propNameLabel}</slot>
+</div>
+{propNameVisibility && (<div data-wf-id="6a7be4f0-30aa-1a33-fa39-e843166ecc00" data-w-id="6a7be4f0-30aa-1a33-fa39-e843166ecc00" class="contact_card_heading u-text-style-h4">
+<slot name="name">{propName}</slot>
+</div>)}
+{propLinkLinkVisibility && (<a data-wf-id="8378a267-8cb3-90fa-c54a-d1cfb5eeed19" data-w-id="8378a267-8cb3-90fa-c54a-d1cfb5eeed19" href={propLinkLinkUrl} target={propLinkLinkUrlTarget || (undefined)}>
+<div data-wf-id="1c84f3c7-7887-6646-c7f1-c536c18fcb61" data-w-id="1c84f3c7-7887-6646-c7f1-c536c18fcb61" class="contact_card_heading u-text-style-h4">
+<slot name="name">{propName}</slot>
+</div>
+</a>)}
+</div>
+</div>
+</div>)}

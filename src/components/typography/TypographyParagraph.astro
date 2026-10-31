@@ -1,0 +1,37 @@
+---
+import { formatNumber } from '@/lib/format';
+import { safeTag } from '@/lib/attributes';
+
+
+interface Props {
+  /** ID */
+  id?: string;
+  /** Classes */
+  classes?: string;
+  /** Max Width */
+  maxWidth?: number;
+  textTag?: string;
+  /** Variant */
+  variant?: "inherit" | "text-small" | "text-main" | "text-large" | "h6" | "h5" | "h4" | "h3" | "h2" | "h1" | "display";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  id: propId = "",
+  classes: propClasses = " ",
+  maxWidth: propMaxWidth = 60,
+  textTag: propTextTag = "p",
+  variant: propVariant = "inherit",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+if (!["inherit", "text-small", "text-main", "text-large", "h6", "h5", "h4", "h3", "h2", "h1", "display"].includes(propVariant)) throw new Error("TypographyParagraph.variant must be one of: inherit, text-small, text-main, text-large, h6, h5, h4, h3, h2, h1, display");
+
+const Tag = safeTag(propTextTag, "p");
+---
+{propVisibility && (<div id={(propId) || undefined} class:list={["w-richtext", {"text-small": "w-variant-4099173f-f581-635c-a5fe-cf4a89c62029", "text-main": "w-variant-61d538b2-709c-eb7a-4258-8c0890dc07fc", "text-large": "w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689", "h6": "w-variant-b8555f10-fa7d-e9ba-e262-f9aa44c27c1c", "h5": "w-variant-5c484503-e2a0-ac99-680d-56013d859efa", "h4": "w-variant-93e8af18-8413-e3ac-0442-72629401a3db", "h3": "w-variant-ad482112-9d0e-852c-0f6e-ba1e5a3aee59", "h2": "w-variant-efb733fe-da83-69a3-ea4a-b3f2f89d0389", "h1": "w-variant-3ddfa43e-abc1-422e-6e6d-23dfb7da71f3", "display": "w-variant-eee56f15-d7ce-d101-2f8c-83b3bbd55d4a"}[propVariant], "u-text", "u-rich-text", propClasses]} data-number={formatNumber(propMaxWidth, -1)} data-wf-id="99ca2e6d-2b82-bb82-6df8-bd4932d075bd" data-w-id="99ca2e6d-2b82-bb82-6df8-bd4932d075bd" data-wf--typography-paragraph--variant={{"inherit": "inherit", "text-small": "text-small", "text-main": "text-main", "text-large": "text-large", "h6": "h6", "h5": "h5", "h4": "h4", "h3": "h3", "h2": "h2", "h1": "h1", "display": "display"}[propVariant]} data-wf-variant={["4e33e904-7e2a-6463-0eef-5719f108b265=" + ({"inherit": "base", "text-small": "4099173f-f581-635c-a5fe-cf4a89c62029", "text-main": "61d538b2-709c-eb7a-4258-8c0890dc07fc", "text-large": "fdb8e663-01e0-aae6-13eb-e6dfca16b689", "h6": "b8555f10-fa7d-e9ba-e262-f9aa44c27c1c", "h5": "5c484503-e2a0-ac99-680d-56013d859efa", "h4": "93e8af18-8413-e3ac-0442-72629401a3db", "h3": "ad482112-9d0e-852c-0f6e-ba1e5a3aee59", "h2": "efb733fe-da83-69a3-ea4a-b3f2f89d0389", "h1": "3ddfa43e-abc1-422e-6e6d-23dfb7da71f3", "display": "eee56f15-d7ce-d101-2f8c-83b3bbd55d4a"}[propVariant])].join(" ")}>
+{Astro.slots.has("text-blocks") ? (<slot name="text-blocks" />) : (<Tag data-wf-id="99ca2e6d-2b82-bb82-6df8-bd4932d075be" data-w-id="99ca2e6d-2b82-bb82-6df8-bd4932d075be">
+<slot>{propText}</slot>
+</Tag>)}
+</div>)}

@@ -1,0 +1,37 @@
+---
+
+
+interface Props {
+  /** Title */
+  title?: string;
+  /** URL */
+  url?: string;
+  /** Style */
+  style?: string;
+  /** Classes */
+  classes?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  title: propTitle = "YouTube video player",
+  url: propUrl = "https://www.youtube.com/embed/GPRcAZLuT3U",
+  style: propStyle = "",
+  classes: propClasses = "",
+  visibility: propVisibility = true
+} = Astro.props;
+
+
+
+---
+{propVisibility && (<div class:list={["u-iframe-wrapper", propClasses]} style={propStyle} data-wf-id="83e1c15c-c790-5f9b-37bf-063230b20546" data-w-id="83e1c15c-c790-5f9b-37bf-063230b20546">
+<div data-wf-id="7f881e95-6afd-263a-9f52-d01c04302537" data-w-id="7f881e95-6afd-263a-9f52-d01c04302537" class="w-embed u-embed-css">
+<style is:inline>
+html.site-scrollbar .c-iframe {
+	pointer-events: none;
+}
+</style>
+</div>
+<iframe src={propUrl} title={propTitle} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=" " frameborder="0" data-wf-id="83e1c15c-c790-5f9b-37bf-063230b20547" data-w-id="83e1c15c-c790-5f9b-37bf-063230b20547" class="u-iframe"></iframe>
+</div>)}

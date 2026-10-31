@@ -1,0 +1,51 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+import IconX from '@/components/svg/IconX.astro';
+import Clickable from '@/components/utility/Clickable.astro';
+
+interface Props {
+  /** Attribute 2 Value */
+  attribute2Value?: string;
+  /** Attribute 2 Name */
+  attribute2Name?: string;
+  /** Attribute 1 Value */
+  attribute1Value?: string;
+  /** Attribute 1 Name */
+  attribute1Name?: string;
+  /** Classes */
+  classes?: string;
+  /** Link */
+  link?: string;
+  linkTarget?: string;
+  /** Variant */
+  variant?: "primary-medium" | "secondary-medium" | "primary-large" | "secondary-large";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attribute2Value: propAttribute2Value = "",
+  attribute2Name: propAttribute2Name = "",
+  attribute1Value: propAttribute1Value = "",
+  attribute1Name: propAttribute1Name = "",
+  classes: propClasses = "",
+  link: propLink = "#",
+  linkTarget: propLinkTarget = "",
+  variant: propVariant = "primary-medium",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Close";
+if (!["primary-medium", "secondary-medium", "primary-large", "secondary-large"].includes(propVariant)) throw new Error("ButtonClose.variant must be one of: primary-medium, secondary-medium, primary-large, secondary-large");
+
+
+---
+{propVisibility && (<div {...safeAttributes(customAttributes([...([({"name": propAttribute1Name, "value": propAttribute1Value}), ({"name": "class", "value": propClasses}), ({"name": propAttribute2Name, "value": propAttribute2Value}), {"name": "data-button", "value": " "}, {"name": "data-trigger", "value": "hover focus"}] || [])]), ["data-wf-id", "data-w-id", "data-wf--button-close--variant", "class"])} data-wf-id="c144d67f-2c62-4dbf-0fd8-0b6056b717e6" data-w-id="c144d67f-2c62-4dbf-0fd8-0b6056b717e6" data-wf--button-close--variant={{"primary-medium": "primary-medium", "secondary-medium": "secondary-medium", "primary-large": "primary-large", "secondary-large": "secondary-large"}[propVariant]} class:list={[{"secondary-medium": "w-variant-c144d67f-2c62-4dbf-0fd8-0b6056b717ec", "primary-large": "w-variant-7198e0ca-f9f4-9662-3fe9-d7114404c9cb", "secondary-large": "w-variant-c6d40e5e-3298-1af4-067d-37896ebd2a45"}[propVariant], "button_close_wrap", customAttributes([...([({"name": propAttribute1Name, "value": propAttribute1Value}), ({"name": "class", "value": propClasses}), ({"name": propAttribute2Name, "value": propAttribute2Value}), {"name": "data-button", "value": " "}, {"name": "data-trigger", "value": "hover focus"}] || [])]).class]} data-wf-variant={["c144d67f-2c62-4dbf-0fd8-0b6056b717eb=" + ({"primary-medium": "base", "secondary-medium": "c144d67f-2c62-4dbf-0fd8-0b6056b717ec", "primary-large": "7198e0ca-f9f4-9662-3fe9-d7114404c9cb", "secondary-large": "c6d40e5e-3298-1af4-067d-37896ebd2a45"}[propVariant])].join(" ")}>
+<div data-wf-id="c54b0cf6-b429-59b3-b836-ab1b61a8dba8" data-w-id="c54b0cf6-b429-59b3-b836-ab1b61a8dba8" class="button_close_element">
+<div aria-hidden="true" data-wf-id="c144d67f-2c62-4dbf-0fd8-0b6056b717e7" data-w-id="c144d67f-2c62-4dbf-0fd8-0b6056b717e7" class="button_close_icon">
+<IconX />
+</div>
+</div>
+<Clickable linkTarget={propLinkTarget} link={propLink}>
+<slot>{propText}</slot>
+</Clickable>
+</div>)}

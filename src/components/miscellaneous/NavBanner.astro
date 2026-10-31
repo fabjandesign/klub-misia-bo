@@ -1,0 +1,42 @@
+---
+
+
+interface Props {
+  /** Link */
+  link?: string;
+  linkTarget?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  link: propLink = "#",
+  linkTarget: propLinkTarget = "",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Important Update Banner";
+
+
+---
+{propVisibility && (<div role="region" aria-label="Announcement" data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca88" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca88" class="nav_banner_wrap">
+<div data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca8a" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca8a" class="nav_banner_contain">
+<a data-state="external" data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca8b" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca8b" class="nav_banner_link" href={propLink} target={propLinkTarget || (undefined)}>
+<div data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca8c" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca8c" class="nav_banner_text u-line-clamp-1">
+<slot>{propText}</slot>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 27 24" fill="none" aria-hidden="true" data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca8e" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca8e" class="nav_banner_svg">
+<path d="M0 12L24 12" stroke="currentColor" stroke-width="var(--nav--icon-thickness)" vector-effect="non-scaling-stroke" data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca8f" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca8f"></path>
+<path d="M14 1.5L24.5 12L14 22.5" stroke="currentColor" stroke-width="var(--nav--icon-thickness)" vector-effect="non-scaling-stroke" data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca90" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca90"></path>
+</svg>
+</a>
+<button role="button" data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca91" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca91" class="nav_banner_close_wrap">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 19" fill="none" aria-hidden="true" data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca92" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca92" class="nav_banner_close_svg">
+<path d="M1.51471 1.01465L18.4853 17.9852" stroke="currentColor" stroke-width="var(--nav--icon-thickness)" vector-effect="non-scaling-stroke" data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca93" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca93"></path>
+<path d="M1.51471 17.9851L18.4853 1.01454" stroke="currentColor" stroke-width="var(--nav--icon-thickness)" vector-effect="non-scaling-stroke" data-wf-id="2f85113a-1fe0-0576-7e21-f2db3933ca94" data-w-id="2f85113a-1fe0-0576-7e21-f2db3933ca94"></path>
+</svg>
+<span data-wf-id="ae080067-01cf-f012-8524-580a502ac8cc" data-w-id="ae080067-01cf-f012-8524-580a502ac8cc" class="nav_screen-reader-text">
+Close Announcement Banner
+</span>
+</button>
+</div>
+</div>)}

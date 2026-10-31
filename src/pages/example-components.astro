@@ -1,0 +1,404 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import GlobalStyles from '@/components/global/GlobalStyles.astro';
+import GlobalGuides from '@/components/global/GlobalGuides.astro';
+import Nav from '@/components/global/Nav.astro';
+import Modal from '@/components/interactive/Modal.astro';
+import Layout2 from '@/components/wrapper/Layout2.astro';
+import TypographyHeading from '@/components/typography/TypographyHeading.astro';
+import TypographyParagraph from '@/components/typography/TypographyParagraph.astro';
+import ButtonWrapper from '@/components/wrapper/ButtonWrapper.astro';
+import ButtonMain from '@/components/button/ButtonMain.astro';
+import Section from '@/components/wrapper/Section.astro';
+import IconArrow from '@/components/svg/IconArrow.astro';
+import ButtonClose from '@/components/button/ButtonClose.astro';
+import Tab from '@/components/interactive/Tab.astro';
+import VisualImage from '@/components/visual/VisualImage.astro';
+import TypographyEyebrow from '@/components/typography/TypographyEyebrow.astro';
+import TabLink from '@/components/interactive/TabLink.astro';
+import Slider from '@/components/interactive/Slider.astro';
+import CardPrimary from '@/components/card/CardPrimary.astro';
+import ButtonArrow from '@/components/button/ButtonArrow.astro';
+import ContactForm from '@/components/form/ContactForm.astro';
+import AccordionList from '@/components/interactive/AccordionList.astro';
+import AccordionItem from '@/components/interactive/AccordionItem.astro';
+import MediaOverlay from '@/components/visual/MediaOverlay.astro';
+import Grid from '@/components/wrapper/Grid.astro';
+import Footer from '@/components/global/Footer.astro';
+
+const data = {};
+const collectionData = {};
+
+
+---
+<Layout webflowPageId="6946d7950be584e943c44607" pageTitle="Example Components" pageDescription="" data-wf-id="6448265f4be072cd17164103" data-w-id="6448265f4be072cd17164103" class="u-theme-dark">
+<div data-wf-id="4be9a37b-c87f-90d1-0eb1-5bdc213da5fb" data-w-id="4be9a37b-c87f-90d1-0eb1-5bdc213da5fb" class="page_wrap">
+<GlobalStyles />
+<GlobalGuides />
+<Nav navPosition="overlap" />
+<main data-wf-id="2ecbe97e-90e8-e145-dd2a-ba9fb779ea08" data-w-id="2ecbe97e-90e8-e145-dd2a-ba9fb779ea08" class="page_main">
+<Modal>
+<Layout2 variant="stack-centered">
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+</ButtonWrapper>
+</Layout2>
+</Modal>
+<Section paddingTop="page-top">
+<Layout2 variant="stack-centered">
+<TypographyHeading />
+<TypographyParagraph textTag="p">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+<a href="#modal-1" data-wf-id="5db0c726-44c7-57ce-aaf7-5d222be87561" data-w-id="5db0c726-44c7-57ce-aaf7-5d222be87561">
+commodo
+</a>
+ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</TypographyParagraph>
+<ButtonWrapper>
+<ButtonMain attributeValue="modal-1" attributeName="data-modal-trigger">
+<IconArrow />
+<Fragment slot="text">Open Modal</Fragment>
+</ButtonMain>
+<ButtonClose />
+</ButtonWrapper>
+</Layout2>
+</Section>
+<Section>
+<Tab autoplayDuration="6" slideTabs="true" previewContent="true" controlsVisibility={true}>
+<Layout2 variant="columns">
+<VisualImage slot="column-2" />
+<TypographyEyebrow />
+<TypographyHeading textTag="h2">
+Tab Content 1
+</TypographyHeading>
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="columns">
+<VisualImage slot="column-2" />
+<TypographyEyebrow />
+<TypographyHeading textTag="h2">
+Tab Content 2
+</TypographyHeading>
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="columns">
+<VisualImage slot="column-2" />
+<TypographyEyebrow />
+<TypographyHeading textTag="h2">
+Tab Content 3
+</TypographyHeading>
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<TabLink slot="tab-link">
+Tab Link 1
+</TabLink>
+<TabLink slot="tab-link">
+Tab Link 2
+</TabLink>
+<TabLink slot="tab-link">
+Tab Link 3
+</TabLink>
+</Tab>
+</Section>
+<Section>
+<Tab previewContent="true" controlsVisibility={false} variant="horizontal">
+<Layout2 variant="contain">
+<VisualImage slot="column-2" />
+<TypographyHeading textTag="h3" variant="h4">
+Strategy
+</TypographyHeading>
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="contain">
+<VisualImage slot="column-2" />
+<TypographyHeading textTag="h3" variant="h4">
+Design
+</TypographyHeading>
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="contain">
+<VisualImage slot="column-2" />
+<TypographyHeading textTag="h3" variant="h4">
+Development
+</TypographyHeading>
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<TabLink slot="tab-link" variant="button">
+Strategy
+</TabLink>
+<TabLink slot="tab-link" variant="button">
+Design
+</TabLink>
+<TabLink slot="tab-link" variant="button">
+Development
+</TabLink>
+<TypographyHeading slot="heading" textTag="h2">
+Services
+</TypographyHeading>
+<TypographyParagraph slot="heading" textTag="p">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit
+</TypographyParagraph>
+</Tab>
+</Section>
+<Section attributeValue="component" attributeName="data-slider">
+<Layout2 variant="columns">
+<Slider slot="column-2" classes="u-gap-gutter u-width-full" settingsControlsVisibility={false} slidesPerView="--lg: 2; --sm: 1.2;" variant="crop-left">
+<CardPrimary linkUrl="#" />
+<CardPrimary />
+<CardPrimary />
+<CardPrimary />
+<CardPrimary />
+<CardPrimary />
+<CardPrimary />
+</Slider>
+<TypographyEyebrow />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper visibility={true}>
+<ButtonArrow attributeValue="previous" attributeName="data-slider" arrowDirection="left" variant="secondary-medium">
+Previous
+</ButtonArrow>
+<ButtonArrow attributeValue="next" attributeName="data-slider" variant="secondary-medium" />
+</ButtonWrapper>
+</Layout2>
+</Section>
+<Section>
+<Layout2>
+<Slider slot="column-2" settingsControlsVisibility={true} variant="crop-left">
+<CardPrimary />
+<CardPrimary />
+<CardPrimary />
+<CardPrimary />
+<CardPrimary />
+<CardPrimary />
+<CardPrimary />
+</Slider>
+<TypographyEyebrow />
+<TypographyHeading />
+<TypographyParagraph />
+</Layout2>
+</Section>
+<Section>
+<Layout2 column1Classes="u-align-self-start" variant="stack">
+<ContactForm slot="column-2" />
+<TypographyHeading variant="h1" />
+<TypographyParagraph maxWidth={43} textTag="p">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+</TypographyParagraph>
+</Layout2>
+</Section>
+<Section variant="brand">
+<Layout2 variant="sticky-left">
+<AccordionList slot="column-2">
+<AccordionItem />
+<AccordionItem />
+<AccordionItem />
+<AccordionItem />
+<AccordionItem />
+<AccordionItem />
+</AccordionList>
+<TypographyHeading variant="h1" />
+<TypographyParagraph maxWidth={43} textTag="p">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+</TypographyParagraph>
+</Layout2>
+</Section>
+<Section containerClasses="u-max-width-none u-width-full" paddingTop="none" paddingBottom="none" />
+<Section idAttributeValue="" sectionClasses="u-min-height-screen" variant="dark">
+<VisualImage slot="background" />
+<MediaOverlay slot="background" />
+<Layout2 variant="stack-centered">
+<TypographyEyebrow />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+</Section>
+<Section idAttributeValue="" sectionClasses="u-min-height-screen u-justify-content-end" variant="dark">
+<VisualImage slot="background" />
+<MediaOverlay slot="background" />
+<Layout2 variant="stack">
+<TypographyEyebrow />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+</Section>
+<Section>
+<Layout2 column1Classes="u-align-self-start" classes="u-gap-row-5" variant="columns">
+<TypographyParagraph slot="column-2" />
+<ButtonWrapper slot="column-2">
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+<TypographyEyebrow />
+<TypographyHeading />
+</Layout2>
+<VisualImage />
+</Section>
+<Section>
+<Layout2>
+<Grid slot="column-2" role="list" smallScreen={1} mediumScreen={2} largeScreen={3} classes="u-gap-row-6">
+<CardPrimary role="listitem" variant="stacked" />
+<CardPrimary role="listitem" variant="stacked" />
+<CardPrimary role="listitem" variant="stacked" />
+<CardPrimary role="listitem" variant="stacked" />
+<CardPrimary role="listitem" variant="stacked" />
+</Grid>
+<TypographyEyebrow />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+</Section>
+<Section>
+<Layout2 variant="stack-centered">
+<Grid slot="column-2" largeScreen={3}>
+<CardPrimary contentClasses="u-margin-trim u-justify-content-end" classes="u-row-span-2" linkVisibility={true} />
+<CardPrimary contentClasses="u-margin-trim u-justify-content-end" />
+<CardPrimary contentClasses="u-margin-trim u-justify-content-end" classes="u-row-span-2" />
+<CardPrimary contentClasses="u-margin-trim u-justify-content-end" />
+</Grid>
+<TypographyEyebrow />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+</Section>
+<Section>
+<Layout2 variant="stack-centered">
+<Grid slot="column-2" smallScreen={1} mediumScreen={0} largeScreen={4}>
+<CardPrimary contentClasses="u-margin-trim u-justify-content-end" classes="u-column-span-2" variant="cover" />
+<CardPrimary contentClasses="u-margin-trim u-justify-content-end" />
+<CardPrimary contentClasses="u-margin-trim u-justify-content-end" classes="u-row-span-2" linkVisibility={true} variant="cover" />
+<CardPrimary contentClasses="u-margin-trim u-justify-content-end" />
+<CardPrimary contentClasses="u-margin-trim u-justify-content-end" classes="u-column-span-2" />
+</Grid>
+<TypographyEyebrow />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+</Section>
+<Section>
+<Layout2 variant="columns">
+<VisualImage slot="column-2" />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="columns-reversed">
+<VisualImage slot="column-2" />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="breakout">
+<VisualImage slot="column-2" />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="breakout-reversed">
+<VisualImage slot="column-2" />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="full">
+<VisualImage slot="column-2" />
+<TypographyEyebrow />
+<TypographyHeading maxWidth={16} />
+<TypographyParagraph />
+</Layout2>
+<Layout2 variant="full-reversed">
+<VisualImage slot="column-2" />
+<TypographyEyebrow />
+<TypographyHeading maxWidth={16} />
+<TypographyParagraph />
+</Layout2>
+<Layout2 variant="contain">
+<VisualImage slot="column-2" />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="contain-reversed">
+<VisualImage slot="column-2" />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+<Layout2 variant="card">
+<VisualImage slot="column-2" variant="wide-2-1" />
+<TypographyHeading />
+<TypographyParagraph />
+<ButtonWrapper>
+<ButtonMain />
+<ButtonMain variant="secondary" />
+</ButtonWrapper>
+</Layout2>
+</Section>
+</main>
+<Footer />
+</div>
+</Layout>

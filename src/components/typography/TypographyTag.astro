@@ -1,0 +1,21 @@
+---
+
+
+interface Props {
+  /** Classes */
+  classes?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  classes: propClasses = "",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "text-block";
+
+
+---
+{propVisibility && (<div class:list={["tag_wrap", propClasses]} data-wf-id="24cdd811-e229-c75c-a667-4d66445404ee" data-w-id="24cdd811-e229-c75c-a667-4d66445404ee">
+<slot>{propText}</slot>
+</div>)}

@@ -1,0 +1,37 @@
+---
+import { formatNumber } from '@/lib/format';
+import { safeTag } from '@/lib/attributes';
+
+
+interface Props {
+  /** ID */
+  id?: string;
+  /** Classes */
+  classes?: string;
+  /** Max Width */
+  maxWidth?: number;
+  textTag?: string;
+  /** Variant */
+  variant?: "inherit" | "text-small" | "text-main" | "text-large" | "h6" | "h5" | "h4" | "h3" | "h2" | "h1" | "display";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  id: propId = "",
+  classes: propClasses = " ",
+  maxWidth: propMaxWidth = 20,
+  textTag: propTextTag = "h2",
+  variant: propVariant = "h2",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Lorem ipsum dolor sit amet elit";
+if (!["inherit", "text-small", "text-main", "text-large", "h6", "h5", "h4", "h3", "h2", "h1", "display"].includes(propVariant)) throw new Error("TypographyHeading.variant must be one of: inherit, text-small, text-main, text-large, h6, h5, h4, h3, h2, h1, display");
+
+const Tag = safeTag(propTextTag, "h1");
+---
+{propVisibility && (<div id={(propId) || undefined} class:list={["w-richtext", {"text-small": "w-variant-3fbd0d32-5675-1947-73b3-abb16c1fb986", "text-main": "w-variant-9027c8ae-1ba5-f702-ea6e-4a1c3fca9f64", "text-large": "w-variant-74a3180a-e505-b452-032f-599c8e557249", "h6": "w-variant-823daff2-fd84-8da0-4ed1-92a39b869ad0", "h5": "w-variant-326a9562-3263-06da-e8ef-16981fd70f1c", "h4": "w-variant-7c7eb163-b37d-338d-2369-5eae7e6d458a", "h3": "w-variant-701c4b6c-37cf-de59-d80d-80a1822c4994", "h2": "w-variant-433d40c6-c261-f13f-c899-61d2cadf150f", "h1": "w-variant-792802b6-ccdb-f982-5023-5fa970cf03d0", "display": "w-variant-41c609dc-9c80-9eef-75df-03bf0eea00b4"}[propVariant], "u-text", propClasses]} data-number={formatNumber(propMaxWidth, -1)} data-wf-id="b9130e59-aa4e-07ef-a822-eda529bf75ca" data-w-id="b9130e59-aa4e-07ef-a822-eda529bf75ca" data-wf--typography-heading--variant={{"inherit": "inherit", "text-small": "text-small", "text-main": "text-main", "text-large": "text-large", "h6": "h6", "h5": "h5", "h4": "h4", "h3": "h3", "h2": "h2", "h1": "h1", "display": "display"}[propVariant]} data-wf-variant={["9b073cb9-c1b8-2c4e-1e1e-fa98533256a4=" + ({"inherit": "base", "text-small": "3fbd0d32-5675-1947-73b3-abb16c1fb986", "text-main": "9027c8ae-1ba5-f702-ea6e-4a1c3fca9f64", "text-large": "74a3180a-e505-b452-032f-599c8e557249", "h6": "823daff2-fd84-8da0-4ed1-92a39b869ad0", "h5": "326a9562-3263-06da-e8ef-16981fd70f1c", "h4": "7c7eb163-b37d-338d-2369-5eae7e6d458a", "h3": "701c4b6c-37cf-de59-d80d-80a1822c4994", "h2": "433d40c6-c261-f13f-c899-61d2cadf150f", "h1": "792802b6-ccdb-f982-5023-5fa970cf03d0", "display": "41c609dc-9c80-9eef-75df-03bf0eea00b4"}[propVariant])].join(" ")}>
+{Astro.slots.has("text-blocks") ? (<slot name="text-blocks" />) : (<Tag data-wf-id="b9130e59-aa4e-07ef-a822-eda529bf75cb" data-w-id="b9130e59-aa4e-07ef-a822-eda529bf75cb">
+<slot>{propText}</slot>
+</Tag>)}
+</div>)}

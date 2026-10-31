@@ -1,0 +1,23 @@
+---
+
+
+interface Props {
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  visibility: propVisibility = true
+} = Astro.props;
+const propTitle = "Heading Text";
+
+
+---
+{propVisibility && (<section data-trigger="group" data-wf-id="3763bb36-8635-2157-d0a6-9adad3740030" data-w-id="3763bb36-8635-2157-d0a6-9adad3740030" class="footer_group_wrap">
+<h3 data-wf-id="3763bb36-8635-2157-d0a6-9adad3740031" data-w-id="3763bb36-8635-2157-d0a6-9adad3740031" class="footer_group_title u-text-style-h5 u-margin-bottom-text">
+<slot name="title">{propTitle}</slot>
+</h3>
+<div role="list" data-wf-id="cf41b567-af07-9472-a734-9784a80ddda9" data-w-id="cf41b567-af07-9472-a734-9784a80ddda9" class="footer_group_list" name="">
+<slot />
+</div>
+</section>)}

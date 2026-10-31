@@ -1,0 +1,37 @@
+---
+import __lumosAsset50 from '@/assets/694c73b2c4b626475b7c67cb_Tygryski.png?url';
+import { imageUrl, imageAlt } from '@/lib/urls';
+import TypographyHeading from '@/components/typography/TypographyHeading.astro';
+
+interface Props {
+  typographyHeadingTextTag?: string;
+  /** Image */
+  image?: string | { url?: string; alt?: string; id?: string };
+}
+const collectionData = {};
+const {
+  typographyHeadingTextTag: propTypographyHeadingTextTag = "h2",
+  image: propImage = {"id": "694c73b2c4b626475b7c67cb"}
+} = Astro.props;
+const propWiek = "3 latki";
+const propTypographyHeadingText = "Lorem ipsum dolor sit amet elit";
+const propTitle = "Tygryski Ryki-Tiki";
+
+
+---
+<div data-wf-id="a0757839-5a6e-3ebd-6309-2f09842d375e" data-w-id="a0757839-5a6e-3ebd-6309-2f09842d375e" class="group_card">
+<div data-wf-id="a0757839-5a6e-3ebd-6309-2f09842d375f" data-w-id="a0757839-5a6e-3ebd-6309-2f09842d375f" class="img_wrapper">
+<img src={imageUrl(propImage) || (__lumosAsset50)} loading="lazy" alt={(imageAlt(propImage)) || ''} data-wf-id="a0757839-5a6e-3ebd-6309-2f09842d3760" data-w-id="a0757839-5a6e-3ebd-6309-2f09842d3760" class="group_img" />
+</div>
+<TypographyHeading textTag={propTypographyHeadingTextTag} classes="u-alignment-center" maxWidth={10} variant="h3">
+<slot name="typographyheadingtext">{propTypographyHeadingText}</slot>
+</TypographyHeading>
+{false && (<h3 data-wf-id="a0757839-5a6e-3ebd-6309-2f09842d3761" data-w-id="a0757839-5a6e-3ebd-6309-2f09842d3761" class="fafa u-text-style-h3 u-alignment-center">
+<slot name="title">{propTitle}</slot>
+</h3>)}
+<div data-wf-id="edf68b01-e953-7bd6-a2d2-6c1207845d14" data-w-id="edf68b01-e953-7bd6-a2d2-6c1207845d14" class="div-block-54">
+<div data-wf-id="630073fa-3964-084f-50a8-9808d6f4ff18" data-w-id="630073fa-3964-084f-50a8-9808d6f4ff18" class="adfdas u-text-style-large">
+<slot name="wiek">{propWiek}</slot>
+</div>
+</div>
+</div>

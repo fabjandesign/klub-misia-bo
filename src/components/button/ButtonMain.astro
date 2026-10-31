@@ -1,0 +1,57 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+import Clickable from '@/components/utility/Clickable.astro';
+
+interface Props {
+  /** Clickable Visibility */
+  clickableVisibility?: boolean;
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Classes */
+  classes?: string;
+  /** Target */
+  target?: string;
+  /** Type */
+  type?: string;
+  /** Link */
+  link?: string;
+  linkTarget?: string;
+  /** Variant */
+  variant?: "primary" | "secondary" | "link";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  clickableVisibility: propClickableVisibility = true,
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  classes: propClasses = "",
+  target: propTarget = "",
+  type: propType = "button",
+  link: propLink = "#",
+  linkTarget: propLinkTarget = "",
+  variant: propVariant = "primary",
+  visibility: propVisibility = true
+} = Astro.props;
+const propText = "Button Text";
+if (!["primary", "secondary", "link"].includes(propVariant)) throw new Error("ButtonMain.variant must be one of: primary, secondary, link");
+
+
+---
+{propVisibility && (<div {...safeAttributes(customAttributes([...([({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses}), {"name": "data-button", "value": " "}, {"name": "data-trigger", "value": "hover focus"}] || [])]), ["data-wf-id", "data-w-id", "data-wf--button-main--variant", "class"])} data-wf-id="824b76d0-0ddb-5ed5-8ae6-09771aaa568a" data-w-id="824b76d0-0ddb-5ed5-8ae6-09771aaa568a" data-wf--button-main--variant={{"primary": "primary", "secondary": "secondary", "link": "link"}[propVariant]} class:list={[{"secondary": "w-variant-e85564cd-af30-a478-692b-71732aefb3ab", "link": "w-variant-625d5df4-ad91-f7dc-9e2f-2e69f3fd7400"}[propVariant], "button_main_wrap", customAttributes([...([({"name": propAttributeName, "value": propAttributeValue}), ({"name": "class", "value": propClasses}), {"name": "data-button", "value": " "}, {"name": "data-trigger", "value": "hover focus"}] || [])]).class]} data-wf-variant={["59dad94d-02cf-903d-918f-aeb4aab17371=" + ({"primary": "base", "secondary": "e85564cd-af30-a478-692b-71732aefb3ab", "link": "625d5df4-ad91-f7dc-9e2f-2e69f3fd7400"}[propVariant])].join(" ")}>
+<Clickable target={propTarget} type={propType} linkTarget={propLinkTarget} link={propLink} visibility={propClickableVisibility}>
+<slot name="text">{propText}</slot>
+</Clickable>
+<div data-wf-id="6ccfb5d2-7c2b-eb3b-3030-39dff426a7ac" data-w-id="6ccfb5d2-7c2b-eb3b-3030-39dff426a7ac" class="button_main_element">
+<div aria-hidden="true" data-wf-id="824b76d0-0ddb-5ed5-8ae6-09771aaa568b" data-w-id="824b76d0-0ddb-5ed5-8ae6-09771aaa568b" class="button_main_text u-text-style-main">
+<slot name="text">{propText}</slot>
+</div>
+{Astro.slots.has('default') && (<div class="button_main_icon u-hide-if-empty" data-wf-id="73a8893b-84ac-2718-0ab9-1323ff138243" data-w-id="73a8893b-84ac-2718-0ab9-1323ff138243" name="">
+<slot />
+</div>)}
+<div data-wf-id="4201093a-f5bf-f3d7-f266-dbe5d83399f2" data-w-id="4201093a-f5bf-f3d7-f266-dbe5d83399f2" class="button_main_line"></div>
+</div>
+</div>)}

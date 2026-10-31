@@ -1,0 +1,125 @@
+---
+import ButtonClose from '@/components/button/ButtonClose.astro';
+
+interface Props {
+  /** Show In Designer */
+  showInDesigner?: string;
+  /** Modal ID */
+  modalId?: string;
+  /** Variant */
+  variant?: "small" | "side-panel" | "full-screen";
+  /** Classes */
+  classes?: string;
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  showInDesigner: propShowInDesigner = "false",
+  modalId: propModalId = "modal-1",
+  variant: propVariant = "small",
+  classes: propClasses = "",
+  visibility: propVisibility = true
+} = Astro.props;
+if (!["small", "side-panel", "full-screen"].includes(propVariant)) throw new Error("Modal.variant must be one of: small, side-panel, full-screen");
+
+
+---
+{propVisibility && (<dialog data-modal-target={propModalId} data-show-in-designer={propShowInDesigner} class:list={[{"side-panel": "w-variant-ce8c84b8-072d-28eb-fa41-e255213771e0", "full-screen": "w-variant-abed2e46-044e-db8d-e420-f41a8503c278"}[propVariant], "modal_dialog", propClasses]} data-wf-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a4" data-w-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a4" data-wf--modal--variant={{"small": "small", "side-panel": "side-panel", "full-screen": "full-screen"}[propVariant]} data-wf-variant={["4f2f48e2-bd75-4865-bc87-b0442584b287=" + ({"small": "base", "side-panel": "ce8c84b8-072d-28eb-fa41-e255213771e0", "full-screen": "abed2e46-044e-db8d-e420-f41a8503c278"}[propVariant])].join(" ")}>
+<div data-wf-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a5" data-w-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a5" class="w-embed u-embed-css">
+<style is:inline>
+.modal_dialog::backdrop { opacity: 0; }
+.wf-design-mode [data-show-in-designer="true"] {
+	display: block;
+}
+</style>
+</div>
+<div data-wf-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a6" data-w-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a6" class="modal_inner">
+<div data-modal-close="" data-wf-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a7" data-w-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a7" class="modal_backdrop"></div>
+<div data-wf-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a8" data-w-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a8" class="modal_content">
+<div data-modal-scroll="" data-lenis-prevent=" " data-wf-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a9" data-w-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977a9" class="modal_scroll">
+<div data-wf-id="5bfa2137-1493-ebec-dbb0-b6252aa79783" data-w-id="5bfa2137-1493-ebec-dbb0-b6252aa79783" class="modal_close">
+<ButtonClose attribute2Value=" " attribute2Name="autofocus" attribute1Value=" " attribute1Name="data-modal-close" />
+</div>
+<div data-wf-id="d3393e11-7951-9ce9-3ff4-221c9e01b564" data-w-id="d3393e11-7951-9ce9-3ff4-221c9e01b564" class="modal_slot" name="">
+<slot />
+</div>
+</div>
+</div>
+</div>
+<div data-wf-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977af" data-w-id="77d4fd3a-1a20-3e92-dec1-0c3f0f4977af" class="w-embed u-embed-js">
+<script is:inline>
+(function onReady(callback, options) {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", callback, options);
+  } else if (!options?.signal?.aborted) {
+    const event = new Event("DOMContentLoaded");
+    if (typeof callback === "function") callback.call(document, event);
+    else callback?.handleEvent(event);
+  }
+})( function () {
+	const modalSystem = ((window.lumos ??= {}).modal ??= {
+		list: {}, open(id) { this.list[id]?.open?.(); }, closeAll() { Object.values(this.list).forEach((m) => m.close?.()); },
+	});
+	function createModals() {
+		document.querySelectorAll(".modal_dialog").forEach(function (modal) {
+			if (modal.dataset.scriptInitialized) return;
+			modal.dataset.scriptInitialized = "true";
+
+			const modalId = modal.getAttribute("data-modal-target");
+			const variant = modal.getAttribute("data-wf--modal--variant");
+			let lastFocusedElement;
+
+			if (typeof gsap !== "undefined") {
+				gsap.context(() => {
+					let tl = gsap.timeline({ paused: true, onReverseComplete: resetModal });
+					if (variant === "side-panel") {
+						tl.fromTo(".modal_backdrop", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" });
+						tl.from(".modal_content", { xPercent: 100, duration: 0.3, ease: "power1.out" }, "<");
+					} else if (variant === "full-screen") {
+						tl.set(".modal_backdrop", { opacity: 0 });
+						tl.from(".modal_content", { opacity: 0, duration: 0.2, ease: "power1.out" });
+						tl.from(".modal_slot", { opacity: 0, y: "2rem", duration: 0.2, ease: "power1.out" }, "<0.1");
+					} else {
+						tl.fromTo(".modal_backdrop", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" });
+						tl.from(".modal_content", { opacity: 0, y: "6rem", duration: 0.3, ease: "power1.out" }, "<");
+					}
+					modal.tl = tl;
+				}, modal);
+			}
+
+			function resetModal() {
+				typeof lenis !== "undefined" && lenis.start ? lenis.start() : (document.body.style.overflow = "");
+				modal.close();
+				if (lastFocusedElement) lastFocusedElement.focus();
+				window.dispatchEvent(new CustomEvent("modal-close", { detail: { modal } }));
+			}
+			function openModal() {
+				typeof lenis !== "undefined" && lenis.stop ? lenis.stop() : (document.body.style.overflow = "hidden");
+				lastFocusedElement = document.activeElement;
+				modal.showModal();
+				if (typeof gsap !== "undefined") modal.tl.play();
+				modal.querySelectorAll("[data-modal-scroll]").forEach((el) => (el.scrollTop = 0));
+				window.dispatchEvent(new CustomEvent("modal-open", { detail: { modal } }));
+			}
+			function closeModal() {
+				typeof gsap !== "undefined" ? modal.tl.reverse() : resetModal();
+			}
+
+			if (new URLSearchParams(location.search).get("modal-id") === modalId) openModal(), history.replaceState({}, "", ((u) => (u.searchParams.delete("modal-id"), u))(new URL(location.href)));
+			modal.addEventListener("cancel", (e) => (e.preventDefault(), closeModal()));
+			modal.addEventListener("click", (e) => e.target.closest("[data-modal-close]") && closeModal());
+			document.addEventListener("click", (e) => {
+				const trigger = e.target.closest(`[data-modal-trigger='${modalId}'], a[href='#${modalId}']`);
+				if (!trigger) return;
+				if (trigger.tagName === "A") e.preventDefault();
+				openModal();
+			});
+			modalSystem.list[modalId] = { open: openModal, close: closeModal };
+		});
+	}
+	createModals();
+});
+</script>
+</div>
+</dialog>)}

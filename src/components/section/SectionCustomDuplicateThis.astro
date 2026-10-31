@@ -1,0 +1,120 @@
+---
+import Spacer from '@/components/utility/Spacer.astro';
+import ContentWrapper from '@/components/wrapper/ContentWrapper.astro';
+import TypographyEyebrow from '@/components/typography/TypographyEyebrow.astro';
+import TypographyHeading from '@/components/typography/TypographyHeading.astro';
+import TypographyParagraph from '@/components/typography/TypographyParagraph.astro';
+import ButtonWrapper from '@/components/wrapper/ButtonWrapper.astro';
+import ButtonMain from '@/components/button/ButtonMain.astro';
+import Block from '@/components/wrapper/Block.astro';
+import VisualImage from '@/components/visual/VisualImage.astro';
+import VisualVideo from '@/components/visual/VisualVideo.astro';
+
+interface Props {
+  /** Section/ID */
+  sectionId?: string;
+  /** Section/Padding Bottom */
+  sectionPaddingBottom?: "none" | "even" | "small" | "main" | "large" | "page-top";
+  /** Section/Padding Top */
+  sectionPaddingTop?: "none" | "even" | "small" | "main" | "large" | "page-top";
+  /** Video/Url */
+  videoUrl?: string;
+  /** Video/Visibility */
+  videoVisibility?: boolean;
+  /** Image/Loading */
+  imageLoading?: string;
+  /** Image/File */
+  imageFile?: string | { url?: string; alt?: string; id?: string };
+  /** Image/Visibility */
+  imageVisibility?: boolean;
+  /** Button 2/Link */
+  button2Link?: string;
+  button2LinkTarget?: string;
+  /** Button 2/Visibility */
+  button2Visibility?: boolean;
+  /** Button 1/Link */
+  button1Link?: string;
+  button1LinkTarget?: string;
+  /** Button 1/Visibility */
+  button1Visibility?: boolean;
+  /** Button Group/Visibility */
+  buttonGroupVisibility?: boolean;
+  paragraphTextTag?: string;
+  /** Paragraph/Visibility */
+  paragraphVisibility?: boolean;
+  headingTextTag?: string;
+  eyebrowTextTag?: string;
+  /** Eyebrow/Visibility */
+  eyebrowVisibility?: boolean;
+  /** Section/Theme */
+  sectionTheme?: "inherit" | "light" | "dark" | "brand";
+  /** Section/Visibility */
+  sectionVisibility?: boolean;
+}
+const collectionData = {};
+const {
+  sectionId: propSectionId = "",
+  sectionPaddingBottom: propSectionPaddingBottom = "main",
+  sectionPaddingTop: propSectionPaddingTop = "main",
+  videoUrl: propVideoUrl = "",
+  videoVisibility: propVideoVisibility = false,
+  imageLoading: propImageLoading = "lazy",
+  imageFile: propImageFile = {"id": "6946d7950be584e943c44639"},
+  imageVisibility: propImageVisibility = true,
+  button2Link: propButton2Link = "#",
+  button2LinkTarget: propButton2LinkTarget = "",
+  button2Visibility: propButton2Visibility = true,
+  button1Link: propButton1Link = "#",
+  button1LinkTarget: propButton1LinkTarget = "",
+  button1Visibility: propButton1Visibility = true,
+  buttonGroupVisibility: propButtonGroupVisibility = true,
+  paragraphTextTag: propParagraphTextTag = "p",
+  paragraphVisibility: propParagraphVisibility = true,
+  headingTextTag: propHeadingTextTag = "h2",
+  eyebrowTextTag: propEyebrowTextTag = "p",
+  eyebrowVisibility: propEyebrowVisibility = true,
+  sectionTheme: propSectionTheme = "inherit",
+  sectionVisibility: propSectionVisibility = true
+} = Astro.props;
+if (!["none", "even", "small", "main", "large", "page-top"].includes(propSectionPaddingBottom)) throw new Error("SectionCustomDuplicateThis.sectionPaddingBottom must be one of: none, even, small, main, large, page-top");
+if (!["none", "even", "small", "main", "large", "page-top"].includes(propSectionPaddingTop)) throw new Error("SectionCustomDuplicateThis.sectionPaddingTop must be one of: none, even, small, main, large, page-top");
+const propButton2Text = "Button Text";
+const propButton1Text = "Button Text";
+const propParagraphText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.";
+const propHeadingText = "Lorem ipsum dolor sit amet elit";
+const propEyebrowText = "Eyebrow Text Here";
+if (!["inherit", "light", "dark", "brand"].includes(propSectionTheme)) throw new Error("SectionCustomDuplicateThis.sectionTheme must be one of: inherit, light, dark, brand");
+
+
+---
+{propSectionVisibility && (<section id={(propSectionId) || undefined} data-wf-id="ff646fea-153c-0ace-5c8e-ac7249c9b618" data-w-id="ff646fea-153c-0ace-5c8e-ac7249c9b618" data-wf--section-custom-duplicate-this--section-theme={{"inherit": "inherit", "light": "light", "dark": "dark", "brand": "brand"}[propSectionTheme]} class:list={[{"light": "w-variant-f3a81397-d460-3add-9beb-5ec7af47907a", "dark": "w-variant-b4d321b1-05d4-6b05-8ab2-dfbc2f41ee4e", "brand": "w-variant-bb2c68bd-fd74-aa1e-69b0-e84595dd4ec8"}[propSectionTheme], "section_wrap", "u-section"]} data-wf-variant={["050263d0-cb09-a92f-4885-035c72f1a7f0=" + ({"inherit": "base", "light": "f3a81397-d460-3add-9beb-5ec7af47907a", "dark": "b4d321b1-05d4-6b05-8ab2-dfbc2f41ee4e", "brand": "bb2c68bd-fd74-aa1e-69b0-e84595dd4ec8"}[propSectionTheme])].join(" ")}>
+<Spacer variant={propSectionPaddingTop} />
+<div data-wf-id="ff646fea-153c-0ace-5c8e-ac7249c9b61a" data-w-id="ff646fea-153c-0ace-5c8e-ac7249c9b61a" class="section_contain u-container">
+<div data-wf-id="639150bb-854a-0377-6c89-a86c8a9b1bf1" data-w-id="639150bb-854a-0377-6c89-a86c8a9b1bf1" class="section_layout u-grid-autofit">
+<ContentWrapper>
+<TypographyEyebrow visibility={propEyebrowVisibility}>
+<slot name="eyebrowtext">{propEyebrowText}</slot>
+</TypographyEyebrow>
+<TypographyHeading>
+<slot name="headingtext">{propHeadingText}</slot>
+</TypographyHeading>
+<TypographyParagraph visibility={propParagraphVisibility}>
+<slot name="paragraphtext">{propParagraphText}</slot>
+</TypographyParagraph>
+<ButtonWrapper visibility={propButtonGroupVisibility}>
+<ButtonMain linkTarget={propButton1LinkTarget} link={propButton1Link} visibility={propButton1Visibility}>
+<slot name="button1text" slot="text">{propButton1Text}</slot>
+</ButtonMain>
+<ButtonMain linkTarget={propButton2LinkTarget} link={propButton2Link} variant="secondary" visibility={propButton2Visibility}>
+<slot name="button2text" slot="text">{propButton2Text}</slot>
+</ButtonMain>
+</ButtonWrapper>
+</ContentWrapper>
+<Block classes="u-position-relative u-cover u-radius-small u-background-skeleton u-ratio-16-9 u-overflow-clip">
+<VisualImage classes=" " loading={propImageLoading} image={propImageFile} variant="cover" visibility={propImageVisibility} />
+<VisualVideo classes=" " url={propVideoUrl} variant="cover" visibility={propVideoVisibility} />
+</Block>
+</div>
+</div>
+<Spacer variant={propSectionPaddingBottom} />
+</section>)}

@@ -1,0 +1,318 @@
+---
+import IconArrow from '@/components/svg/IconArrow.astro';
+import ButtonMain from '@/components/button/ButtonMain.astro';
+import IconGoogle from '@/components/svg/IconGoogle.astro';
+import IconFacebook from '@/components/svg/IconFacebook.astro';
+import IconSearch from '@/components/svg/IconSearch.astro';
+
+interface Props {
+  /** Variant */
+  variant?: "mobile" | "desktop";
+}
+const collectionData = {};
+const {
+  variant: propVariant = "mobile"
+} = Astro.props;
+if (!["mobile", "desktop"].includes(propVariant)) throw new Error("Menu.variant must be one of: mobile, desktop");
+
+
+---
+<nav aria-label="Main" data-wf-id="f898fa14-e9c4-646a-b332-c95900470afa" data-w-id="f898fa14-e9c4-646a-b332-c95900470afa" data-wf--menu--variant={{"mobile": "mobile", "desktop": "desktop"}[propVariant]} class:list={[{"desktop": "w-variant-23049969-09ac-2789-520b-3c6ae895bbc6"}[propVariant], "nav_links_component"]} data-wf-variant={["ff0600e1-1d70-83b4-c673-07c1a69e7e69=" + ({"mobile": "base", "desktop": "23049969-09ac-2789-520b-3c6ae895bbc6"}[propVariant])].join(" ")}>
+<ul data-wf-id="f898fa14-e9c4-646a-b332-c95900470afb" data-w-id="f898fa14-e9c4-646a-b332-c95900470afb" class="nav_links_wrap">
+{false && (<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470afc" data-w-id="f898fa14-e9c4-646a-b332-c95900470afc" class="nav_links_item">
+<div data-delay={400} data-hover={true} data-wf-id="f898fa14-e9c4-646a-b332-c95900470afd" data-w-id="f898fa14-e9c4-646a-b332-c95900470afd" class="w-dropdown nav_dropdown_component">
+<div data-state="expanded" data-wf-id="f898fa14-e9c4-646a-b332-c95900470afe" data-w-id="f898fa14-e9c4-646a-b332-c95900470afe" class="w-dropdown-toggle nav_links_link">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470aff" data-w-id="f898fa14-e9c4-646a-b332-c95900470aff" class="nav_links_text">
+Services
+</div>
+<div data-wf-id="ed868c1d-ea06-81a9-d908-e168b32f625d" data-w-id="ed868c1d-ea06-81a9-d908-e168b32f625d" class="nav_links_svg">
+<IconArrow direction="bottom" />
+</div>
+</div>
+<nav data-wf-id="f898fa14-e9c4-646a-b332-c95900470b03" data-w-id="f898fa14-e9c4-646a-b332-c95900470b03" class="w-dropdown-list nav_dropdown_main_wrap">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b04" data-w-id="f898fa14-e9c4-646a-b332-c95900470b04" class="nav_dropdown_main_content">
+<div data-lenis-prevent="" data-wf-id="f898fa14-e9c4-646a-b332-c95900470b05" data-w-id="f898fa14-e9c4-646a-b332-c95900470b05" class="nav_dropdown_main_scroll">
+<ul data-wf-id="f898fa14-e9c4-646a-b332-c95900470b06" data-w-id="f898fa14-e9c4-646a-b332-c95900470b06" class="nav_dropdown_list">
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b07" data-w-id="f898fa14-e9c4-646a-b332-c95900470b07" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b08" data-w-id="f898fa14-e9c4-646a-b332-c95900470b08" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b09" data-w-id="f898fa14-e9c4-646a-b332-c95900470b09" class="nav_dropdown_text">
+Branding
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b0b" data-w-id="f898fa14-e9c4-646a-b332-c95900470b0b" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b0c" data-w-id="f898fa14-e9c4-646a-b332-c95900470b0c" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b0d" data-w-id="f898fa14-e9c4-646a-b332-c95900470b0d" class="nav_dropdown_text">
+Website Design
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b0f" data-w-id="f898fa14-e9c4-646a-b332-c95900470b0f" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b10" data-w-id="f898fa14-e9c4-646a-b332-c95900470b10" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b11" data-w-id="f898fa14-e9c4-646a-b332-c95900470b11" class="nav_dropdown_text">
+Development
+</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</li>)}
+{false && (<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b13" data-w-id="f898fa14-e9c4-646a-b332-c95900470b13" class="nav_links_item">
+<div data-delay={400} data-hover={true} data-wf-id="f898fa14-e9c4-646a-b332-c95900470b14" data-w-id="f898fa14-e9c4-646a-b332-c95900470b14" class="w-dropdown nav_dropdown_component">
+<div data-state="expanded" data-wf-id="f898fa14-e9c4-646a-b332-c95900470b15" data-w-id="f898fa14-e9c4-646a-b332-c95900470b15" class="w-dropdown-toggle nav_links_link">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b16" data-w-id="f898fa14-e9c4-646a-b332-c95900470b16" class="nav_links_text">
+Work
+</div>
+<div data-wf-id="5f6f55a8-1906-2f44-5081-dc762ac9c3b7" data-w-id="5f6f55a8-1906-2f44-5081-dc762ac9c3b7" class="nav_links_svg">
+<IconArrow direction="bottom" />
+</div>
+</div>
+<nav data-wf-id="f898fa14-e9c4-646a-b332-c95900470b1a" data-w-id="f898fa14-e9c4-646a-b332-c95900470b1a" class="w-dropdown-list nav_dropdown_mega_wrap">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b1b" data-w-id="f898fa14-e9c4-646a-b332-c95900470b1b" class="nav_dropdown_mega_content">
+<div data-lenis-prevent="" data-wf-id="f898fa14-e9c4-646a-b332-c95900470b1c" data-w-id="f898fa14-e9c4-646a-b332-c95900470b1c" class="nav_dropdown_mega_scroll">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b1d" data-w-id="f898fa14-e9c4-646a-b332-c95900470b1d" class="nav_dropdown_mega_contain">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b1e" data-w-id="f898fa14-e9c4-646a-b332-c95900470b1e" class="nav_dropdown_mega_layout">
+<ul data-wf-id="f898fa14-e9c4-646a-b332-c95900470b1f" data-w-id="f898fa14-e9c4-646a-b332-c95900470b1f" class="nav_dropdown_list">
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b20" data-w-id="f898fa14-e9c4-646a-b332-c95900470b20" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b21" data-w-id="f898fa14-e9c4-646a-b332-c95900470b21" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b22" data-w-id="f898fa14-e9c4-646a-b332-c95900470b22" class="nav_dropdown_text">
+Branding
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b24" data-w-id="f898fa14-e9c4-646a-b332-c95900470b24" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b25" data-w-id="f898fa14-e9c4-646a-b332-c95900470b25" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b26" data-w-id="f898fa14-e9c4-646a-b332-c95900470b26" class="nav_dropdown_text">
+Website Design
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b28" data-w-id="f898fa14-e9c4-646a-b332-c95900470b28" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b29" data-w-id="f898fa14-e9c4-646a-b332-c95900470b29" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b2a" data-w-id="f898fa14-e9c4-646a-b332-c95900470b2a" class="nav_dropdown_text">
+Development
+</div>
+</a>
+</li>
+</ul>
+<ul data-wf-id="f898fa14-e9c4-646a-b332-c95900470b2c" data-w-id="f898fa14-e9c4-646a-b332-c95900470b2c" class="nav_dropdown_list">
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b2d" data-w-id="f898fa14-e9c4-646a-b332-c95900470b2d" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b2e" data-w-id="f898fa14-e9c4-646a-b332-c95900470b2e" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b2f" data-w-id="f898fa14-e9c4-646a-b332-c95900470b2f" class="nav_dropdown_text">
+Branding
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b31" data-w-id="f898fa14-e9c4-646a-b332-c95900470b31" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b32" data-w-id="f898fa14-e9c4-646a-b332-c95900470b32" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b33" data-w-id="f898fa14-e9c4-646a-b332-c95900470b33" class="nav_dropdown_text">
+Website Design
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b35" data-w-id="f898fa14-e9c4-646a-b332-c95900470b35" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b36" data-w-id="f898fa14-e9c4-646a-b332-c95900470b36" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b37" data-w-id="f898fa14-e9c4-646a-b332-c95900470b37" class="nav_dropdown_text">
+Development
+</div>
+</a>
+</li>
+</ul>
+<ul data-wf-id="f898fa14-e9c4-646a-b332-c95900470b39" data-w-id="f898fa14-e9c4-646a-b332-c95900470b39" class="nav_dropdown_list">
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b3a" data-w-id="f898fa14-e9c4-646a-b332-c95900470b3a" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b3b" data-w-id="f898fa14-e9c4-646a-b332-c95900470b3b" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b3c" data-w-id="f898fa14-e9c4-646a-b332-c95900470b3c" class="nav_dropdown_text">
+Branding
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b3e" data-w-id="f898fa14-e9c4-646a-b332-c95900470b3e" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b3f" data-w-id="f898fa14-e9c4-646a-b332-c95900470b3f" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b40" data-w-id="f898fa14-e9c4-646a-b332-c95900470b40" class="nav_dropdown_text">
+Website Design
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b42" data-w-id="f898fa14-e9c4-646a-b332-c95900470b42" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b43" data-w-id="f898fa14-e9c4-646a-b332-c95900470b43" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b44" data-w-id="f898fa14-e9c4-646a-b332-c95900470b44" class="nav_dropdown_text">
+Development
+</div>
+</a>
+</li>
+</ul>
+<ul data-wf-id="f898fa14-e9c4-646a-b332-c95900470b46" data-w-id="f898fa14-e9c4-646a-b332-c95900470b46" class="nav_dropdown_list">
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b47" data-w-id="f898fa14-e9c4-646a-b332-c95900470b47" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b48" data-w-id="f898fa14-e9c4-646a-b332-c95900470b48" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b49" data-w-id="f898fa14-e9c4-646a-b332-c95900470b49" class="nav_dropdown_text">
+Branding
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b4b" data-w-id="f898fa14-e9c4-646a-b332-c95900470b4b" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b4c" data-w-id="f898fa14-e9c4-646a-b332-c95900470b4c" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b4d" data-w-id="f898fa14-e9c4-646a-b332-c95900470b4d" class="nav_dropdown_text">
+Website Design
+</div>
+</a>
+</li>
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b4f" data-w-id="f898fa14-e9c4-646a-b332-c95900470b4f" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b50" data-w-id="f898fa14-e9c4-646a-b332-c95900470b50" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b51" data-w-id="f898fa14-e9c4-646a-b332-c95900470b51" class="nav_dropdown_text">
+Development
+</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</li>)}
+{false && (<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b53" data-w-id="f898fa14-e9c4-646a-b332-c95900470b53" class="nav_links_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b54" data-w-id="f898fa14-e9c4-646a-b332-c95900470b54" class="nav_links_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b55" data-w-id="f898fa14-e9c4-646a-b332-c95900470b55" class="nav_links_text">
+O nas
+</div>
+</a>
+</li>)}
+<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b57" data-w-id="f898fa14-e9c4-646a-b332-c95900470b57" class="nav_links_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b58" data-w-id="f898fa14-e9c4-646a-b332-c95900470b58" class="nav_links_link" href="/rekrutacja">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b59" data-w-id="f898fa14-e9c4-646a-b332-c95900470b59" class="nav_links_text">
+Rekrutacja
+</div>
+</a>
+</li>
+<li data-wf-id="8222daa7-042c-8404-4d6d-54b323b22fdb" data-w-id="8222daa7-042c-8404-4d6d-54b323b22fdb" class="nav_links_item">
+<a data-wf-id="8222daa7-042c-8404-4d6d-54b323b22fdc" data-w-id="8222daa7-042c-8404-4d6d-54b323b22fdc" class="nav_links_link" href="/galeria">
+<div data-wf-id="8222daa7-042c-8404-4d6d-54b323b22fdd" data-w-id="8222daa7-042c-8404-4d6d-54b323b22fdd" class="nav_links_text">
+Galeria
+</div>
+</a>
+</li>
+<li data-wf-id="965a5da2-5483-184f-3f82-f5f2074f3907" data-w-id="965a5da2-5483-184f-3f82-f5f2074f3907" class="nav_links_item">
+<a data-wf-id="965a5da2-5483-184f-3f82-f5f2074f3908" data-w-id="965a5da2-5483-184f-3f82-f5f2074f3908" class="nav_links_link" href="/opinie">
+<div data-wf-id="965a5da2-5483-184f-3f82-f5f2074f3909" data-w-id="965a5da2-5483-184f-3f82-f5f2074f3909" class="nav_links_text">
+Opinie 
+</div>
+</a>
+</li>
+<li data-wf-id="1409c789-101b-2079-b045-fde7bfd6e59e" data-w-id="1409c789-101b-2079-b045-fde7bfd6e59e" class="nav_links_item">
+<a data-wf-id="1409c789-101b-2079-b045-fde7bfd6e59f" data-w-id="1409c789-101b-2079-b045-fde7bfd6e59f" class="nav_links_link" href="https://www.facebook.com/KlubMisiaBo" target="_blank">
+<div data-wf-id="1409c789-101b-2079-b045-fde7bfd6e5a0" data-w-id="1409c789-101b-2079-b045-fde7bfd6e5a0" class="nav_links_text">
+Facebook
+</div>
+</a>
+</li>
+<li data-wf-id="cf00eb37-be4f-875c-b41a-3f7017ee37d2" data-w-id="cf00eb37-be4f-875c-b41a-3f7017ee37d2" class="nav_links_item">
+<a data-wf-id="cf00eb37-be4f-875c-b41a-3f7017ee37d3" data-w-id="cf00eb37-be4f-875c-b41a-3f7017ee37d3" class="nav_links_link" href="/kontakt">
+<div data-wf-id="cf00eb37-be4f-875c-b41a-3f7017ee37d4" data-w-id="cf00eb37-be4f-875c-b41a-3f7017ee37d4" class="nav_links_text">
+Kontakt
+</div>
+</a>
+</li>
+{false && (<li data-wf-id="750b7ce4-14f6-89f4-c38f-c0cc906d5320" data-w-id="750b7ce4-14f6-89f4-c38f-c0cc906d5320" class="nav_buttons_item is-main">
+<ButtonMain linkTarget="_blank" link="https://www.google.com/search?sca_esv=e0108723e50a180c&amp;hl=pl&amp;biw=2306&amp;bih=1420&amp;aic=0&amp;sxsrf=ANbL-n5vMYKzqfAzOYw3CPDGn4MbGzbODQ:1768325567635&amp;si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x-jRkPd7aV11BETdxGD3B16wPORmToWdQqlMP1qKxlIjeySFUobrWJ9GqLEJquKToz9y324Y0mWmz1m_OUvGxNb9quqLc0KOhF_siITnSvJBGzHID2LGXhVhJ7v__WasBY1hRj0%3D&amp;q=Klub+Misia+Bo+Przedszkole+Publiczne+Opinie&amp;sa=X&amp;ved=2ahUKEwjomrmKhomSAxVbR_EDHTx1EfoQ0bkNegQIIhAE&amp;cshid=1768325667431697" variant="secondary">
+<IconGoogle />
+<Fragment slot="text">opinie</Fragment>
+</ButtonMain>
+</li>)}
+{false && (<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b8c" data-w-id="f898fa14-e9c4-646a-b332-c95900470b8c" class="nav_buttons_item is-main">
+<ButtonMain linkTarget="_blank" link="https://www.facebook.com/KlubMisiaBo/reviews" variant="secondary">
+<IconFacebook />
+<Fragment slot="text">opinie</Fragment>
+</ButtonMain>
+</li>)}
+</ul>
+<ul data-wf-id="f898fa14-e9c4-646a-b332-c95900470b5b" data-w-id="f898fa14-e9c4-646a-b332-c95900470b5b" class="nav_actions_wrap">
+{false && (<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b5c" data-w-id="f898fa14-e9c4-646a-b332-c95900470b5c" class="nav_links_item">
+<div data-delay={400} data-hover={false} data-wf-id="f898fa14-e9c4-646a-b332-c95900470b5d" data-w-id="f898fa14-e9c4-646a-b332-c95900470b5d" class="w-dropdown nav_dropdown_component">
+<div data-state="expanded" data-wf-id="f898fa14-e9c4-646a-b332-c95900470b5e" data-w-id="f898fa14-e9c4-646a-b332-c95900470b5e" class="w-dropdown-toggle nav_links_link">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b5f" data-w-id="f898fa14-e9c4-646a-b332-c95900470b5f">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b60" data-w-id="f898fa14-e9c4-646a-b332-c95900470b60" class="nav_links_text u-text-transform-uppercase">
+EN
+</div>
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b62" data-w-id="f898fa14-e9c4-646a-b332-c95900470b62" class="nav_links_locales_hide">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b63" data-w-id="f898fa14-e9c4-646a-b332-c95900470b63"></div>
+</div>
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b64" data-w-id="f898fa14-e9c4-646a-b332-c95900470b64" class="nav_links_locales_hide"></div>
+</div>
+<div data-wf-id="c97a4dff-17b0-a4f6-04a4-4387e3e17f4e" data-w-id="c97a4dff-17b0-a4f6-04a4-4387e3e17f4e" class="nav_links_svg">
+<IconArrow direction="bottom" />
+</div>
+</div>
+<nav data-wf-id="f898fa14-e9c4-646a-b332-c95900470b67" data-w-id="f898fa14-e9c4-646a-b332-c95900470b67" class="w-dropdown-list nav_dropdown_main_wrap">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b68" data-w-id="f898fa14-e9c4-646a-b332-c95900470b68" class="nav_dropdown_main_content">
+<div data-lenis-prevent="" data-wf-id="f898fa14-e9c4-646a-b332-c95900470b69" data-w-id="f898fa14-e9c4-646a-b332-c95900470b69" class="nav_dropdown_main_scroll">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b6a" data-w-id="f898fa14-e9c4-646a-b332-c95900470b6a" class="nav_dropdown_list">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b6b" data-w-id="f898fa14-e9c4-646a-b332-c95900470b6b" class="nav_dropdown_item">
+<a data-wf-id="f898fa14-e9c4-646a-b332-c95900470b6c" data-w-id="f898fa14-e9c4-646a-b332-c95900470b6c" class="nav_dropdown_link" href="#">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b6d" data-w-id="f898fa14-e9c4-646a-b332-c95900470b6d" class="nav_dropdown_text">
+This is some text inside of a div block.
+</div>
+</a>
+</div>
+</div>
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b6f" data-w-id="f898fa14-e9c4-646a-b332-c95900470b6f">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b70" data-w-id="f898fa14-e9c4-646a-b332-c95900470b70">
+No enabled locales found.
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</li>)}
+{false && (<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b72" data-w-id="f898fa14-e9c4-646a-b332-c95900470b72" class="nav_links_item">
+<div data-delay={400} data-hover={false} data-open-on-mobile="" data-wf-id="f898fa14-e9c4-646a-b332-c95900470b73" data-w-id="f898fa14-e9c4-646a-b332-c95900470b73" class="w-dropdown nav_dropdown_component">
+<div data-state="expanded" data-wf-id="f898fa14-e9c4-646a-b332-c95900470b74" data-w-id="f898fa14-e9c4-646a-b332-c95900470b74" class="w-dropdown-toggle nav_links_link">
+<div data-wf-id="204af66a-91a2-b4de-8088-d5f4cc45c9ca" data-w-id="204af66a-91a2-b4de-8088-d5f4cc45c9ca" class="nav_links_search_icon">
+<IconSearch />
+</div>
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b78" data-w-id="f898fa14-e9c4-646a-b332-c95900470b78" class="u-sr-only">
+Search
+</div>
+</div>
+<nav data-wf-id="f898fa14-e9c4-646a-b332-c95900470b7a" data-w-id="f898fa14-e9c4-646a-b332-c95900470b7a" class="w-dropdown-list nav_dropdown_mega_wrap">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b7b" data-w-id="f898fa14-e9c4-646a-b332-c95900470b7b" class="nav_dropdown_mega_content">
+<div data-lenis-prevent="" data-wf-id="f898fa14-e9c4-646a-b332-c95900470b7c" data-w-id="f898fa14-e9c4-646a-b332-c95900470b7c" class="nav_dropdown_mega_scroll">
+<div data-wf-id="f898fa14-e9c4-646a-b332-c95900470b7d" data-w-id="f898fa14-e9c4-646a-b332-c95900470b7d" class="nav_dropdown_mega_contain">
+<div action="/search" data-wf-id="b82da9a2-8c56-4f03-7e26-96fcafcdc172" data-w-id="b82da9a2-8c56-4f03-7e26-96fcafcdc172" class="nav_search_wrap">
+<button type="submit" tabindex="-1" data-wf-id="47b1ee1a-da69-a1f3-59de-dd898723466f" data-w-id="47b1ee1a-da69-a1f3-59de-dd898723466f" class="nav_search_btn_wrap">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 400 400" fill="none" aria-hidden="true" data-wf-id="47b1ee1a-da69-a1f3-59de-dd8987234670" data-w-id="47b1ee1a-da69-a1f3-59de-dd8987234670" class="nav_search_btn_icon">
+<circle cx="171" cy="171" r="155" stroke="currentColor" stroke-width="var(--nav--icon-thickness)" vector-effect="non-scaling-stroke" data-wf-id="47b1ee1a-da69-a1f3-59de-dd8987234671" data-w-id="47b1ee1a-da69-a1f3-59de-dd8987234671"></circle>
+<path d="M280.602 280.602L388.602 388.602" stroke="currentColor" stroke-width="var(--nav--icon-thickness)" vector-effect="non-scaling-stroke" data-wf-id="47b1ee1a-da69-a1f3-59de-dd8987234672" data-w-id="47b1ee1a-da69-a1f3-59de-dd8987234672"></path>
+</svg>
+<div data-wf-id="47b1ee1a-da69-a1f3-59de-dd8987234673" data-w-id="47b1ee1a-da69-a1f3-59de-dd8987234673" class="u-sr-only">
+Search
+</div>
+</button>
+<label data-wf-id="6ef0fda3-0d70-6c48-3d49-7949ae4a9984" data-w-id="6ef0fda3-0d70-6c48-3d49-7949ae4a9984" class="nav_search_label">
+<span data-wf-id="6f2a975e-9aba-2e4c-754b-0bde436fa041" data-w-id="6f2a975e-9aba-2e4c-754b-0bde436fa041" class="u-sr-only">
+Search
+</span>
+<div autofocus={false} disabled={false} maxlength={256} name="query" placeholder="Search…" required={true} type="search" id="search-2" data-wf-id="b82da9a2-8c56-4f03-7e26-96fcafcdc175" data-w-id="b82da9a2-8c56-4f03-7e26-96fcafcdc175" class="nav_search_field"></div>
+</label>
+<div type="submit" value="Search" data-wf-id="b82da9a2-8c56-4f03-7e26-96fcafcdc176" data-w-id="b82da9a2-8c56-4f03-7e26-96fcafcdc176" class="u-display-none"></div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</li>)}
+{false && (<li data-wf-id="f898fa14-e9c4-646a-b332-c95900470b8a" data-w-id="f898fa14-e9c4-646a-b332-c95900470b8a" class="nav_buttons_item is-main">
+<ButtonMain variant="secondary" />
+</li>)}
+<li data-wf-id="9094f5a7-63d2-5ead-b6c4-d7e905ccc6bf" data-w-id="9094f5a7-63d2-5ead-b6c4-d7e905ccc6bf" class="nav_buttons_item is-main2">
+<ButtonMain link="/rekrutacja" variant="primary">
+<Fragment slot="text">0 zł za pobyt</Fragment>
+</ButtonMain>
+</li>
+</ul>
+</nav>

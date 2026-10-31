@@ -1,0 +1,69 @@
+---
+import Spacer from '@/components/utility/Spacer.astro';
+import TypographyHeading from '@/components/typography/TypographyHeading.astro';
+import GroupCard from '@/components/card/GroupCard.astro';
+
+interface Props {
+
+}
+const collectionData = {};
+const {
+
+} = Astro.props;
+
+
+
+---
+<section data-wf-id="be7bd6be-a5e1-f456-7b45-030c494c00e6" data-w-id="be7bd6be-a5e1-f456-7b45-030c494c00e6" class="group_wrap">
+<Spacer variant="small" />
+<div data-wf-id="be7bd6be-a5e1-f456-7b45-030c494c00e8" data-w-id="be7bd6be-a5e1-f456-7b45-030c494c00e8" class="group_contain u-container">
+<TypographyHeading classes="u-alignment-center u-margin-bottom-8" textTag="h2" variant="h2">
+Grupy wiekowe
+</TypographyHeading>
+{false && (<div data-wf-id="be7bd6be-a5e1-f456-7b45-030c494c00ec" data-w-id="be7bd6be-a5e1-f456-7b45-030c494c00ec" class="group_layout">
+<GroupCard typographyHeadingTextTag="h2">
+<Fragment slot="typographyheadingtext">Tygryski Ryki-Tyki</Fragment>
+</GroupCard>
+<GroupCard typographyHeadingTextTag="h2" image={{"id": "694c73b253e4a8495abfee11"}}>
+<Fragment slot="typographyheadingtext">Julki Wiewiórki</Fragment>
+<Fragment slot="title">Julki Wiewiórki</Fragment>
+</GroupCard>
+<GroupCard typographyHeadingTextTag="p" image={{"id": "694c73b273ee5ad0381d42a7"}}>
+<Fragment slot="typographyheadingtext">Misie</Fragment>
+<br slot="typographyheadingtext" data-wf-id="be7bd6be-a5e1-f456-7b45-030c494c00f8" data-w-id="be7bd6be-a5e1-f456-7b45-030c494c00f8" />
+<Fragment slot="typographyheadingtext">Bo</Fragment>
+<Fragment slot="title">Misie Bo</Fragment>
+</GroupCard>
+</div>)}
+<div data-wf-id="be7bd6be-a5e1-f456-7b45-030c494c00fa" data-w-id="be7bd6be-a5e1-f456-7b45-030c494c00fa" class="div-block-55">
+<GroupCard typographyHeadingTextTag="h2">
+<Fragment slot="typographyheadingtext">Tygryski Ryki-Tyki</Fragment>
+</GroupCard>
+<GroupCard typographyHeadingTextTag="h2" image={{"id": "694c73b253e4a8495abfee11"}}>
+<Fragment slot="wiek">4 latki</Fragment>
+<Fragment slot="typographyheadingtext">Julki Wiewiórki</Fragment>
+<Fragment slot="title">Julki Wiewiórki</Fragment>
+</GroupCard>
+<GroupCard typographyHeadingTextTag="p" image={{"id": "6953a7b248e18ac77bb486ce"}}>
+<Fragment slot="wiek">5-6 latki</Fragment>
+<Fragment slot="typographyheadingtext">Misie</Fragment>
+<br slot="typographyheadingtext" data-wf-id="be7bd6be-a5e1-f456-7b45-030c494c0107" data-w-id="be7bd6be-a5e1-f456-7b45-030c494c0107" />
+<Fragment slot="typographyheadingtext">Bo</Fragment>
+<Fragment slot="title">Misie Bo</Fragment>
+</GroupCard>
+</div>
+<div data-wf-id="be7bd6be-a5e1-f456-7b45-030c494c010a" data-w-id="be7bd6be-a5e1-f456-7b45-030c494c010a" class="price_layout">
+<div data-wf-id="be7bd6be-a5e1-f456-7b45-030c494c010b" data-w-id="be7bd6be-a5e1-f456-7b45-030c494c010b" class="price_info u-gap-2 u-zindex-1">
+<div data-wf-id="8d194c30-2520-bdb1-d49a-3eb35422fcef" data-w-id="8d194c30-2520-bdb1-d49a-3eb35422fcef" class="price_info_icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 21 21" fill="none" aria-label="Ikona: informacji" data-wf-id="474cba2c-0e2c-e6b0-3405-ddc867d108ed" data-w-id="474cba2c-0e2c-e6b0-3405-ddc867d108ed">
+<path d="M9.88372 15.4492H11.1923V9.45964H9.88372V15.4492ZM10.4991 7.75417C10.7118 7.75417 10.8905 7.68351 11.0353 7.54219C11.1801 7.40087 11.2525 7.22405 11.2525 7.01172C11.2525 6.79401 11.1802 6.61224 11.0355 6.46641C10.8911 6.32075 10.7125 6.24792 10.4996 6.24792C10.2824 6.24792 10.1026 6.32075 9.96003 6.46641C9.81749 6.61224 9.74622 6.79401 9.74622 7.01172C9.74622 7.22405 9.81853 7.40087 9.96315 7.54219C10.1076 7.68351 10.2862 7.75417 10.4991 7.75417ZM10.5056 20.3971C9.13563 20.3971 7.851 20.1374 6.65169 19.618C5.45221 19.0985 4.40412 18.3907 3.50742 17.4945C2.61089 16.5982 1.90273 15.5502 1.38294 14.3505C0.863324 13.1507 0.603516 11.8653 0.603516 10.4943C0.603516 9.12778 0.863238 7.84332 1.38268 6.64089C1.90213 5.43828 2.60994 4.39158 3.50612 3.50078C4.40247 2.60998 5.45048 1.90469 6.65013 1.3849C7.84996 0.865278 9.13537 0.605469 10.5064 0.605469C11.8729 0.605469 13.1573 0.865191 14.3598 1.38463C15.5624 1.90408 16.6091 2.60903 17.4999 3.49948C18.3907 4.38993 19.096 5.43707 19.6158 6.64089C20.1354 7.84471 20.3952 9.12943 20.3952 10.4951C20.3952 11.865 20.1355 13.1497 19.616 14.349C19.0966 15.5484 18.3916 16.5954 17.5012 17.4898C16.6107 18.3845 15.5636 19.0926 14.3598 19.6143C13.1559 20.1362 11.8712 20.3971 10.5056 20.3971ZM10.5079 19.0883C12.8944 19.0883 14.9208 18.2534 16.5871 16.5836C18.2533 14.9138 19.0863 12.8835 19.0863 10.4927C19.0863 8.10625 18.2543 6.07986 16.5902 4.41354C14.9262 2.7474 12.8959 1.91432 10.4993 1.91432C8.11428 1.91432 6.08685 2.74635 4.41706 4.41042C2.74727 6.07448 1.91237 8.10477 1.91237 10.5013C1.91237 12.8864 2.74727 14.9138 4.41706 16.5836C6.08685 18.2534 8.11714 19.0883 10.5079 19.0883Z" fill="currentColor" data-wf-id="474cba2c-0e2c-e6b0-3405-ddc867d108ee" data-w-id="474cba2c-0e2c-e6b0-3405-ddc867d108ee"></path>
+</svg>
+</div>
+<div data-wf-id="be7bd6be-a5e1-f456-7b45-030c494c010c" data-w-id="be7bd6be-a5e1-f456-7b45-030c494c010c" class="faasd u-text-style-large">
+Grupy liczą około 15 dzieci, co pozwala na indywidualne podejście do każdego dziecka.
+</div>
+</div>
+</div>
+</div>
+<Spacer variant="small" />
+</section>

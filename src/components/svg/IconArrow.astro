@@ -1,0 +1,18 @@
+---
+import StrokePath from '@/components/svg/StrokePath.astro';
+
+interface Props {
+  /** Direction */
+  direction?: "right" | "left" | "top" | "bottom";
+}
+const collectionData = {};
+const {
+  direction: propDirection = "right"
+} = Astro.props;
+if (!["right", "left", "top", "bottom"].includes(propDirection)) throw new Error("IconArrow.direction must be one of: right, left, top, bottom");
+
+
+---
+<svg viewBox="0 0 66 70" fill="none" width="100%" height="100%" aria-hidden="true" data-wf-id="973d4f8d-b9e1-3d51-3d84-7a9efc662c8f" data-w-id="973d4f8d-b9e1-3d51-3d84-7a9efc662c8f" data-wf--icon-arrow--direction={{"right": "right", "left": "left", "top": "top", "bottom": "bottom"}[propDirection]} class:list={[{"left": "w-variant-dc469724-71a3-14e1-b5d5-1294323411ce", "top": "w-variant-b18a0fcd-abb0-329e-47f4-79155dd8284a", "bottom": "w-variant-caa8b8e9-e8ec-6eb3-4526-30f19f7326f5"}[propDirection], "u-svg"]} data-wf-variant={["4110ac31-e9af-1f67-65b2-82b1b11ed64c=" + ({"right": "base", "left": "dc469724-71a3-14e1-b5d5-1294323411ce", "top": "b18a0fcd-abb0-329e-47f4-79155dd8284a", "bottom": "caa8b8e9-e8ec-6eb3-4526-30f19f7326f5"}[propDirection])].join(" ")}>
+<StrokePath path="M17 2L50 34.9999L17 68" />
+</svg>

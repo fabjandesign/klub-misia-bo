@@ -1,0 +1,26 @@
+---
+
+
+interface Props {
+  /** Classes */
+  classes?: string;
+  /** Variant */
+  variant?: "left" | "center" | "right" | "center-mobile";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  classes: propClasses = " ",
+  variant: propVariant = "left",
+  visibility: propVisibility = true
+} = Astro.props;
+if (!["left", "center", "right", "center-mobile"].includes(propVariant)) throw new Error("ContentWrapper.variant must be one of: left, center, right, center-mobile");
+
+
+---
+{propVisibility && (<div data-wf-id="4691487f-404c-ddef-cd99-f79676913b7a" data-w-id="4691487f-404c-ddef-cd99-f79676913b7a" data-wf--content-wrapper--variant={{"left": "left", "center": "center", "right": "right", "center-mobile": "center-mobile"}[propVariant]} class:list={[{"center": "w-variant-4f54624e-ceb1-0769-a238-365d5e220b70", "right": "w-variant-405b6754-709a-81de-bf32-f0102c0c7aa2", "center-mobile": "w-variant-e98b91c1-a8bf-9b6d-a119-f398c9e3f46b"}[propVariant], "u-display-contents"]} data-wf-variant={["939b4cec-eeb4-435c-14dd-3d7c4bfab190=" + ({"left": "base", "center": "4f54624e-ceb1-0769-a238-365d5e220b70", "right": "405b6754-709a-81de-bf32-f0102c0c7aa2", "center-mobile": "e98b91c1-a8bf-9b6d-a119-f398c9e3f46b"}[propVariant])].join(" ")}>
+<div class:list={["u-content-wrapper", propClasses]} data-wf-id="d0e71e85-281e-e4b0-837a-10125c09cab3" data-w-id="d0e71e85-281e-e4b0-837a-10125c09cab3" name="Content">
+<slot />
+</div>
+</div>)}

@@ -1,0 +1,54 @@
+---
+import { safeAttributes, customAttributes } from '@/lib/attributes';
+import FormLabelText from '@/components/form/FormLabelText.astro';
+
+interface Props {
+  /** Attribute Value */
+  attributeValue?: string;
+  /** Attribute Name */
+  attributeName?: string;
+  /** Classes */
+  classes?: string;
+  /** Slot Role */
+  slotRole?: string;
+  /** Legend Variant */
+  legendVariant?: "visible" | "hidden" | "bold";
+  /** Variant */
+  variant?: "flex-vertical" | "flex-horizontal" | "grid-2-column" | "grid-3-column";
+  /** Visibility */
+  visibility?: boolean;
+}
+const collectionData = {};
+const {
+  attributeValue: propAttributeValue = "",
+  attributeName: propAttributeName = "",
+  classes: propClasses = " ",
+  slotRole: propSlotRole = "none",
+  legendVariant: propLegendVariant = "visible",
+  variant: propVariant = "flex-vertical",
+  visibility: propVisibility = true
+} = Astro.props;
+const propLegendText = "Legend";
+if (!["visible", "hidden", "bold"].includes(propLegendVariant)) throw new Error("FormFieldset.legendVariant must be one of: visible, hidden, bold");
+if (!["flex-vertical", "flex-horizontal", "grid-2-column", "grid-3-column"].includes(propVariant)) throw new Error("FormFieldset.variant must be one of: flex-vertical, flex-horizontal, grid-2-column, grid-3-column");
+
+
+---
+{propVisibility && (<fieldset {...safeAttributes(customAttributes([...([({"name": "class", "value": propClasses}), ({"name": propAttributeName, "value": propAttributeValue})] || [])]), ["data-wf-id", "data-w-id", "data-wf--form-fieldset--variant", "class"])} data-wf-id="40c5c120-b67e-abdf-9581-f3dc48d20a3c" data-w-id="40c5c120-b67e-abdf-9581-f3dc48d20a3c" data-wf--form-fieldset--variant={{"flex-vertical": "flex-vertical", "flex-horizontal": "flex-horizontal", "grid-2-column": "grid-2-column", "grid-3-column": "grid-3-column"}[propVariant]} class:list={[{"flex-horizontal": "w-variant-ccbf2df7-16d0-30d7-0afb-0df098785596", "grid-2-column": "w-variant-14c165fa-7397-02ef-8dc0-6e307b6c980f", "grid-3-column": "w-variant-5fdb0361-c340-58a0-00d3-b0e0b17257ad"}[propVariant], "form_fieldset_wrap", customAttributes([...([({"name": "class", "value": propClasses}), ({"name": propAttributeName, "value": propAttributeValue})] || [])]).class]} data-wf-variant={["760b4142-154a-2f18-170c-ea9506d7d5ff=" + ({"flex-vertical": "base", "flex-horizontal": "ccbf2df7-16d0-30d7-0afb-0df098785596", "grid-2-column": "14c165fa-7397-02ef-8dc0-6e307b6c980f", "grid-3-column": "5fdb0361-c340-58a0-00d3-b0e0b17257ad"}[propVariant])].join(" ")}>
+<FormLabelText tag="legend" variant={propLegendVariant}>
+<slot name="legendtext">{propLegendText}</slot>
+</FormLabelText>
+<div role={propSlotRole} data-wf-id="6805b1af-5e66-f96b-6006-fa2708c80db8" data-w-id="6805b1af-5e66-f96b-6006-fa2708c80db8" class="form_fieldset_list" name="">
+<slot />
+</div>
+<div data-wf-id="217fd854-fabd-2469-b724-728503a5aba1" data-w-id="217fd854-fabd-2469-b724-728503a5aba1" class="w-embed u-embed-css">
+<style is:inline>
+@container (width < 40em) {
+	.form_fieldset_list:has(.form_fieldset_list) { display: flex; }
+}
+@container (width < 18em) {
+	.form_fieldset_list { display: flex; }
+}
+</style>
+</div>
+</fieldset>)}

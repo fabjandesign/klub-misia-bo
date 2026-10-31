@@ -1,0 +1,33 @@
+---
+
+
+interface Props {
+
+}
+const collectionData = {};
+const {
+
+} = Astro.props;
+
+
+
+---
+<div data-wf-id="625bf776-8cb1-fa1f-a6f9-6b7f7ac28358" data-w-id="625bf776-8cb1-fa1f-a6f9-6b7f7ac28358" class="w-embed u-embed-js">
+<script is:inline>
+(function onReady(callback, options) {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", callback, options);
+  } else if (!options?.signal?.aborted) {
+    const event = new Event("DOMContentLoaded");
+    if (typeof callback === "function") callback.call(document, event);
+    else callback?.handleEvent(event);
+  }
+})( function () {
+  document.querySelectorAll(".your-element").forEach((component) => {
+    if (component.dataset.scriptInitialized) return;
+    component.dataset.scriptInitialized = "true";
+    // run script here
+  });
+});
+</script>
+</div>
